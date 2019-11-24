@@ -1,0 +1,9 @@
+<map id="led_control" name="led_control">
+<area shape="rect" id="node2" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="141,5,256,32"/>
+<area shape="rect" id="node3" href="$buttons_8h.html#a2e8d9dc0a729a8bf64ee62a334fcea72" title="IsPressed" alt="" coords="158,56,239,83"/>
+<area shape="rect" id="node4" href="$led__strip_8h.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="139,107,259,133"/>
+<area shape="rect" id="node8" href="$led__strip_8h.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="147,157,250,184"/>
+<area shape="rect" id="node5" href="$rgbw_8h.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="307,107,397,133"/>
+<area shape="rect" id="node6" href="$timer__dma_8h.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent. " alt="" coords="456,81,560,108"/>
+<area shape="rect" id="node7" href="$timer__dma_8h.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer. " alt="" coords="445,132,571,159"/>
+</map>

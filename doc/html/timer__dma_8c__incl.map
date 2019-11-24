@@ -1,0 +1,4 @@
+<map id="timer_dma.c" name="timer_dma.c">
+<area shape="rect" id="node4" href="$timer__dma_8h.html" title="Contains timer2+dma driver prototypes to send data to led strip. " alt="" coords="150,80,245,107"/>
+<area shape="rect" id="node5" href="$gpio_8h.html" title="Contains definitions for gpio.c. " alt="" coords="269,80,326,107"/>
+</map>

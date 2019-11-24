@@ -1,0 +1,4 @@
+<map id="Toggle_Heartbeat" name="Toggle_Heartbeat">
+<area shape="rect" id="node2" href="$gpio_8h.html#ae60d6d62cc9dd39cee66297840556850" title="Reads the corresponding GPIO pin. " alt="" coords="179,5,289,32"/>
+<area shape="rect" id="node3" href="$gpio_8h.html#acd490e73c4bdd10da5c560279b713036" title="Sets the corresponding GPIO pin. " alt="" coords="185,56,283,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="heartbeat.c" name="heartbeat.c">
+<area shape="rect" id="node3" href="$heartbeat_8h.html" title="Contains prototype of function which toggles heartbeat led. " alt="" coords="95,80,181,107"/>
+<area shape="rect" id="node4" href="$gpio_8h.html" title="Contains definitions for gpio.c. " alt="" coords="205,80,263,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="sendDataToStrip" name="sendDataToStrip">
+<area shape="rect" id="node2" href="$rgbw_8h.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="173,31,264,57"/>
+<area shape="rect" id="node3" href="$timer__dma_8h.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent. " alt="" coords="323,5,427,32"/>
+<area shape="rect" id="node4" href="$timer__dma_8h.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer. " alt="" coords="312,56,437,83"/>
+</map>

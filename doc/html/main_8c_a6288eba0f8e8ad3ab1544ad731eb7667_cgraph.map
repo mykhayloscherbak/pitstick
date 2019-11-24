@@ -1,0 +1,8 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$bll_8h.html#acbcce6716e32407292c040cb312d5b4a" title="contains one iteration of the main loop " alt="" coords="104,56,236,83"/>
+<area shape="rect" id="node4" href="$watchdog_8h.html#abea5cad08a2d366bccc2dcb8f41cd869" title="Resets watchdog. " alt="" coords="285,107,408,133"/>
+<area shape="rect" id="node3" href="$clock_8h.html#a23cddb4c0674cdf7dfe2588329d0fa54" title="Returns number of milliseconds from timebase start. " alt="" coords="286,5,407,32"/>
+<area shape="rect" id="node5" href="$heartbeat_8h.html#a729e0be438901c5f6664344701c80a48" title="Toggles &quot;Heartbeat led&quot;. " alt="" coords="284,56,409,83"/>
+<area shape="rect" id="node6" href="$gpio_8h.html#ae60d6d62cc9dd39cee66297840556850" title="Reads the corresponding GPIO pin. " alt="" coords="457,31,568,57"/>
+<area shape="rect" id="node7" href="$gpio_8h.html#acd490e73c4bdd10da5c560279b713036" title="Sets the corresponding GPIO pin. " alt="" coords="463,81,562,108"/>
+</map>

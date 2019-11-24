@@ -1,0 +1,6 @@
+<map id="eeemu.h" name="eeemu.h">
+<area shape="rect" id="node2" href="$led__control_8c.html" title="Contains led control logic for all modes: " alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$prng_8c.html" title="contains function for generation pseudo&#45;rundonm number sequence for slalom light. x[n+1] = (a*x[n] + ..." alt="" coords="125,80,184,107"/>
+<area shape="rect" id="node4" href="$eeemu_8c.html" title="eeprom emulation implementation " alt="" coords="208,80,280,107"/>
+<area shape="rect" id="node5" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle. " alt="" coords="304,80,365,107"/>
+</map>

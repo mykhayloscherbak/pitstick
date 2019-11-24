@@ -1,0 +1,10 @@
+<map id="main.c" name="main.c">
+<area shape="rect" id="node2" href="$bll_8h.html" title="Contains business logic function prototype. " alt="" coords="139,80,185,107"/>
+<area shape="rect" id="node4" href="$clock_8h.html" title="Contains definitions for clock.c. " alt="" coords="210,80,274,107"/>
+<area shape="rect" id="node5" href="$gpio_8h.html" title="Contains definitions for gpio.c. " alt="" coords="5,80,63,107"/>
+<area shape="rect" id="node7" href="$timer__dma_8h.html" title="Contains timer2+dma driver prototypes to send data to led strip. " alt="" coords="299,80,393,107"/>
+<area shape="rect" id="node8" href="$buttons_8h.html" title="Buttons driver with debouncing and long press detection header file. " alt="" coords="417,80,493,107"/>
+<area shape="rect" id="node9" href="$eeemu_8h.html" title="eeprom emulation header in pair with eeemu.c " alt="" coords="518,80,590,107"/>
+<area shape="rect" id="node10" href="$watchdog_8h.html" title="Contains independent watchdog init and functions prototypes. " alt="" coords="615,80,704,107"/>
+<area shape="rect" id="node11" href="$adc_8h.html" title="Contains ADC driver form one channel prototypes. " alt="" coords="728,80,783,107"/>
+</map>

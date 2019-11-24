@@ -1,0 +1,8 @@
+<map id="gpio.h" name="gpio.h">
+<area shape="rect" id="node2" href="$heartbeat_8c.html" title="Contains heartbeat toggling function. " alt="" coords="5,80,92,107"/>
+<area shape="rect" id="node3" href="$buttons_8c.html" title="Buttons driver with debouncing and long press detection. " alt="" coords="116,80,192,107"/>
+<area shape="rect" id="node4" href="$clock_8c.html" title="Contains clock init and functions. " alt="" coords="217,80,281,107"/>
+<area shape="rect" id="node5" href="$gpio_8c.html" title="Contains init and access functions for Gpio. " alt="" coords="305,80,363,107"/>
+<area shape="rect" id="node6" href="$timer__dma_8c.html" title="Contains timer2+dma driver to send data to led strip. " alt="" coords="387,80,481,107"/>
+<area shape="rect" id="node7" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle. " alt="" coords="506,80,567,107"/>
+</map>

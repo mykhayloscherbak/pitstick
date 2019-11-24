@@ -1,0 +1,5 @@
+<map id="watchdog.h" name="watchdog.h">
+<area shape="rect" id="node2" href="$bll_8c.html" title="Contains task switcher implementation and task table. " alt="" coords="5,80,52,107"/>
+<area shape="rect" id="node3" href="$watchdog_8c.html" title="Contains independent watchdog init and functions. " alt="" coords="76,80,165,107"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle. " alt="" coords="190,80,251,107"/>
+</map>

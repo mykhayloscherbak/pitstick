@@ -1,0 +1,6 @@
+<map id="led_strip.c" name="led_strip.c">
+<area shape="rect" id="node3" href="$led__strip_8h.html" title="Contains common functions prototypes for led strip control. " alt="" coords="99,80,181,107"/>
+<area shape="rect" id="node5" href="$project__conf_8h.html" title="Contains configuration constants for the project. " alt="" coords="205,80,309,107"/>
+<area shape="rect" id="node6" href="$clock_8h.html" title="Contains definitions for clock.c. " alt="" coords="333,80,397,107"/>
+<area shape="rect" id="node7" href="$rgbw_8h.html" title="Contains prototypes and data types for SK6812 led strip driver. " alt="" coords="421,80,483,107"/>
+</map>

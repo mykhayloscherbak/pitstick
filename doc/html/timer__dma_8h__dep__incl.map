@@ -1,0 +1,5 @@
+<map id="timer_dma.h" name="timer_dma.h">
+<area shape="rect" id="node2" href="$rgbw_8c.html" title="Contains SK6812 led strip driver implementation. The driver converts rgbw led data to serial array of..." alt="" coords="5,80,67,107"/>
+<area shape="rect" id="node3" href="$timer__dma_8c.html" title="Contains timer2+dma driver to send data to led strip. " alt="" coords="91,80,186,107"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle. " alt="" coords="211,80,272,107"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="bll.c" name="bll.c">
+<area shape="rect" id="node5" href="$bll_8h.html" title="Contains business logic function prototype. " alt="" coords="234,80,281,107"/>
+<area shape="rect" id="node6" href="$heartbeat_8h.html" title="Contains prototype of function which toggles heartbeat led. " alt="" coords="305,80,391,107"/>
+<area shape="rect" id="node7" href="$clock_8h.html" title="Contains definitions for clock.c. " alt="" coords="416,80,480,107"/>
+<area shape="rect" id="node8" href="$watchdog_8h.html" title="Contains independent watchdog init and functions prototypes. " alt="" coords="505,80,594,107"/>
+<area shape="rect" id="node9" href="$buttons_8h.html" title="Buttons driver with debouncing and long press detection header file. " alt="" coords="618,80,694,107"/>
+<area shape="rect" id="node10" href="$led__control_8h.html" title="Contains function that controls led strip. " alt="" coords="719,80,815,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="tim2_TransferBits" name="tim2_TransferBits">
+<area shape="rect" id="node2" href="$rgbw_8c.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="179,5,269,32"/>
+<area shape="rect" id="node3" href="$led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="317,5,437,32"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="485,5,571,32"/>
+</map>

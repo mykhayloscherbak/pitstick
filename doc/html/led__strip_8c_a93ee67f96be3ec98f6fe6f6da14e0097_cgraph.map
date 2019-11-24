@@ -1,0 +1,3 @@
+<map id="put2pixels" name="put2pixels">
+<area shape="rect" id="node2" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="135,5,204,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="prng.c" name="prng.c">
+<area shape="rect" id="node2" href="$prng_8h.html" title="Contains prototypes of function that returns random value between min and max. Caculated value is sto..." alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node4" href="$eeemu_8h.html" title="eeprom emulation header in pair with eeemu.c " alt="" coords="88,80,160,107"/>
+<area shape="rect" id="node5" href="$adc_8h.html" title="Contains ADC driver form one channel prototypes. " alt="" coords="185,80,239,107"/>
+</map>

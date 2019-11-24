@@ -1,0 +1,4 @@
+<map id="displayStrip" name="displayStrip">
+<area shape="rect" id="node2" href="$timer__dma_8h.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent. " alt="" coords="155,5,259,32"/>
+<area shape="rect" id="node3" href="$timer__dma_8h.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer. " alt="" coords="144,56,269,83"/>
+</map>

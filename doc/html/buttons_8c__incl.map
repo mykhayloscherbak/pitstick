@@ -1,0 +1,4 @@
+<map id="buttons.c" name="buttons.c">
+<area shape="rect" id="node3" href="$buttons_8h.html" title="Buttons driver with debouncing and long press detection header file. " alt="" coords="45,80,121,107"/>
+<area shape="rect" id="node4" href="$gpio_8h.html" title="Contains definitions for gpio.c. " alt="" coords="145,80,203,107"/>
+</map>
