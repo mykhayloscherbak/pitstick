@@ -3,6 +3,7 @@
  * @brief Contains led control logic for all modes:
  *        + Pitstop
  *        + Traffic light for autoslalom
+ *        + Rally stop-and-go ("Podnos") mode
  *        + Config mode
  *        .
  *
@@ -15,8 +16,10 @@
  * + Blue   : T2
  * + White  : Tlight min
  * + Green  : Tlight max
+ * + Red    : Podnos phase duration
  *
- * @date 11-11-2019
+ * @date 12-12-2019
+ * @version 1.12
  */
 #include <adc.h>
 #include <stdint.h>
@@ -40,22 +43,24 @@ typedef enum
 	STATE_CONFIG,                   /**< Config state. This state is entered if button is pressed at startup time */
 	STATE_PIT,                      /**< Main mode, pit stop */
 	STATE_TLIGHT,                   /**< Autoslalom mode. Switching between modes is done by the second config frame */
-	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previouse modes and is needed to remind that the stick is not turned off */
-	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the config mode and mode processor is in the idle state */
+	STATE_PODNOS,                   /**< Stop-and-go ("Podnos") mode */
+	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previous modes and is needed to remind that the stick is not turned off */
+	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the configuration  mode and mode processor is in the idle state */
 	STATE_CONFIG_PARAM_PRESSED,     /**< Button is pressed while parameter is displayed */
-	STATE_CONFIG_PARAM_RELEASED,    /**< Button is released while the parameyer is displayed in config mode */
+	STATE_CONFIG_PARAM_RELEASED,    /**< Button is released while the parameter is displayed in configuration mode */
 	STATE_CONFIG_PARAM_LONG_PRESSED,/**< Button is long pressed while parameter is displayed */
 	STATE_CONFIG_PARAM_SAVING,      /**< Current parameter was changed and will be saved. Short red blink indicates that. */
 	STATE_CONFIG_PARAM_NOT_SAVING,  /**< Current parameter was not changed and will not be saved. Short turn the stick off confirms that */
 	STATE_CONFIG_PARAM_WAITING,     /**< Waiting after last button press */
-	STATE_CONFIG_BEGIN,             /**< Beginning of the config precess */
+	STATE_CONFIG_BEGIN,             /**< Beginning of the configuration process */
 	STATE_CONFIG_BRIGHTNESS,        /**< Configuring brightness */
 	STATE_CONFIG_MODE,              /**< Configuring mode (tlight for slalom or pitstick mode) */
-	STATE_CONFIG_TSEQ,              /**< Configuring total pitstop duratuin */
+	STATE_CONFIG_TSEQ,              /**< Configuring total pitstop duration */
 	STATE_CONFIG_T1,                /**< Configuring T1. T1 is the time kart starts going from the pitlane */
 	STATE_CONFIG_T2,                /**< Configuring T1. T2 is time from intermediate point and crossing start/stop line */
 	STATE_CONFIG_TLIGHT_MIN,        /**< Configuring minimal time for the last phase in tlingt mode. 1/10s resolution */
 	STATE_CONFIG_TLIGHT_MAX,        /**< Configuring maximal time for the last phase in tlingt mode. 1/10s resolution */
+	STATE_CONFIG_PODNOS_MODE,       /**< Set stop-and-go mode duration */
 	STATE_CONFIG_END,               /**< End of configuration process */
 	STATE_LOCK_START,               /**< Start lock mode. Lock mode is turned on after all operations are complete to remimd switchig the stick off */
 	STATE_LOCK_ON,                  /**< Lock mode. Red light+battery power is on */
@@ -73,6 +78,7 @@ typedef enum
 {
 	MODE_PIT = 0,/**< Pitstop mode */
 	MODE_TLIGHT, /**< Slalom traffic light mode */
+	MODE_PODNOS, /**< Mode for rally stop-and-go */
 	MODE_TOTAL   /**< Total number of modes */
 } Working_Mode_t;
 
@@ -81,13 +87,14 @@ typedef enum
  */
 typedef enum /* Attention! Adding new channels here do not forget to extend MAX_STORAGE in eeemu.h */
 {
-	CH_BRIGHTNESS = 0,/**< Brightness */
-	CH_MODE,          /**< Selected work mode */
-	CH_TSEQ,          /**< Total pitstop time */
-	CH_T1,            /**< T1 Time in seconds */
-	CH_T2,            /**< T2 Time in seconds */
-	CH_TLIGHT_MIN,    /**< Tlight random part minimal value in 1/10s */
-	CH_TLIGHT_MAX     /**< Tlight random part maximal value in 1/10s */
+	CH_BRIGHTNESS = 0,	/**< Brightness */
+	CH_MODE,          	/**< Selected work mode */
+	CH_TSEQ,          	/**< Total pitstop time */
+	CH_T1,            	/**< T1 Time in seconds */
+	CH_T2,            	/**< T2 Time in seconds */
+	CH_TLIGHT_MIN,    	/**< Tlight random part minimal value in 1/10s */
+	CH_TLIGHT_MAX,     	/**< Tlight random part maximal value in 1/10s */
+	CH_PODNOS_MODE_TIME /**< Stop-and-go mode time */
 }Config_idx_t;
 
 /**
@@ -166,6 +173,13 @@ static void dispModePattern(const uint8_t value)
 			put2pixels(RED,i * 3 + 1);
 		}
 		break;
+	case MODE_PODNOS:
+		for (uint8_t i = 0; i < 10; i++)
+		{
+			put2pixels(GREEN,i + 10);
+			put2pixels(RED,i);
+		}
+		break;
 	default:
 		break;
 	}
@@ -195,6 +209,11 @@ static void displayTlightMin(const uint8_t value)
 static void displayTlightMax(const uint8_t value)
 {
 	displayNumber(GREEN,GREEN,value);
+}
+
+static void displayPodnosModeTime(const uint8_t value)
+{
+	displayNumber(RED,RED,value);
 }
 
 /**
@@ -411,23 +430,32 @@ static uint8_t  config(uint8_t * const nextState)
     			saved = 0;
     		}
     		savedParams[CH_MODE] = dV.value;
-    		if (MODE_PIT == savedParams[CH_MODE])
+    		switch (savedParams[CH_MODE])
     		{
+    		case MODE_PIT:
     			dV.dispFunc = displayTSEQ;
     			dV.min = TSEQ_MIN;
     			dV.max = TSEQ_MAX;
     			dV.value = savedParams[CH_TSEQ];
     			dV.endMode = EM_CONTINUE;
     			state = STATE_CONFIG_TSEQ;
-    		}
-    		else
-    		{
+    			break;
+    		case MODE_TLIGHT:
     			dV.dispFunc = displayTlightMin;
     			dV.min = TLIGHT_MIN;
     			dV.max = TLIGHT_MAX - 2;
     			dV.value = savedParams[CH_TLIGHT_MIN];
     			dV.endMode = EM_CONTINUE;
     			state = STATE_CONFIG_TLIGHT_MIN;
+    			break;
+    		case MODE_PODNOS:
+    			dV.dispFunc = displayPodnosModeTime,
+				dV.min = PODNOS_MODE_MIN;
+    			dV.max = PODNOS_MODE_MAX;
+    			dV.value = savedParams[CH_PODNOS_MODE_TIME];
+    			dV.endMode = EM_CONTINUE;
+    			state = STATE_CONFIG_PODNOS_MODE;
+    			break;
     		}
     		uint8_t changed2 = changeParam(&dV,!0);
     		changed = changed || changed2;
@@ -549,6 +577,34 @@ static uint8_t  config(uint8_t * const nextState)
           state = STATE_CONFIG_END;
         }
         break;
+    case STATE_CONFIG_PODNOS_MODE:
+    	changed = changeParam(&dV,0);
+    	savedParams[CH_PODNOS_MODE_TIME] = dV.value;
+    	if (dV.endMode != EM_CONTINUE && dV.endMode != EM_CONTINUE_DO_NOT_UPDATE)
+    	{
+    		if (dV.endMode == EM_END_SAVING)
+    		{
+    			saved = 0;
+    		}
+    		if (saved == 0)
+    		{
+    			eeemu_write(savedParams);
+    			showFull(BLACK);
+    			for (uint8_t i = 0; i < 20; i++)
+    			{
+    				put2pixels(RED,i);
+    			}
+    		}
+    		else
+    		{
+    			showFull(BLACK);
+    		}
+    		changed = !0;
+    		ResetTimer(&timer);
+    		state = STATE_CONFIG_END;
+    	}
+    	break;
+
 
     case STATE_CONFIG_END:
       if (nextState != NULL)
@@ -1000,6 +1056,50 @@ static uint8_t tlightMode(uint32_t const ms,uint8_t * const nextState)
 }
 
 /**
+ * @brief Red phase of "Podnos" mode
+ * @param init is nonzero at the first run
+ * @return nonzero means the led strip must be updated
+ */
+static uint8_t podnosRed(const uint8_t init)
+{
+  return showFullWithInit(RED,init);
+}
+
+/**
+ * @brief Green phase of "Podnos" mode
+ * @param init is nonzero at the first run
+ * @return nonzero means the led strip must be updated
+ */
+
+static uint8_t podnosGreen(const uint8_t init)
+{
+  return showFullWithInit(GREEN,init);
+}
+
+
+/**
+ * @brief fills and executes state table for stop-and-go ("Podnos") mode.
+ * @param ms milliseconds from the start
+ * @param nextState out param. Is non-zero if sequence is finished and we need to go to the next (@ref lock) state
+ * @return nonzero means the led strip must be updated
+ */
+
+static uint8_t podnosMode(uint32_t const ms,uint8_t * const nextState)
+{
+  const uint8_t * const conf = eeemuGetValue();
+  const uint8_t duration = conf[CH_PODNOS_MODE_TIME];
+  const uint16_t powerPhaseStart = duration + 10;
+  const Phase_desc_t desc[]=
+  {
+      {0,podnosRed},
+      {duration, podnosGreen},
+      {powerPhaseStart,showPower},
+      {powerPhaseStart + 5,NULL}
+  };
+  return processPhaseTable(desc,nextState,ms);
+}
+
+/**
  * @brief Lock mode. Is shown at the end of all sequences (@ref config, @ref tlightMode, etc) to show that the stick is on and remind to switch it off
  * @return nonzero means the led strip must be updated
  */
@@ -1082,6 +1182,9 @@ void led_control(uint32_t const ms)
 			case MODE_TLIGHT:
 				state = STATE_TLIGHT;
 				break;
+			case MODE_PODNOS:
+			  state = STATE_PODNOS;
+			  break;
 			default:
 				state = STATE_LOCK;
 				break;
@@ -1109,7 +1212,13 @@ void led_control(uint32_t const ms)
 			state = STATE_LOCK;
 		}
 		break;
-
+	case STATE_PODNOS:
+	  changed = podnosMode(ms,&nextState);
+	  if (nextState != 0)
+	  {
+	    state = STATE_LOCK;
+	  }
+	  break;
 	case STATE_LOCK:
 	  changed = lock();
 	  break;

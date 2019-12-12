@@ -13,5 +13,6 @@ var led__strip_8c =
     [ "putPixel", "led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec", null ],
     [ "sendDataToStrip", "led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06", null ],
     [ "setBrightness", "led__strip_8c.html#a98bf1b7337d6f6c14a09e02d4d3308dd", null ],
-    [ "showFull", "led__strip_8c.html#ad19c7910dd7f93657785511c880f187a", null ]
+    [ "showFull", "led__strip_8c.html#ad19c7910dd7f93657785511c880f187a", null ],
+    [ "showFullWithInit", "led__strip_8c.html#acc67db7a2a81f9b75653212c4343c97a", null ]
 ];

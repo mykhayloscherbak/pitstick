@@ -182,6 +182,17 @@ void showFull(const Colors_t color)
   }
 }
 
+uint8_t showFullWithInit(const Colors_t color, const uint8_t init)
+{
+  uint8_t changed = 0;
+    if (init != 0)
+    {
+      showFull(color);
+      changed = !0;
+    }
+    return changed;
+}
+
 void displayNumber(const Colors_t colorL, const Colors_t colorR,const uint8_t Number)
 {
   displayDigit(colorR, Number % 10, 1);

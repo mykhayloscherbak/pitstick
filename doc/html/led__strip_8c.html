@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PitStick
-   &#160;<span id="projectnumber">1.00</span>
+   &#160;<span id="projectnumber">1.20</span>
    </div>
   </td>
  </tr>
@@ -126,6 +126,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad19c7910dd7f93657785511c880f187a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led__strip_8c.html#ad19c7910dd7f93657785511c880f187a">showFull</a> (const <a class="el" href="led__strip_8h.html#a942e54583a1ead533f6a6df6d1ab75ac">Colors_t</a> color)</td></tr>
 <tr class="memdesc:ad19c7910dd7f93657785511c880f187a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the whole stick by the color. Data is put to the out buffer and actual color will not be changed until updated by <a class="el" href="led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06">sendDataToStrip</a>.  <a href="#ad19c7910dd7f93657785511c880f187a">More...</a><br /></td></tr>
 <tr class="separator:ad19c7910dd7f93657785511c880f187a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc67db7a2a81f9b75653212c4343c97a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led__strip_8c.html#acc67db7a2a81f9b75653212c4343c97a">showFullWithInit</a> (const <a class="el" href="led__strip_8h.html#a942e54583a1ead533f6a6df6d1ab75ac">Colors_t</a> color, const uint8_t init)</td></tr>
+<tr class="memdesc:acc67db7a2a81f9b75653212c4343c97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows total stick with the same color if init is nonzero. Does nothing else.  <a href="#acc67db7a2a81f9b75653212c4343c97a">More...</a><br /></td></tr>
+<tr class="separator:acc67db7a2a81f9b75653212c4343c97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a619ebce1d2a34e10976da0e90ee198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led__strip_8c.html#a5a619ebce1d2a34e10976da0e90ee198">displayNumber</a> (const <a class="el" href="led__strip_8h.html#a942e54583a1ead533f6a6df6d1ab75ac">Colors_t</a> colorL, const <a class="el" href="led__strip_8h.html#a942e54583a1ead533f6a6df6d1ab75ac">Colors_t</a> colorR, const uint8_t Number)</td></tr>
 <tr class="memdesc:a5a619ebce1d2a34e10976da0e90ee198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by one black led per each 3.  <a href="#a5a619ebce1d2a34e10976da0e90ee198">More...</a><br /></td></tr>
 <tr class="separator:a5a619ebce1d2a34e10976da0e90ee198"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,7 +168,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00212">212</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
+<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00223">223</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
 
 </div>
 </div>
@@ -211,9 +214,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>if nonzero the strip must be updated by <a class="el" href="led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06">sendDataToStrip</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00218">218</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
+<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00229">229</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
 
-<p>References <a class="el" href="led__strip_8h_source.html#l00018">BLACK</a>, <a class="el" href="led__strip_8c_source.html#l00214">BLINKTWICE_BLINK</a>, <a class="el" href="led__strip_8c_source.html#l00215">BLINKTWICE_OFF</a>, <a class="el" href="clock_8c_source.html#l00071">IsExpiredTimer()</a>, <a class="el" href="led__strip_8c_source.html#l00168">put2pixels()</a>, <a class="el" href="clock_8c_source.html#l00060">ResetTimer()</a>, and <a class="el" href="led__strip_8c_source.html#l00175">showFull()</a>.</p>
+<p>References <a class="el" href="led__strip_8h_source.html#l00018">BLACK</a>, <a class="el" href="led__strip_8c_source.html#l00225">BLINKTWICE_BLINK</a>, <a class="el" href="led__strip_8c_source.html#l00226">BLINKTWICE_OFF</a>, <a class="el" href="clock_8c_source.html#l00071">IsExpiredTimer()</a>, <a class="el" href="led__strip_8c_source.html#l00168">put2pixels()</a>, <a class="el" href="clock_8c_source.html#l00060">ResetTimer()</a>, and <a class="el" href="led__strip_8c_source.html#l00175">showFull()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -273,7 +276,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00185">185</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
+<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00196">196</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
 
 </div>
 </div>
@@ -310,7 +313,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00192">192</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
+<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00203">203</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
 
 <p>References <a class="el" href="led__strip_8h_source.html#l00018">BLACK</a>, <a class="el" href="led__strip_8c_source.html#l00025">Strip_t::from</a>, <a class="el" href="led__strip_8c_source.html#l00026">Strip_t::number</a>, <a class="el" href="led__strip_8c_source.html#l00168">put2pixels()</a>, and <a class="el" href="led__strip_8c_source.html#l00175">showFull()</a>.</p>
 
@@ -367,7 +370,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="led__strip_8c_source.html#l00149">putPixel()</a>.</p>
 
-<p>Referenced by <a class="el" href="led__strip_8c_source.html#l00218">blinkTwice()</a>, and <a class="el" href="led__strip_8c_source.html#l00192">dispStrips()</a>.</p>
+<p>Referenced by <a class="el" href="led__strip_8c_source.html#l00229">blinkTwice()</a>, and <a class="el" href="led__strip_8c_source.html#l00203">dispStrips()</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -474,11 +477,11 @@ Functions</h2></td></tr>
 
 <p>Sends the led buffer to the led strip. </p>
 
-<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00274">274</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
+<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00285">285</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
 
 <p>References <a class="el" href="rgbw_8c_source.html#l00085">displayStrip()</a>.</p>
 
-<p>Referenced by <a class="el" href="led__control_8c_source.html#l01057">led_control()</a>.</p>
+<p>Referenced by <a class="el" href="led__control_8c_source.html#l01157">led_control()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -532,9 +535,9 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led__strip_8c_source.html#l00137">137</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
 
-<p>References <a class="el" href="project__conf_8h_source.html#l00022">MAX_BRIGHNESS_LEVELS</a>.</p>
+<p>References <a class="el" href="project__conf_8h_source.html#l00024">MAX_BRIGHNESS_LEVELS</a>.</p>
 
-<p>Referenced by <a class="el" href="led__control_8c_source.html#l01057">led_control()</a>.</p>
+<p>Referenced by <a class="el" href="led__control_8c_source.html#l01157">led_control()</a>.</p>
 
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -576,7 +579,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="project__conf_8h_source.html#l00013">NLEDS</a>.</p>
 
-<p>Referenced by <a class="el" href="led__strip_8c_source.html#l00218">blinkTwice()</a>, and <a class="el" href="led__strip_8c_source.html#l00192">dispStrips()</a>.</p>
+<p>Referenced by <a class="el" href="led__strip_8c_source.html#l00229">blinkTwice()</a>, <a class="el" href="led__strip_8c_source.html#l00203">dispStrips()</a>, and <a class="el" href="led__strip_8c_source.html#l00185">showFullWithInit()</a>.</p>
 
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -585,8 +588,61 @@ Functions</h2></td></tr>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="led__strip_8c_ad19c7910dd7f93657785511c880f187a_icgraph.png" border="0" usemap="#led__strip_8c_ad19c7910dd7f93657785511c880f187a_icgraph" alt=""/></div>
 <map name="led__strip_8c_ad19c7910dd7f93657785511c880f187a_icgraph" id="led__strip_8c_ad19c7910dd7f93657785511c880f187a_icgraph">
-<area shape="rect" id="node2" href="led__strip_8c.html#a3dab55669d5e93a6e73a624b8217f5de" title="Blinks the whole stick by color to black two times at 1Hz frequency. " alt="" coords="128,5,212,32"/>
-<area shape="rect" id="node3" href="led__strip_8c.html#ad10040e6007839c36957a9239584a8e1" title="Displays strips (0 &#45; 5) of selected color. Data is put to the out buffer and actual color will not be..." alt="" coords="130,56,210,83"/>
+<area shape="rect" id="node2" href="led__strip_8c.html#a3dab55669d5e93a6e73a624b8217f5de" title="Blinks the whole stick by color to black two times at 1Hz frequency. " alt="" coords="145,5,229,32"/>
+<area shape="rect" id="node3" href="led__strip_8c.html#ad10040e6007839c36957a9239584a8e1" title="Displays strips (0 &#45; 5) of selected color. Data is put to the out buffer and actual color will not be..." alt="" coords="147,56,227,83"/>
+<area shape="rect" id="node4" href="led__strip_8c.html#acc67db7a2a81f9b75653212c4343c97a" title="Shows total stick with the same color if init is nonzero. Does nothing else. " alt="" coords="128,107,247,133"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acc67db7a2a81f9b75653212c4343c97a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t showFullWithInit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="led__strip_8h.html#a942e54583a1ead533f6a6df6d1ab75ac">Colors_t</a>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>init</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shows total stick with the same color if init is nonzero. Does nothing else. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>Color code to fill </td></tr>
+    <tr><td class="paramname">init</td><td>Init mode. Function works if it's non zero only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>if nonzero the strip must be updated by <a class="el" href="led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06">sendDataToStrip</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="led__strip_8c_source.html#l00185">185</a> of file <a class="el" href="led__strip_8c_source.html">led_strip.c</a>.</p>
+
+<p>References <a class="el" href="led__strip_8c_source.html#l00175">showFull()</a>.</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="led__strip_8c_acc67db7a2a81f9b75653212c4343c97a_cgraph.png" border="0" usemap="#led__strip_8c_acc67db7a2a81f9b75653212c4343c97a_cgraph" alt=""/></div>
+<map name="led__strip_8c_acc67db7a2a81f9b75653212c4343c97a_cgraph" id="led__strip_8c_acc67db7a2a81f9b75653212c4343c97a_cgraph">
+<area shape="rect" id="node2" href="led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="172,5,247,32"/>
 </map>
 </div>
 </p>

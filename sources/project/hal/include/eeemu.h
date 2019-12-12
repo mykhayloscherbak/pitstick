@@ -12,7 +12,7 @@
 #ifndef SOURCES_PROJECT_HAL_INCLUDE_EEEMU_H_
 #define SOURCES_PROJECT_HAL_INCLUDE_EEEMU_H_
 
-#define MAX_STORED 7 /**< The number of stored params. All params are one byte size */
+#define MAX_STORED 8 /**< The number of stored params. All params are one byte size */
 
 #include <stdint.h>
 /**

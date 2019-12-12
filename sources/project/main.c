@@ -1,8 +1,8 @@
 /**
  * @file main.c
- * @version 1.10
+ * @version 1.20
  * @brief The file contains upper level init functions calls and main while(1) cycle
- * @date 24-11-2019
+ * @date 12-12-2019
  */
 /**
  * @mainpage
@@ -13,8 +13,8 @@
  * Button can not be used in normal usecases. It's for config only.\n
  * @author Mykhalo Shcherbak
  * @em mikl74@yahoo.com
- * @version 1.10
- * @date 23-11-2019
+ * @version 1.20
+ * @date 12-12-2019
  * @startuml
  * header
  * Main flow
@@ -76,6 +76,19 @@
  * Main_Traffic_Light_Mode : Red lights go on one-by one.\nDriver must strat at the moment (random) all of them go off.
  * Main_Traffic_Light_Mode --> Vbat_Show
  * Vbat_Show : At the end of the previuose phase+5s 2 upper leds\nshow the battery state
+ * Vbat_Show --> Lock
+ * Lock --> [*]
+ * @enduml
+ * @startuml
+ * header
+ * Stop-and-go mode flow
+ * endheader
+ * [*] --> Red_Phase
+ * Red_Phase : Duration is taken from configuration phase.
+ * Red_Phase --> Green_Phase
+ * Green_Phase : Duration is 10 sec
+ * Green_Phase --> Vbat_Show
+ * Vbat_Show : At the end of the previous phase+5s 2 upper leds\nshow the battery state
  * Vbat_Show --> Lock
  * Lock --> [*]
  * @enduml

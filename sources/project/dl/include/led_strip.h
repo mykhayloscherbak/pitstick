@@ -56,11 +56,21 @@ void put2pixels(const Colors_t color,const uint8_t pos);
  * @param color Color index
  */
 void showFull(const Colors_t color);
+
+/**
+ * @brief Shows total stick with the same color if init is nonzero. Does nothing else
+ * @param color Color code to fill
+ * @param init Init mode. Function works if it's non zero only.
+ * @return if nonzero the strip must be updated by @ref sendDataToStrip
+ */
+uint8_t showFullWithInit(const Colors_t color, const uint8_t init);
+
 /**
  * @brief Displays strips (0 - 5) of selected color. Data is put to the out buffer and actual color will not be changed until updated by @ref sendDataToStrip
  * @param color Color index
  * @param nstrips Number of strips
  */
+
 void dispStrips(const Colors_t color, const uint8_t nstrips);
 /**
  * @brief Blinks the whole stick by color to black two times at 1Hz frequency
