@@ -75,7 +75,7 @@
  * Yellow_Pre_Phase --> Main_Traffic_Light_Mode
  * Main_Traffic_Light_Mode : Red lights go on one-by one.\nDriver must strat at the moment (random) all of them go off.
  * Main_Traffic_Light_Mode --> Vbat_Show
- * Vbat_Show : At the end of the previuose phase+5s 2 upper leds\nshow the battery state
+ * Vbat_Show : At the end of the previuos phase+5s 2 upper leds\nshow the battery state
  * Vbat_Show --> Lock
  * Lock --> [*]
  * @enduml

@@ -199,8 +199,7 @@ void displayNumber(const Colors_t colorL, const Colors_t colorR,const uint8_t Nu
   displayDigit(colorL, Number / 10, 0);
 }
 
-
-void dispStrips(const Colors_t color,const uint8_t nstrips)
+void dispStrip(const Colors_t color,const uint8_t stripNo)
 {
 	static const Strip_t strips[5]=
 	{
@@ -210,13 +209,20 @@ void dispStrips(const Colors_t color,const uint8_t nstrips)
 			{.from = 46,	.number = 10},
 			{.from = 61,    .number = 10}
 	};
+	const uint8_t correctedStripNo = (stripNo >= 5) ? 4 : stripNo;
+	for (uint8_t k = 0; k < strips[correctedStripNo].number; k++)
+	{
+		put2pixels(color,k + strips[correctedStripNo].from);
+	}
+}
+
+
+void dispStrips(const Colors_t color,const uint8_t nstrips)
+{
 	showFull(BLACK);
 	for (uint8_t i = 0; i < ((nstrips > 5) ? 5 : nstrips); i++)
 	{
-		for (uint8_t k = 0; k < strips[i].number; k++)
-		{
-			put2pixels(color,k + strips[i].from);
-		}
+		dispStrip(color,i);
 	}
 }
 

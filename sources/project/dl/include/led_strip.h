@@ -79,6 +79,9 @@ void dispStrips(const Colors_t color, const uint8_t nstrips);
  * @param getPowerColor A function that returns the color corresponding to the current Vbat
  * @return  if nonzero the strip must be updated by @ref sendDataToStrip
  */
+
+void dispStrip(const Colors_t color,const uint8_t stripNo);
+
 uint8_t blinkTwice(const uint8_t init,const Colors_t color,pPowerColorFunc_t const getPowerColor);
 /**
  * @brief Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by one black led per each 3

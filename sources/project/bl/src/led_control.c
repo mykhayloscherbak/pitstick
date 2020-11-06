@@ -4,6 +4,7 @@
  *        + Pitstop
  *        + Traffic light for autoslalom
  *        + Rally stop-and-go ("Podnos") mode
+ *        + Safety Car ("Zvyagin") mode
  *        + Config mode
  *        .
  *
@@ -44,6 +45,7 @@ typedef enum
 	STATE_PIT,                      /**< Main mode, pit stop */
 	STATE_TLIGHT,                   /**< Autoslalom mode. Switching between modes is done by the second config frame */
 	STATE_PODNOS,                   /**< Stop-and-go ("Podnos") mode */
+	STATE_SC,                       /**< Safety car mode */
 	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previous modes and is needed to remind that the stick is not turned off */
 	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the configuration  mode and mode processor is in the idle state */
 	STATE_CONFIG_PARAM_PRESSED,     /**< Button is pressed while parameter is displayed */
@@ -79,6 +81,7 @@ typedef enum
 	MODE_PIT = 0,/**< Pitstop mode */
 	MODE_TLIGHT, /**< Slalom traffic light mode */
 	MODE_PODNOS, /**< Mode for rally stop-and-go */
+	MODE_SC,     /**< Safety car mode */
 	MODE_TOTAL   /**< Total number of modes */
 } Working_Mode_t;
 
@@ -179,6 +182,10 @@ static void dispModePattern(const uint8_t value)
 			put2pixels(GREEN,i + 10);
 			put2pixels(RED,i);
 		}
+		break;
+	case MODE_SC:
+		put2pixels(YELLOW,0);
+		put2pixels(YELLOW,4);
 		break;
 	default:
 		break;
@@ -455,6 +462,27 @@ static uint8_t  config(uint8_t * const nextState)
     			dV.value = savedParams[CH_PODNOS_MODE_TIME];
     			dV.endMode = EM_CONTINUE;
     			state = STATE_CONFIG_PODNOS_MODE;
+    			break;
+    		case MODE_SC:
+    	        if (saved == 0)
+    	        {
+    	          eeemu_write(savedParams);
+    	          for (uint8_t i = 0; i < 20; i++)
+    	          {
+    	           put2pixels(RED,i);
+    	          }
+    	          for (uint8_t i = 20; i < NLEDS / 2; i++)
+    	          {
+    	            put2pixels(BLACK,i);
+    	          }
+    	        }
+    	        else
+    	        {
+    	        	showFull(BLACK);
+    	        }
+    	        changed = !0;
+    	        ResetTimer(&timer);
+    	        state = STATE_CONFIG_END;
     			break;
     		}
     		uint8_t changed2 = changeParam(&dV,!0);
@@ -1099,6 +1127,70 @@ static uint8_t podnosMode(uint32_t const ms,uint8_t * const nextState)
   return processPhaseTable(desc,nextState,ms);
 }
 
+static uint8_t show234(const uint8_t init)
+{
+	uint8_t changed = 0;
+	if (init != 0)
+	{
+		showFull(BLACK);
+		dispStrip(YELLOW, 2 - 1);
+		dispStrip(YELLOW, 3 - 1);
+		dispStrip(YELLOW, 4 - 1);
+		changed = !0;
+	}
+	return changed;
+}
+
+
+static uint8_t show1245(const uint8_t init)
+{
+	uint8_t changed = 0;
+	if (init != 0)
+	{
+		showFull(BLACK);
+		dispStrip(YELLOW, 1 - 1);
+		dispStrip(YELLOW, 2 - 1);
+		dispStrip(YELLOW, 4 - 1);
+		dispStrip(YELLOW, 5 - 1);
+		changed = !0;
+	}
+	return changed;
+}
+
+
+static uint8_t show15(const uint8_t init)
+{
+	uint8_t changed = 0;
+	if (init != 0)
+	{
+		showFull(BLACK);
+		dispStrip(YELLOW, 1 - 1);
+		dispStrip(YELLOW, 5 - 1);
+		changed = !0;
+	}
+	return changed;
+}
+
+
+static uint8_t showOff(const uint8_t init)
+{
+	return showFullWithInit(BLACK,init);
+}
+
+static uint8_t scMode(uint32_t const ms,uint8_t * const nextState)
+{
+  const Phase_desc_t desc[]=
+  {
+      {0, showOff},
+      {1, show234},
+	  {2, showOff},
+
+      {15,NULL}
+  };
+  return processPhaseTable(desc,nextState,ms);
+}
+
+
 /**
  * @brief Lock mode. Is shown at the end of all sequences (@ref config, @ref tlightMode, etc) to show that the stick is on and remind to switch it off
  * @return nonzero means the led strip must be updated
@@ -1185,6 +1277,9 @@ void led_control(uint32_t const ms)
 			case MODE_PODNOS:
 			  state = STATE_PODNOS;
 			  break;
+			case MODE_SC:
+				state = STATE_SC;
+				break;
 			default:
 				state = STATE_LOCK;
 				break;
@@ -1219,6 +1314,14 @@ void led_control(uint32_t const ms)
 	    state = STATE_LOCK;
 	  }
 	  break;
+	case STATE_SC:
+		changed = scMode(ms,&nextState);
+		if (nextState != 0)
+		{
+			state = STATE_LOCK;
+		}
+		break;
+
 	case STATE_LOCK:
 	  changed = lock();
 	  break;
