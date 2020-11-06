@@ -35,6 +35,8 @@
 #include "prng.h"
 #include "led_strip.h"
 
+static const uint16_t S = 1000; /**< millisecons per second */
+
 /**
  * @brief Main state machine states
  */
@@ -895,7 +897,7 @@ typedef uint8_t (*pPhase_t)(const uint8_t init);
  */
 typedef struct
 {
-  const uint16_t  start; /**< Phase start time. ms from turning the stick on */
+  const uint32_t  start; /**< Phase start time. ms from turning the stick on */
   pPhase_t pPhase; /**< Phase function. Phase function is called every 100ms from @ref start until next phase starts */
 }Phase_desc_t;
 
@@ -917,7 +919,7 @@ static uint8_t processPhaseTable(const Phase_desc_t * const desc,uint8_t * const
 	uint8_t i = 0;
 	for (; desc[i].pPhase != NULL;i++)
 	{
-		if (ms >= desc[i].start * 1000 && ms < desc[i + 1].start * 1000)
+		if (ms >= desc[i].start && ms < desc[i + 1].start)
 		{
 			break;
 		}
@@ -967,13 +969,13 @@ static uint8_t pitStopCalc(uint32_t const ms,uint8_t * const nextState)
   const uint16_t nullPhaseStart = tseq + LAST_BLINK_TIME;
   const Phase_desc_t desc[]=
   {
-      {0,greenPhase},
-      {yellowPhase_start,yellowPhase},
-      {gbPhase_start, green2Black},
-      {preRed_start, redPre},
-	  {tlightPhase_start, tlight},
-      {green2Phase_start, lastGreenPhase},
-      {nullPhaseStart,NULL}
+      {0 * S,greenPhase},
+      {yellowPhase_start * S,yellowPhase},
+      {gbPhase_start * S, green2Black},
+      {preRed_start * S, redPre},
+	    {tlightPhase_start * S, tlight},
+      {green2Phase_start * S, lastGreenPhase},
+      {nullPhaseStart * S,NULL}
   };
   return processPhaseTable(desc,nextState,ms);
 }
@@ -1075,10 +1077,10 @@ static uint8_t tlightMode(uint32_t const ms,uint8_t * const nextState)
 	const uint16_t powerPhaseStart = ((rMax % 10 == 0) ? rMax / 10 : rMax / 10 + 1) + 5 + 2 + 5;
 	const Phase_desc_t desc[]=
 	{
-			{0,yellowTPre},
-			{mainTlightModeStart,tlightTMain},
-			{powerPhaseStart,showPower},
-			{powerPhaseStart + 5,NULL}
+			{0 * S,yellowTPre},
+			{mainTlightModeStart * S,tlightTMain},
+			{powerPhaseStart * S,showPower},
+			{(powerPhaseStart + 5) * S,NULL}
 	};
 	return processPhaseTable(desc,nextState,ms);
 }
@@ -1119,10 +1121,10 @@ static uint8_t podnosMode(uint32_t const ms,uint8_t * const nextState)
   const uint16_t powerPhaseStart = duration + 10;
   const Phase_desc_t desc[]=
   {
-      {0,podnosRed},
-      {duration, podnosGreen},
-      {powerPhaseStart,showPower},
-      {powerPhaseStart + 5,NULL}
+      {0 * S,podnosRed},
+      {duration * S, podnosGreen},
+      {powerPhaseStart * S,showPower},
+      {(powerPhaseStart + 5) * S,NULL}
   };
   return processPhaseTable(desc,nextState,ms);
 }
@@ -1177,17 +1179,39 @@ static uint8_t showOff(const uint8_t init)
 	return showFullWithInit(BLACK,init);
 }
 
-static uint8_t scMode(uint32_t const ms,uint8_t * const nextState)
+static uint8_t scMode(uint32_t const ms)
 {
   const Phase_desc_t desc[]=
   {
-      {0, showOff},
-      {1, show234},
-	  {2, showOff},
-
-      {15,NULL}
+      {0   * S / 10, showOff},
+      {10  * S / 10, show234},
+      {20  * S / 10, showOff},
+      {30  * S / 10, show1245},
+      {35  * S / 10, showOff},
+      {40  * S / 10, show1245},
+      {45  * S / 10, showOff},
+      {50  * S / 10, show15},
+      {60  * S / 10, showOff},
+      {70  * S / 10, show234},
+      {75  * S / 10, showOff},
+      {80  * S / 10, show234},
+      {85  * S / 10, showOff},
+      {90  * S / 10, show15},
+      {100 * S / 10, showOff},
+      {110 * S / 10, show1245},
+      {115 * S / 10, showOff},
+      {120 * S / 10, show1245},
+      {125 * S / 10, showOff},
+      {130 * S / 10, NULL}
   };
-  return processPhaseTable(desc,nextState,ms);
+  uint8_t tableEnded;
+  static uint32_t currentMs = 0;
+  const uint8_t retval = processPhaseTable(desc,&tableEnded,ms - currentMs);
+  if (tableEnded != 0)
+  {
+    currentMs = ms;
+  }
+  return retval;
 }
 
 
@@ -1314,12 +1338,8 @@ void led_control(uint32_t const ms)
 	    state = STATE_LOCK;
 	  }
 	  break;
-	case STATE_SC:
-		changed = scMode(ms,&nextState);
-		if (nextState != 0)
-		{
-			state = STATE_LOCK;
-		}
+	case STATE_SC: /* This state never ends */
+		changed = scMode(ms);
 		break;
 
 	case STATE_LOCK:
