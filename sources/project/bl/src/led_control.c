@@ -65,6 +65,7 @@ typedef enum
 	STATE_CONFIG_TLIGHT_MIN,        /**< Configuring minimal time for the last phase in tlingt mode. 1/10s resolution */
 	STATE_CONFIG_TLIGHT_MAX,        /**< Configuring maximal time for the last phase in tlingt mode. 1/10s resolution */
 	STATE_CONFIG_PODNOS_MODE,       /**< Set stop-and-go mode duration */
+	STATE_CONFIG_SC_END,            /**< End of safety car mode config */
 	STATE_CONFIG_END,               /**< End of configuration process */
 	STATE_LOCK_START,               /**< Start lock mode. Lock mode is turned on after all operations are complete to remimd switchig the stick off */
 	STATE_LOCK_ON,                  /**< Lock mode. Red light+battery power is on */
@@ -72,7 +73,9 @@ typedef enum
 	STATE_GB_GREEN,                 /**< Green->black phase. Green leds are on */
 	STATE_GB_BLACK,                 /**< Green->black phase. All is off */
 	STATE_TLIGHT_SLALOM,            /**< Slalom mode start */
-	STATE_TLIGHT_SHOW_RANDOM        /**< Random pause after the fifth strip is on */
+	STATE_TLIGHT_SHOW_RANDOM,        /**< Random pause after the fifth strip is on */
+	STATE_SC_SHOW_POWER,            /**< First phase of Safety Car mode, showing battery level */
+	STATE_SC_MAIN                   /**< Main phase of safety car mode */
 }States_t;
 
 /**
@@ -439,6 +442,7 @@ static uint8_t  config(uint8_t * const nextState)
     			saved = 0;
     		}
     		savedParams[CH_MODE] = dV.value;
+    		uint8_t noParam = !0;
     		switch (savedParams[CH_MODE])
     		{
     		case MODE_PIT:
@@ -447,6 +451,7 @@ static uint8_t  config(uint8_t * const nextState)
     			dV.max = TSEQ_MAX;
     			dV.value = savedParams[CH_TSEQ];
     			dV.endMode = EM_CONTINUE;
+    			noParam = 0;
     			state = STATE_CONFIG_TSEQ;
     			break;
     		case MODE_TLIGHT:
@@ -455,6 +460,7 @@ static uint8_t  config(uint8_t * const nextState)
     			dV.max = TLIGHT_MAX - 2;
     			dV.value = savedParams[CH_TLIGHT_MIN];
     			dV.endMode = EM_CONTINUE;
+    			noParam = 0;
     			state = STATE_CONFIG_TLIGHT_MIN;
     			break;
     		case MODE_PODNOS:
@@ -463,32 +469,23 @@ static uint8_t  config(uint8_t * const nextState)
     			dV.max = PODNOS_MODE_MAX;
     			dV.value = savedParams[CH_PODNOS_MODE_TIME];
     			dV.endMode = EM_CONTINUE;
+    			noParam = 0;
     			state = STATE_CONFIG_PODNOS_MODE;
     			break;
     		case MODE_SC:
-    	        if (saved == 0)
-    	        {
-    	          eeemu_write(savedParams);
-    	          for (uint8_t i = 0; i < 20; i++)
-    	          {
-    	           put2pixels(RED,i);
-    	          }
-    	          for (uint8_t i = 20; i < NLEDS / 2; i++)
-    	          {
-    	            put2pixels(BLACK,i);
-    	          }
-    	        }
-    	        else
-    	        {
-    	        	showFull(BLACK);
-    	        }
-    	        changed = !0;
-    	        ResetTimer(&timer);
-    	        state = STATE_CONFIG_END;
+    	        state = STATE_CONFIG_SC_END;
+    	        noParam = !0;
     			break;
     		}
-    		uint8_t changed2 = changeParam(&dV,!0);
-    		changed = changed || changed2;
+    		if (noParam == 0)
+    		{
+    			const uint8_t changed2 = changeParam(&dV,!0);
+    			changed = changed || changed2;
+    		}
+    		else
+    		{
+    			changed = !0;
+    		}
     	}
     	break;
 
@@ -635,6 +632,24 @@ static uint8_t  config(uint8_t * const nextState)
     	}
     	break;
 
+    case STATE_CONFIG_SC_END:
+        if (saved == 0)
+        {
+          eeemu_write(savedParams);
+          showFull(BLACK);
+          for (uint8_t i = 0; i < 20; i++)
+          {
+           put2pixels(RED,i);
+          }
+        }
+        else
+        {
+      	  showFull(BLACK);
+        }
+        changed = !0;
+        ResetTimer(&timer);
+        state = STATE_CONFIG_END;
+        break;
 
     case STATE_CONFIG_END:
       if (nextState != NULL)
@@ -1204,14 +1219,36 @@ static uint8_t scMode(uint32_t const ms)
       {125 * S / 10, showOff},
       {130 * S / 10, NULL}
   };
+  static States_t state = STATE_IDLE;
+  static uint32_t timer = 0;
   uint8_t tableEnded;
   static uint32_t currentMs = 0;
-  const uint8_t retval = processPhaseTable(desc,&tableEnded,ms - currentMs);
-  if (tableEnded != 0)
+  uint8_t changed = 0;
+  switch(state)
   {
-    currentMs = ms;
+  case STATE_IDLE:
+	  changed =  showPower(!0);
+	  ResetTimer(&timer);
+	  state = STATE_SC_SHOW_POWER;
+	  break;
+  case STATE_SC_SHOW_POWER:
+	  if (IsExpiredTimer(&timer,500) != 0)
+	  {
+		  currentMs = ms;
+		  state = STATE_SC_MAIN;
+	  }
+	  break;
+  case STATE_SC_MAIN:
+	  changed = processPhaseTable(desc,&tableEnded,ms - currentMs);
+	  if (tableEnded != 0)
+	  {
+		  currentMs = ms;
+	  }
+	  break;
+  default:
+	  break;
   }
-  return retval;
+  return changed;
 }
 
 

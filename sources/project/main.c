@@ -13,8 +13,8 @@
  * Button can not be used in normal usecases. It's for config only.\n
  * @author Mykhalo Shcherbak
  * @em mikl74@yahoo.com
- * @version 1.20
- * @date 12-12-2019
+ * @version 1.30
+ * @date 07-11-2020
  * @startuml
  * header
  * Main flow

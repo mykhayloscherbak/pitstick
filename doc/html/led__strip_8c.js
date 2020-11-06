@@ -8,6 +8,7 @@ var led__strip_8c =
     ] ],
     [ "blinkTwice", "led__strip_8c.html#a3dab55669d5e93a6e73a624b8217f5de", null ],
     [ "displayNumber", "led__strip_8c.html#a5a619ebce1d2a34e10976da0e90ee198", null ],
+    [ "dispStrip", "led__strip_8c.html#a38105803a923b427c0d872730042b27f", null ],
     [ "dispStrips", "led__strip_8c.html#ad10040e6007839c36957a9239584a8e1", null ],
     [ "put2pixels", "led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097", null ],
     [ "putPixel", "led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec", null ],

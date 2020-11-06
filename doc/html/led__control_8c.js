@@ -30,6 +30,7 @@ var led__control_8c =
       [ "STATE_PIT", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6badc2714c05c2ee93eb41e0c6fd17703dc", null ],
       [ "STATE_TLIGHT", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6bafa45228ef93a32d1f3c3a5e278e04d48", null ],
       [ "STATE_PODNOS", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba8feb69afdea6d27876600145742a3aab", null ],
+      [ "STATE_SC", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6baa6b1b3938706b2990855e31b14f8190e", null ],
       [ "STATE_LOCK", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba7b3ddae6fb079a8073be43858970ad00", null ],
       [ "STATE_CONFIG_PARAM_IDLE", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6bab9deeebd3c858df946c9fb9e2a794e17", null ],
       [ "STATE_CONFIG_PARAM_PRESSED", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba31a9a871020abfcee868337820946521", null ],
@@ -47,6 +48,7 @@ var led__control_8c =
       [ "STATE_CONFIG_TLIGHT_MIN", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6bae759849e1600d2e233ec9586c1605762", null ],
       [ "STATE_CONFIG_TLIGHT_MAX", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba71b6e443118b0b94596f38f77b1c54b3", null ],
       [ "STATE_CONFIG_PODNOS_MODE", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba7a2c4f2f2c17215d5fb32607648fdb3b", null ],
+      [ "STATE_CONFIG_SC_END", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba6dbc7a93e7558026429dd1d95449bb1b", null ],
       [ "STATE_CONFIG_END", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba76ca5a74879099b9841795a58aabb0df", null ],
       [ "STATE_LOCK_START", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba47371dc854418c43a6fa4b678260a179", null ],
       [ "STATE_LOCK_ON", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba872d5753912b77e25f6b7054e60041f8", null ],
@@ -54,12 +56,15 @@ var led__control_8c =
       [ "STATE_GB_GREEN", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba9852e2e41a428f5fcf81000b08ed56e8", null ],
       [ "STATE_GB_BLACK", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6bab1f53b0dac4406b40cdc978d99f04d88", null ],
       [ "STATE_TLIGHT_SLALOM", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba3ebbd7132e4ad4636b14416042108201", null ],
-      [ "STATE_TLIGHT_SHOW_RANDOM", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba4e3baf50b9ffbfca49d3f2f3effb0737", null ]
+      [ "STATE_TLIGHT_SHOW_RANDOM", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba4e3baf50b9ffbfca49d3f2f3effb0737", null ],
+      [ "STATE_SC_SHOW_POWER", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba1bea5ab083bb201a6b058ca6f1d1d355", null ],
+      [ "STATE_SC_MAIN", "led__control_8c.html#aea939a02b2b7779554a763e5d4680a6ba85d2d3c55fb1d9a82ad1e3aa22602b40", null ]
     ] ],
     [ "Working_Mode_t", "led__control_8c.html#a6267d45a02f18bd2f422cf2848794193", [
       [ "MODE_PIT", "led__control_8c.html#a6267d45a02f18bd2f422cf2848794193a08800825ba243f7399b2defe4dc6b7db", null ],
       [ "MODE_TLIGHT", "led__control_8c.html#a6267d45a02f18bd2f422cf2848794193a434f93cbd704a5fcb6c9aedb8ae43532", null ],
       [ "MODE_PODNOS", "led__control_8c.html#a6267d45a02f18bd2f422cf2848794193ab0191b8c7235e4bf4dd4ca0f78d0a641", null ],
+      [ "MODE_SC", "led__control_8c.html#a6267d45a02f18bd2f422cf2848794193aaa25da88fc7e03acb91d27c80901599d", null ],
       [ "MODE_TOTAL", "led__control_8c.html#a6267d45a02f18bd2f422cf2848794193abc84e46a57abffb36ce5b64f2f300ddc", null ]
     ] ],
     [ "led_control", "led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8", null ]

@@ -26,7 +26,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc_8c.html",
-"main_8c.html"
+"led__strip_8h.html#a942e54583a1ead533f6a6df6d1ab75acaf77fb67151d0c18d397069ad8c271ba3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

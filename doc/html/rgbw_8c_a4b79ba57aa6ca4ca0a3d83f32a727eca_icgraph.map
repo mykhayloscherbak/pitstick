@@ -1,4 +1,3 @@
 <map id="displayStrip" name="displayStrip">
 <area shape="rect" id="node2" href="$led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="144,5,264,32"/>
-<area shape="rect" id="node3" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="312,5,397,32"/>
 </map>

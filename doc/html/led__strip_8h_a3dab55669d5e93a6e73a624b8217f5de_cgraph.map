@@ -1,7 +1,0 @@
-<map id="blinkTwice" name="blinkTwice">
-<area shape="rect" id="node2" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="137,5,248,32"/>
-<area shape="rect" id="node3" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="152,56,233,83"/>
-<area shape="rect" id="node5" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="147,107,238,133"/>
-<area shape="rect" id="node6" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="155,157,230,184"/>
-<area shape="rect" id="node4" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="296,56,365,83"/>
-</map>
