@@ -60,7 +60,8 @@ $(document).ready(function(){initNavTree('clock_8c.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">clock.c File Reference</div>  </div>
 </div><!--header-->
@@ -106,6 +107,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a23cddb4c0674cdf7dfe2588329d0fa54"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clock_8c.html#a23cddb4c0674cdf7dfe2588329d0fa54">GetTicksCounter</a> (void)</td></tr>
 <tr class="memdesc:a23cddb4c0674cdf7dfe2588329d0fa54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of milliseconds from timebase start.  <a href="#a23cddb4c0674cdf7dfe2588329d0fa54">More...</a><br /></td></tr>
 <tr class="separator:a23cddb4c0674cdf7dfe2588329d0fa54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a042bade7288fcb4e8693692ef39cc973"><td class="memItemLeft" align="right" valign="top">static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clock_8c.html#a042bade7288fcb4e8693692ef39cc973">Counter</a> = 0</td></tr>
+<tr class="separator:a042bade7288fcb4e8693692ef39cc973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains clock init and functions. </p>
@@ -136,6 +142,19 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00017">17</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00109">Init()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="clock_8c_a04d04902cf9bf2933581d1813ca63e88_icgraph.png" border="0" usemap="#clock_8c_a04d04902cf9bf2933581d1813ca63e88_icgraph" alt=""/></div>
+<map name="clock_8c_a04d04902cf9bf2933581d1813ca63e88_icgraph" id="clock_8c_a04d04902cf9bf2933581d1813ca63e88_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="169,5,209,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="257,5,308,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a23cddb4c0674cdf7dfe2588329d0fa54"></a>
@@ -158,6 +177,21 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>milliscenonds </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00081">81</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
+
+<p class="reference">References <a class="el" href="clock_8c_source.html#l00012">Counter</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bll_8c_source.html#l00054">MainLoop_Iteration()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="clock_8c_a23cddb4c0674cdf7dfe2588329d0fa54_icgraph.png" border="0" usemap="#clock_8c_a23cddb4c0674cdf7dfe2588329d0fa54_icgraph" alt=""/></div>
+<map name="clock_8c_a23cddb4c0674cdf7dfe2588329d0fa54_icgraph" id="clock_8c_a23cddb4c0674cdf7dfe2588329d0fa54_icgraph">
+<area shape="rect" id="node2" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="175,5,307,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="355,5,405,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -199,6 +233,38 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00071">71</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
 
+<p class="reference">References <a class="el" href="clock_8c_source.html#l00012">Counter</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="led__strip_8c_source.html#l00235">blinkTwice()</a>, <a class="el" href="led__control_8c_source.html#l00250">changeParam()</a>, <a class="el" href="led__control_8c_source.html#l00813">green2Black()</a>, <a class="el" href="led__control_8c_source.html#l00724">greenPhase()</a>, <a class="el" href="led__control_8c_source.html#l01293">lock()</a>, <a class="el" href="led__control_8c_source.html#l01230">scMode()</a>, <a class="el" href="led__control_8c_source.html#l00878">tlight()</a>, <a class="el" href="led__control_8c_source.html#l01013">tlightTMain()</a>, and <a class="el" href="led__control_8c_source.html#l00785">yellowPhase()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="clock_8c_a8a4e699fbe055adaac0e209980ed3288_icgraph.png" border="0" usemap="#clock_8c_a8a4e699fbe055adaac0e209980ed3288_icgraph" alt=""/></div>
+<map name="clock_8c_a8a4e699fbe055adaac0e209980ed3288_icgraph" id="clock_8c_a8a4e699fbe055adaac0e209980ed3288_icgraph">
+<area shape="rect" id="node2" href="led__strip_8c.html#a3dab55669d5e93a6e73a624b8217f5de" title="Blinks the whole stick by color to black two times at 1Hz frequency. " alt="" coords="170,284,254,311"/>
+<area shape="rect" id="node12" href="led__control_8c.html#a83ac31f201e838ba08faf013635b0e7d" title="show the param value and changes it during setup " alt="" coords="314,5,417,32"/>
+<area shape="rect" id="node14" href="led__control_8c.html#a8373e895d646ab474009d0e567b9462f" title="Green&#45;to&#45;black phase is phase after going out of pitlane. Geen light goes off after 2s and only 2 led..." alt="" coords="165,107,259,133"/>
+<area shape="rect" id="node15" href="led__control_8c.html#a5d8b147f4df715a5692aecb880957836" title="Shows the first &quot;green&quot; phase of the pitstop mode. " alt="" coords="167,157,257,184"/>
+<area shape="rect" id="node16" href="led__control_8c.html#a8570b3bfcea5661603159d157f7dca1e" title="Lock mode. Is shown at the end of all sequences (config, tlightMode, etc) to show that the stick is o..." alt="" coords="493,461,539,488"/>
+<area shape="rect" id="node17" href="led__control_8c.html#a1a058721e80572b5dc836be8937e8973" title="Safety Car mode implementation. Safety Car mode is non&#45;setupable endless mode. The sequence can be si..." alt="" coords="482,512,550,539"/>
+<area shape="rect" id="node18" href="led__control_8c.html#aad4f392e6c8e887a5960b092e18be9a1" title="The main phase 5&#45;4&#45;3&#45;2&#45;1&#45;go traffic light before crossing start/finish line. Starts at &#45;5s and ends a..." alt="" coords="187,208,237,235"/>
+<area shape="rect" id="node19" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="322,411,409,437"/>
+<area shape="rect" id="node20" href="led__control_8c.html#ad483bfc84bbd75ed975fa9111b71f455" title="Yellow phase is 5&#45;4&#45;3&#45;2&#45;1&#45;go phase for going out of pitlane. Starts at &#45;T1&#45;5s. " alt="" coords="164,56,260,83"/>
+<area shape="rect" id="node3" href="led__control_8c.html#a6e0b4c2d4e7d80a1b154ce1ada6010f9" title="Red pre&#45;phase is 2 red blinks at &#45;T2. It&#39;s time when the driver must be at the intermediate point..." alt="" coords="335,309,395,336"/>
+<area shape="rect" id="node9" href="led__control_8c.html#ad473313ad5d686121b36ad25263a4dde" title="Last phase : two green blinks starting from 0 (TSEQ) " alt="" coords="308,259,423,285"/>
+<area shape="rect" id="node10" href="led__control_8c.html#a1718f582c0a850cda87c9e5a7a54950a" title="tlight mode yellow pre&#45;phase, two blinks at the start " alt="" coords="322,360,409,387"/>
+<area shape="rect" id="node4" href="led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="471,208,561,235"/>
+<area shape="rect" id="node5" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="609,385,695,412"/>
+<area shape="rect" id="node6" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="743,385,877,412"/>
+<area shape="rect" id="node7" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="925,385,1057,412"/>
+<area shape="rect" id="node8" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1105,385,1156,412"/>
+<area shape="rect" id="node11" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="475,385,557,412"/>
+<area shape="rect" id="node13" href="led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="487,81,545,108"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a0916a7747db1d64daf21e3862c550fb0"></a>
@@ -218,6 +284,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00076">76</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
+
+<p class="reference">References <a class="el" href="clock_8c_source.html#l00012">Counter</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bll_8c_source.html#l00029">ledControl_wrapper()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="clock_8c_a0916a7747db1d64daf21e3862c550fb0_icgraph.png" border="0" usemap="#clock_8c_a0916a7747db1d64daf21e3862c550fb0_icgraph" alt=""/></div>
+<map name="clock_8c_a0916a7747db1d64daf21e3862c550fb0_icgraph" id="clock_8c_a0916a7747db1d64daf21e3862c550fb0_icgraph">
+<area shape="rect" id="node2" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="140,5,275,32"/>
+<area shape="rect" id="node3" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="323,5,455,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="503,5,553,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -247,6 +329,38 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00060">60</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
 
+<p class="reference">References <a class="el" href="clock_8c_source.html#l00012">Counter</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="led__strip_8c_source.html#l00235">blinkTwice()</a>, <a class="el" href="led__control_8c_source.html#l00250">changeParam()</a>, <a class="el" href="led__control_8c_source.html#l00378">config()</a>, <a class="el" href="led__control_8c_source.html#l00813">green2Black()</a>, <a class="el" href="led__control_8c_source.html#l00724">greenPhase()</a>, <a class="el" href="bll_8c_source.html#l00029">ledControl_wrapper()</a>, <a class="el" href="led__control_8c_source.html#l01293">lock()</a>, <a class="el" href="led__control_8c_source.html#l01230">scMode()</a>, <a class="el" href="led__control_8c_source.html#l00878">tlight()</a>, <a class="el" href="led__control_8c_source.html#l01013">tlightTMain()</a>, and <a class="el" href="led__control_8c_source.html#l00785">yellowPhase()</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="clock_8c_aa9cb67dffbf08af7059377c84e10d7e4_icgraph.png" border="0" usemap="#clock_8c_aa9cb67dffbf08af7059377c84e10d7e4_icgraph" alt=""/></div>
+<map name="clock_8c_aa9cb67dffbf08af7059377c84e10d7e4_icgraph" id="clock_8c_aa9cb67dffbf08af7059377c84e10d7e4_icgraph">
+<area shape="rect" id="node2" href="led__strip_8c.html#a3dab55669d5e93a6e73a624b8217f5de" title="Blinks the whole stick by color to black two times at 1Hz frequency. " alt="" coords="153,299,237,326"/>
+<area shape="rect" id="node6" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="729,195,864,222"/>
+<area shape="rect" id="node12" href="led__control_8c.html#a83ac31f201e838ba08faf013635b0e7d" title="show the param value and changes it during setup " alt="" coords="144,495,247,522"/>
+<area shape="rect" id="node13" href="led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="323,499,381,526"/>
+<area shape="rect" id="node14" href="led__control_8c.html#a8373e895d646ab474009d0e567b9462f" title="Green&#45;to&#45;black phase is phase after going out of pitlane. Geen light goes off after 2s and only 2 led..." alt="" coords="305,94,399,120"/>
+<area shape="rect" id="node15" href="led__control_8c.html#a5d8b147f4df715a5692aecb880957836" title="Shows the first &quot;green&quot; phase of the pitstop mode. " alt="" coords="150,144,241,171"/>
+<area shape="rect" id="node16" href="led__control_8c.html#a8570b3bfcea5661603159d157f7dca1e" title="Lock mode. Is shown at the end of all sequences (config, tlightMode, etc) to show that the stick is o..." alt="" coords="479,536,526,563"/>
+<area shape="rect" id="node17" href="led__control_8c.html#a1a058721e80572b5dc836be8937e8973" title="Safety Car mode implementation. Safety Car mode is non&#45;setupable endless mode. The sequence can be si..." alt="" coords="469,119,537,146"/>
+<area shape="rect" id="node18" href="led__control_8c.html#aad4f392e6c8e887a5960b092e18be9a1" title="The main phase 5&#45;4&#45;3&#45;2&#45;1&#45;go traffic light before crossing start/finish line. Starts at &#45;5s and ends a..." alt="" coords="170,195,221,222"/>
+<area shape="rect" id="node19" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="309,448,395,475"/>
+<area shape="rect" id="node20" href="led__control_8c.html#ad483bfc84bbd75ed975fa9111b71f455" title="Yellow phase is 5&#45;4&#45;3&#45;2&#45;1&#45;go phase for going out of pitlane. Starts at &#45;T1&#45;5s. " alt="" coords="147,246,243,272"/>
+<area shape="rect" id="node3" href="led__control_8c.html#a6e0b4c2d4e7d80a1b154ce1ada6010f9" title="Red pre&#45;phase is 2 red blinks at &#45;T2. It&#39;s time when the driver must be at the intermediate point..." alt="" coords="322,347,382,374"/>
+<area shape="rect" id="node9" href="led__control_8c.html#ad473313ad5d686121b36ad25263a4dde" title="Last phase : two green blinks starting from 0 (TSEQ) " alt="" coords="295,296,409,323"/>
+<area shape="rect" id="node10" href="led__control_8c.html#a1718f582c0a850cda87c9e5a7a54950a" title="tlight mode yellow pre&#45;phase, two blinks at the start " alt="" coords="309,398,395,424"/>
+<area shape="rect" id="node4" href="led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="457,246,548,272"/>
+<area shape="rect" id="node5" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="596,322,681,348"/>
+<area shape="rect" id="node7" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="912,195,1044,222"/>
+<area shape="rect" id="node8" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1092,195,1143,222"/>
+<area shape="rect" id="node11" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="461,398,544,424"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ab5e09814056d617c521549e542639b7e"></a>
@@ -267,15 +381,19 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00051">51</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
 
+<p class="reference">References <a class="el" href="clock_8c_source.html#l00012">Counter</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="clock_8c_source.html#l00044">Systick_Init()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="clock_8c_ab5e09814056d617c521549e542639b7e_icgraph.png" border="0" usemap="#clock_8c_ab5e09814056d617c521549e542639b7e_icgraph" alt=""/></div>
 <map name="clock_8c_ab5e09814056d617c521549e542639b7e_icgraph" id="clock_8c_ab5e09814056d617c521549e542639b7e_icgraph">
 <area shape="rect" id="node2" href="clock_8c.html#a99ae53ef20dfaff65b1ca3b4687771bf" title="Inits systick timer interrupt for 1ms period. " alt="" coords="176,5,267,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="315,5,355,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="403,5,453,32"/>
 </map>
 </div>
 
@@ -302,16 +420,56 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00044">44</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
 
 <p class="reference">References <a class="el" href="clock_8h_source.html#l00014">CPU_FREQ</a>, <a class="el" href="clock_8h_source.html#l00015">SYSTICK_FREQ</a>, and <a class="el" href="clock_8c_source.html#l00051">SysTick_Handler()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00109">Init()</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_cgraph.png" border="0" usemap="#clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_cgraph" alt=""/></div>
 <map name="clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_cgraph" id="clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_cgraph">
 <area shape="rect" id="node2" href="clock_8c.html#ab5e09814056d617c521549e542639b7e" title="SysTick_Handler" alt="" coords="144,5,267,32"/>
 </map>
 </div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_icgraph.png" border="0" usemap="#clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_icgraph" alt=""/></div>
+<map name="clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_icgraph" id="clock_8c_a99ae53ef20dfaff65b1ca3b4687771bf_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="144,5,184,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="232,5,283,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a042bade7288fcb4e8693692ef39cc973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042bade7288fcb4e8693692ef39cc973">&#9670;&nbsp;</a></span>Counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t Counter = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="clock_8c_source.html#l00012">12</a> of file <a class="el" href="clock_8c_source.html">clock.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="clock_8c_source.html#l00081">GetTicksCounter()</a>, <a class="el" href="clock_8c_source.html#l00071">IsExpiredTimer()</a>, <a class="el" href="bll_8c_source.html#l00054">MainLoop_Iteration()</a>, <a class="el" href="clock_8c_source.html#l00076">ReadTimer()</a>, <a class="el" href="clock_8c_source.html#l00060">ResetTimer()</a>, and <a class="el" href="clock_8c_source.html#l00051">SysTick_Handler()</a>.</p>
 
 </div>
 </div>

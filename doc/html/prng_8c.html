@@ -170,6 +170,8 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="prng_8c_source.html#l00023">23</a> of file <a class="el" href="prng_8c_source.html">prng.c</a>.</p>
 
 <p class="reference">References <a class="el" href="prng_8c_source.html#l00013">a</a>, <a class="el" href="prng_8c_source.html#l00014">b</a>, <a class="el" href="eeemu_8c_source.html#l00184">eeemuSeedGet()</a>, <a class="el" href="eeemu_8c_source.html#l00190">eeemuSeedSet()</a>, and <a class="el" href="adc_8c_source.html#l00093">getEntropy()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="led__control_8c_source.html#l01013">tlightTMain()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -178,8 +180,25 @@ Functions</h2></td></tr>
 <div class="center"><img src="prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_cgraph.png" border="0" usemap="#prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_cgraph" alt=""/></div>
 <map name="prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_cgraph" id="prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_cgraph">
 <area shape="rect" id="node2" href="eeemu_8h.html#a60a9cca550af4e32b3e38afaa67c0571" title="Returns previous saved prng value. " alt="" coords="145,5,257,32"/>
-<area shape="rect" id="node3" href="eeemu_8h.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="146,56,257,83"/>
-<area shape="rect" id="node4" href="adc_8h.html#a0d9dbdc793bffa545f5b2c5c0b6dd688" title="returns calculated entropy value " alt="" coords="159,107,244,133"/>
+<area shape="rect" id="node4" href="eeemu_8h.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="146,56,257,83"/>
+<area shape="rect" id="node6" href="adc_8h.html#a0d9dbdc793bffa545f5b2c5c0b6dd688" title="returns calculated entropy value " alt="" coords="159,107,244,133"/>
+<area shape="rect" id="node3" href="eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng. " alt="" coords="305,5,436,32"/>
+<area shape="rect" id="node5" href="eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="308,56,433,83"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_icgraph.png" border="0" usemap="#prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_icgraph" alt=""/></div>
+<map name="prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_icgraph" id="prng_8c_a3bbf634bae2b6f1165ab662eb6c06aa3_icgraph">
+<area shape="rect" id="node2" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="145,5,232,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="280,5,363,32"/>
+<area shape="rect" id="node4" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="411,5,496,32"/>
+<area shape="rect" id="node5" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="544,5,679,32"/>
+<area shape="rect" id="node6" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="727,5,859,32"/>
+<area shape="rect" id="node7" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="907,5,957,32"/>
 </map>
 </div>
 

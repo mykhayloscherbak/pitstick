@@ -1,5 +1,51 @@
 <map id="led_control" name="led_control">
-<area shape="rect" id="node2" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="139,5,253,32"/>
-<area shape="rect" id="node3" href="$buttons_8h.html#a2e8d9dc0a729a8bf64ee62a334fcea72" title="IsPressed" alt="" coords="155,56,237,83"/>
-<area shape="rect" id="node4" href="$led__strip_8h.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="145,107,247,133"/>
+<area shape="rect" id="node2" href="$led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="170,492,227,519"/>
+<area shape="rect" id="node7" href="$buttons_8h.html#a2e8d9dc0a729a8bf64ee62a334fcea72" title="IsPressed" alt="" coords="734,188,815,215"/>
+<area shape="rect" id="node25" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="717,1708,832,1735"/>
+<area shape="rect" id="node26" href="$led__strip_8h.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="723,442,826,468"/>
+<area shape="rect" id="node27" href="$led__control_8c.html#a8570b3bfcea5661603159d157f7dca1e" title="Lock mode. Is shown at the end of all sequences (config, tlightMode, etc) to show that the stick is o..." alt="" coords="573,1100,619,1127"/>
+<area shape="rect" id="node29" href="$led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="345,1303,436,1330"/>
+<area shape="rect" id="node37" href="$led__control_8c.html#ab502b8fd1b6d1f2963cde3e25331ba23" title="fills and executes state table for stop&#45;and&#45;go (&quot;Podnos&quot;) mode. " alt="" coords="343,1708,439,1735"/>
+<area shape="rect" id="node41" href="$led__control_8c.html#a1a058721e80572b5dc836be8937e8973" title="Safety Car mode implementation. Safety Car mode is non&#45;setupable endless mode. The sequence can be si..." alt="" coords="357,999,425,1026"/>
+<area shape="rect" id="node46" href="$led__strip_8h.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="139,2012,259,2039"/>
+<area shape="rect" id="node48" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="349,1480,432,1507"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#a83ac31f201e838ba08faf013635b0e7d" title="show the param value and changes it during setup " alt="" coords="545,492,647,519"/>
+<area shape="rect" id="node8" href="$led__strip_8h.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="734,707,815,734"/>
+<area shape="rect" id="node10" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="729,1151,820,1178"/>
+<area shape="rect" id="node11" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="737,822,812,848"/>
+<area shape="rect" id="node12" href="$led__control_8c.html#a90079040009bdb11976bdb5d575de3dc" title="Show pattern for configuring brighness: red, green, blue and white strips. " alt="" coords="523,594,669,620"/>
+<area shape="rect" id="node13" href="$led__control_8c.html#a2b7c5fb7dd1adcab8f268b916c286c28" title="Displays brightness setup pattern using the current brighness. " alt="" coords="328,594,453,620"/>
+<area shape="rect" id="node14" href="$led__control_8c.html#a68192aa25ed535083ad7fc1c1c41f308" title="displayPodnosModeTime" alt="" coords="307,87,475,114"/>
+<area shape="rect" id="node16" href="$led__control_8c.html#afdea84b3ae64dec3eebe9e3b0a920346" title="displayT1" alt="" coords="351,138,430,164"/>
+<area shape="rect" id="node17" href="$led__control_8c.html#a002107c76047cbf8466727945864da75" title="displayT2" alt="" coords="351,188,430,215"/>
+<area shape="rect" id="node18" href="$led__control_8c.html#ac9eb710bcb5611edfd54dbacd868c975" title="displayTlightMax" alt="" coords="331,239,451,266"/>
+<area shape="rect" id="node19" href="$led__control_8c.html#a6e7d2c4e1d1543be158e3b91c6aa1b18" title="displayTlightMin" alt="" coords="333,290,449,316"/>
+<area shape="rect" id="node20" href="$led__control_8c.html#a47842ce67bfc0b2605cb6d1106c6ab20" title="displayTSEQ" alt="" coords="341,340,440,367"/>
+<area shape="rect" id="node21" href="$led__control_8c.html#ad9d7c30aba1aba8ce9cf29eea0e9b88f" title="Displays mode pattern: green points for MODE_PIT and red strips for MODE_TLIGHT. " alt="" coords="536,644,656,671"/>
+<area shape="rect" id="node22" href="$eeemu_8h.html#a8231eba0e5e301dd2bf2f1b1a3225f3e" title="stores config block to the eeprom emulation page " alt="" coords="343,391,439,418"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#a9f56725f852569377b98fbabc341cc3c" title="Incremens the value using min and max limits. " alt="" coords="739,492,811,519"/>
+<area shape="rect" id="node5" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="719,1202,830,1228"/>
+<area shape="rect" id="node6" href="$buttons_8h.html#ac3cb06a3761589b05a9d31c73a5a0f52" title="IsLongPressed" alt="" coords="720,543,829,570"/>
+<area shape="rect" id="node9" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="880,707,949,734"/>
+<area shape="rect" id="node15" href="$led__strip_8h.html#a5a619ebce1d2a34e10976da0e90ee198" title="Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by..." alt="" coords="541,214,651,240"/>
+<area shape="rect" id="node23" href="$eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block " alt="" coords="573,340,619,367"/>
+<area shape="rect" id="node24" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="533,391,659,418"/>
+<area shape="rect" id="node28" href="$led__control_8c.html#a711e2a55c7fc53596f8c6a5864c1f0e0" title="Returns the color corresponding to current battery voltage. Battery needs to be charged immediately i..." alt="" coords="721,1252,829,1279"/>
+<area shape="rect" id="node30" href="$led__control_8c.html#a5d8b147f4df715a5692aecb880957836" title="Shows the first &quot;green&quot; phase of the pitstop mode. " alt="" coords="551,1151,641,1178"/>
+<area shape="rect" id="node31" href="$led__control_8c.html#ad483bfc84bbd75ed975fa9111b71f455" title="Yellow phase is 5&#45;4&#45;3&#45;2&#45;1&#45;go phase for going out of pitlane. Starts at &#45;T1&#45;5s. " alt="" coords="548,1303,644,1330"/>
+<area shape="rect" id="node32" href="$led__control_8c.html#a8373e895d646ab474009d0e567b9462f" title="Green&#45;to&#45;black phase is phase after going out of pitlane. Geen light goes off after 2s and only 2 led..." alt="" coords="549,1202,643,1228"/>
+<area shape="rect" id="node33" href="$led__control_8c.html#a6e0b4c2d4e7d80a1b154ce1ada6010f9" title="Red pre&#45;phase is 2 red blinks at &#45;T2. It&#39;s time when the driver must be at the intermediate point..." alt="" coords="566,1455,626,1482"/>
+<area shape="rect" id="node34" href="$led__control_8c.html#aad4f392e6c8e887a5960b092e18be9a1" title="The main phase 5&#45;4&#45;3&#45;2&#45;1&#45;go traffic light before crossing start/finish line. Starts at &#45;5s and ends a..." alt="" coords="571,1252,621,1279"/>
+<area shape="rect" id="node35" href="$led__control_8c.html#ad473313ad5d686121b36ad25263a4dde" title="Last phase : two green blinks starting from 0 (TSEQ) " alt="" coords="539,1506,653,1532"/>
+<area shape="rect" id="node36" href="$led__control_8c.html#a4c88b47551cd8a4dca011dd46f67d132" title="phase function processor. Calls needed phase function every time this function is called starting wit..." alt="" coords="527,1607,665,1634"/>
+<area shape="rect" id="node38" href="$led__control_8c.html#ab1a1c0fe82cf1902597d1d3ecdcb37e4" title="Red phase of &quot;Podnos&quot; mode. " alt="" coords="552,1759,640,1786"/>
+<area shape="rect" id="node39" href="$led__control_8c.html#ac8aab3e010262c3352895b466da4660a" title="Green phase of &quot;Podnos&quot; mode. " alt="" coords="547,1810,645,1836"/>
+<area shape="rect" id="node40" href="$led__control_8c.html#a46249a7d12af274d83728d295a34d97e" title="shows the current bat voltage " alt="" coords="551,1050,641,1076"/>
+<area shape="rect" id="node42" href="$led__control_8c.html#ac0df7b189e2e6be916b811e7165df51a" title="Turns led strip off. " alt="" coords="561,999,631,1026"/>
+<area shape="rect" id="node43" href="$led__control_8c.html#ae4c2238467a12abf90170edf2d2f0df7" title="This is one of safety car script stages. It shows 2,3,4 lights using YELLOW color. " alt="" coords="559,847,633,874"/>
+<area shape="rect" id="node44" href="$led__control_8c.html#a73dee7b3649bed775fbc5dc2fd9049b3" title="This is one of safety car script stages. It shows 1,2,4,5 lights using YELLOW color. " alt="" coords="555,746,637,772"/>
+<area shape="rect" id="node45" href="$led__control_8c.html#a285e3f38c686787e3a99a1dd9a028da3" title="This is one of safety car script stages. It shows 1,5 lights using YELLOW color. " alt="" coords="563,796,629,823"/>
+<area shape="rect" id="node47" href="$rgbw_8h.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="345,2012,436,2039"/>
+<area shape="rect" id="node49" href="$led__control_8c.html#a1718f582c0a850cda87c9e5a7a54950a" title="tlight mode yellow pre&#45;phase, two blinks at the start " alt="" coords="553,1658,639,1684"/>
+<area shape="rect" id="node50" href="$led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="553,1354,639,1380"/>
 </map>

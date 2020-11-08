@@ -1,0 +1,10 @@
+<map id="dispRedStrips" name="dispRedStrips">
+<area shape="rect" id="node2" href="$led__control_8c.html#aad4f392e6c8e887a5960b092e18be9a1" title="The main phase 5&#45;4&#45;3&#45;2&#45;1&#45;go traffic light before crossing start/finish line. Starts at &#45;5s and ends a..." alt="" coords="175,5,226,32"/>
+<area shape="rect" id="node8" href="$led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="157,56,244,83"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="292,5,383,32"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="431,31,516,57"/>
+<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="564,31,699,57"/>
+<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="747,31,879,57"/>
+<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="927,31,977,57"/>
+<area shape="rect" id="node9" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="296,56,379,83"/>
+</map>

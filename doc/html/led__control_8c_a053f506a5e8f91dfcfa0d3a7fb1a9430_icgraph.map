@@ -1,0 +1,7 @@
+<map id="tlightTMain" name="tlightTMain">
+<area shape="rect" id="node2" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="140,5,223,32"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="271,5,356,32"/>
+<area shape="rect" id="node4" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="404,5,539,32"/>
+<area shape="rect" id="node5" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="587,5,719,32"/>
+<area shape="rect" id="node6" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="767,5,817,32"/>
+</map>

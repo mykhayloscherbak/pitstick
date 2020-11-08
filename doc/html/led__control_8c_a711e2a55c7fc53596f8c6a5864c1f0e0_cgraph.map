@@ -1,0 +1,4 @@
+<map id="getPowerColor" name="getPowerColor">
+<area shape="rect" id="node2" href="$adc_8h.html#a156057cb0f4492d54bad69d4bfdad090" title="returns millivolts measuring of vbat " alt="" coords="161,5,279,32"/>
+<area shape="rect" id="node3" href="$adc_8c.html#a23f145378c29e2599d0da09d07a082a2" title="raw averaged value of adc channel reading " alt="" coords="327,5,420,32"/>
+</map>

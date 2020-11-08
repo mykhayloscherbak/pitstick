@@ -106,6 +106,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3dce7cdea1eb46b406c6d3e5828d365d"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="unioneeemu__storage__t.html">eeemu_storage_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeemu_8c.html#a3dce7cdea1eb46b406c6d3e5828d365d">__attribute__</a> ((__section__(&quot;.eeemu&quot;)))</td></tr>
+<tr class="memdesc:a3dce7cdea1eb46b406c6d3e5828d365d"><td class="mdescLeft">&#160;</td><td class="mdescRight">flash page for holding configs  <a href="#a3dce7cdea1eb46b406c6d3e5828d365d">More...</a><br /></td></tr>
+<tr class="separator:a3dce7cdea1eb46b406c6d3e5828d365d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7090ef0372f1ed254dc73d749374d5d0"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0">crc8</a> (uint8_t *data, uint8_t const len)</td></tr>
+<tr class="memdesc:a7090ef0372f1ed254dc73d749374d5d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">crc8 calcualation for data block  <a href="#a7090ef0372f1ed254dc73d749374d5d0">More...</a><br /></td></tr>
+<tr class="separator:a7090ef0372f1ed254dc73d749374d5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17244966a0b706a1a48ce87112fab3e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1">eeemuErasePage</a> (uint32_t const addr)</td></tr>
+<tr class="memdesc:a17244966a0b706a1a48ce87112fab3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erasing a flash page.  <a href="#a17244966a0b706a1a48ce87112fab3e1">More...</a><br /></td></tr>
+<tr class="separator:a17244966a0b706a1a48ce87112fab3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab928265ca774001cc8dd0141a3c15e78"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78">getCurrentSeedIdx</a> (void)</td></tr>
+<tr class="memdesc:ab928265ca774001cc8dd0141a3c15e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searching for the last stored prng.  <a href="#ab928265ca774001cc8dd0141a3c15e78">More...</a><br /></td></tr>
+<tr class="separator:ab928265ca774001cc8dd0141a3c15e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70a772a8de391f4aefa3bbd5343996df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeemu_8c.html#a70a772a8de391f4aefa3bbd5343996df">eeemu_write</a> (uint8_t *const values)</td></tr>
 <tr class="memdesc:a70a772a8de391f4aefa3bbd5343996df"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores config block to the eeprom emulation page  <a href="#a70a772a8de391f4aefa3bbd5343996df">More...</a><br /></td></tr>
 <tr class="separator:a70a772a8de391f4aefa3bbd5343996df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +171,104 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a3dce7cdea1eb46b406c6d3e5828d365d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dce7cdea1eb46b406c6d3e5828d365d">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static volatile <a class="el" href="unioneeemu__storage__t.html">eeemu_storage_t</a> __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(__section__(&quot;.eeemu&quot;))&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>flash page for holding configs </p>
+<p>Waiting for flash write operation complete </p>
+
+<p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00047">47</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
+
+</div>
+</div>
+<a id="a7090ef0372f1ed254dc73d749374d5d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7090ef0372f1ed254dc73d749374d5d0">&#9670;&nbsp;</a></span>crc8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t crc8 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t const&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>crc8 calcualation for data block </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>data itself </td></tr>
+    <tr><td class="paramname">len</td><td>data length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>crc8 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00072">72</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="eeemu_8c_source.html#l00157">eeemu_Init()</a>, and <a class="el" href="eeemu_8c_source.html#l00123">eeemu_write()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a7090ef0372f1ed254dc73d749374d5d0_icgraph.png" border="0" usemap="#eeemu_8c_a7090ef0372f1ed254dc73d749374d5d0_icgraph" alt=""/></div>
+<map name="eeemu_8c_a7090ef0372f1ed254dc73d749374d5d0_icgraph" id="eeemu_8c_a7090ef0372f1ed254dc73d749374d5d0_icgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#a35b1b8e39cb6a64f323a282e52fd7152" title="Eeprom emulation subsystem init. It finds the index of the last saved config. " alt="" coords="105,5,191,32"/>
+<area shape="rect" id="node5" href="eeemu_8c.html#a70a772a8de391f4aefa3bbd5343996df" title="stores config block to the eeprom emulation page " alt="" coords="100,56,196,83"/>
+<area shape="rect" id="node3" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="372,5,412,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="845,31,896,57"/>
+<area shape="rect" id="node6" href="led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="244,56,301,83"/>
+<area shape="rect" id="node7" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="349,56,435,83"/>
+<area shape="rect" id="node8" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="483,56,617,83"/>
+<area shape="rect" id="node9" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="665,56,797,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a35b1b8e39cb6a64f323a282e52fd7152"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35b1b8e39cb6a64f323a282e52fd7152">&#9670;&nbsp;</a></span>eeemu_Init()</h2>
 
@@ -179,7 +289,30 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00157">157</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00039">MAXSTORAGE</a>.</p>
+<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00072">crc8()</a>, <a class="el" href="eeemu_8h_source.html#l00015">MAX_STORED</a>, and <a class="el" href="eeemu_8c_source.html#l00039">MAXSTORAGE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00109">Init()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_cgraph.png" border="0" usemap="#eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_cgraph" alt=""/></div>
+<map name="eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_cgraph" id="eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_cgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block " alt="" coords="140,5,187,32"/>
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_icgraph.png" border="0" usemap="#eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_icgraph" alt=""/></div>
+<map name="eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_icgraph" id="eeemu_8c_a35b1b8e39cb6a64f323a282e52fd7152_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="140,5,180,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="228,5,279,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -209,7 +342,91 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00123">123</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00039">MAXSTORAGE</a>.</p>
+<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00025">eeemu_storage_s::crc8</a>, <a class="el" href="eeemu_8c_source.html#l00072">crc8()</a>, <a class="el" href="eeemu_8c_source.html#l00092">eeemuErasePage()</a>, <a class="el" href="eeemu_8h_source.html#l00015">MAX_STORED</a>, <a class="el" href="eeemu_8c_source.html#l00039">MAXSTORAGE</a>, <a class="el" href="eeemu_8c_source.html#l00033">eeemu_storage_t::raw</a>, <a class="el" href="eeemu_8c_source.html#l00024">eeemu_storage_s::stored</a>, and <a class="el" href="eeemu_8c_source.html#l00034">eeemu_storage_t::structured</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="led__control_8c_source.html#l00378">config()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_cgraph.png" border="0" usemap="#eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_cgraph" alt=""/></div>
+<map name="eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_cgraph" id="eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_cgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block " alt="" coords="189,5,235,32"/>
+<area shape="rect" id="node3" href="eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="149,56,275,83"/>
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_icgraph.png" border="0" usemap="#eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_icgraph" alt=""/></div>
+<map name="eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_icgraph" id="eeemu_8c_a70a772a8de391f4aefa3bbd5343996df_icgraph">
+<area shape="rect" id="node2" href="led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="149,5,207,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="255,5,340,32"/>
+<area shape="rect" id="node4" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="388,5,523,32"/>
+<area shape="rect" id="node5" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="571,5,703,32"/>
+<area shape="rect" id="node6" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="751,5,801,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a17244966a0b706a1a48ce87112fab3e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17244966a0b706a1a48ce87112fab3e1">&#9670;&nbsp;</a></span>eeemuErasePage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void eeemuErasePage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t const&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erasing a flash page. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>flash page addr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00092">92</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="eeemu_8c_source.html#l00123">eeemu_write()</a>, and <a class="el" href="eeemu_8c_source.html#l00190">eeemuSeedSet()</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a17244966a0b706a1a48ce87112fab3e1_icgraph.png" border="0" usemap="#eeemu_8c_a17244966a0b706a1a48ce87112fab3e1_icgraph" alt=""/></div>
+<map name="eeemu_8c_a17244966a0b706a1a48ce87112fab3e1_icgraph" id="eeemu_8c_a17244966a0b706a1a48ce87112fab3e1_icgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#a70a772a8de391f4aefa3bbd5343996df" title="stores config block to the eeprom emulation page " alt="" coords="186,5,282,32"/>
+<area shape="rect" id="node8" href="eeemu_8c.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="179,56,289,83"/>
+<area shape="rect" id="node3" href="led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="492,5,549,32"/>
+<area shape="rect" id="node4" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="743,31,828,57"/>
+<area shape="rect" id="node5" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="876,31,1011,57"/>
+<area shape="rect" id="node6" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="1059,31,1191,57"/>
+<area shape="rect" id="node7" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1239,31,1289,57"/>
+<area shape="rect" id="node9" href="prng_8c.html#a3bbf634bae2b6f1165ab662eb6c06aa3" title="gets the next random value of the sequence " alt="" coords="337,56,429,83"/>
+<area shape="rect" id="node10" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="477,56,564,83"/>
+<area shape="rect" id="node11" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="612,56,695,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -235,15 +452,24 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="eeemu_8c_source.html#l00040">DEFAULT_VALUE</a>, and <a class="el" href="eeemu_8h_source.html#l00015">MAX_STORED</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="led__control_8c_source.html#l01310">led_control()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="led__control_8c_source.html#l00378">config()</a>, <a class="el" href="led__control_8c_source.html#l01344">led_control()</a>, <a class="el" href="led__control_8c_source.html#l01293">lock()</a>, <a class="el" href="led__control_8c_source.html#l00971">pitStopCalc()</a>, <a class="el" href="led__control_8c_source.html#l01132">podnosMode()</a>, <a class="el" href="led__control_8c_source.html#l01087">tlightMode()</a>, and <a class="el" href="led__control_8c_source.html#l01013">tlightTMain()</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="eeemu_8c_a828bd0295ce05df8b4e99f2e8b19c400_icgraph.png" border="0" usemap="#eeemu_8c_a828bd0295ce05df8b4e99f2e8b19c400_icgraph" alt=""/></div>
 <map name="eeemu_8c_a828bd0295ce05df8b4e99f2e8b19c400_icgraph" id="eeemu_8c_a828bd0295ce05df8b4e99f2e8b19c400_icgraph">
-<area shape="rect" id="node2" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="168,5,253,32"/>
+<area shape="rect" id="node2" href="led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="325,5,382,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="443,132,528,159"/>
+<area shape="rect" id="node7" href="led__control_8c.html#a8570b3bfcea5661603159d157f7dca1e" title="Lock mode. Is shown at the end of all sequences (config, tlightMode, etc) to show that the stick is o..." alt="" coords="330,107,377,133"/>
+<area shape="rect" id="node8" href="led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="171,157,261,184"/>
+<area shape="rect" id="node9" href="led__control_8c.html#ab502b8fd1b6d1f2963cde3e25331ba23" title="fills and executes state table for stop&#45;and&#45;go (&quot;Podnos&quot;) mode. " alt="" coords="168,208,264,235"/>
+<area shape="rect" id="node10" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="312,259,395,285"/>
+<area shape="rect" id="node11" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="173,309,259,336"/>
+<area shape="rect" id="node4" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="576,132,711,159"/>
+<area shape="rect" id="node5" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="759,132,891,159"/>
+<area shape="rect" id="node6" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="939,132,989,159"/>
 </map>
 </div>
 
@@ -270,15 +496,33 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00184">184</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
 
+<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00109">getCurrentSeedIdx()</a>, and <a class="el" href="eeemu_8c_source.html#l00041">SEED_NOT_INITED</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="prng_8c_source.html#l00023">genRandom()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_cgraph.png" border="0" usemap="#eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_cgraph" alt=""/></div>
+<map name="eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_cgraph" id="eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_cgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng. " alt="" coords="165,5,296,32"/>
+</map>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_icgraph.png" border="0" usemap="#eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_icgraph" alt=""/></div>
 <map name="eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_icgraph" id="eeemu_8c_a60a9cca550af4e32b3e38afaa67c0571_icgraph">
 <area shape="rect" id="node2" href="prng_8c.html#a3bbf634bae2b6f1165ab662eb6c06aa3" title="gets the next random value of the sequence " alt="" coords="165,5,257,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="305,5,392,32"/>
+<area shape="rect" id="node4" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="440,5,523,32"/>
+<area shape="rect" id="node5" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="571,5,656,32"/>
+<area shape="rect" id="node6" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="704,5,839,32"/>
+<area shape="rect" id="node7" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="887,5,1019,32"/>
+<area shape="rect" id="node8" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1067,5,1117,32"/>
 </map>
 </div>
 
@@ -310,15 +554,87 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00190">190</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
 
+<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00092">eeemuErasePage()</a>, <a class="el" href="eeemu_8c_source.html#l00109">getCurrentSeedIdx()</a>, and <a class="el" href="eeemu_8c_source.html#l00041">SEED_NOT_INITED</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="prng_8c_source.html#l00023">genRandom()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_cgraph.png" border="0" usemap="#eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_cgraph" alt=""/></div>
+<map name="eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_cgraph" id="eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_cgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="167,5,292,32"/>
+<area shape="rect" id="node3" href="eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng. " alt="" coords="164,56,295,83"/>
+</map>
+</div>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_icgraph.png" border="0" usemap="#eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_icgraph" alt=""/></div>
 <map name="eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_icgraph" id="eeemu_8c_abb0f1f94b8cc05907f5c45457db00fe8_icgraph">
 <area shape="rect" id="node2" href="prng_8c.html#a3bbf634bae2b6f1165ab662eb6c06aa3" title="gets the next random value of the sequence " alt="" coords="164,5,256,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="304,5,391,32"/>
+<area shape="rect" id="node4" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="439,5,521,32"/>
+<area shape="rect" id="node5" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="569,5,655,32"/>
+<area shape="rect" id="node6" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="703,5,837,32"/>
+<area shape="rect" id="node7" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="885,5,1017,32"/>
+<area shape="rect" id="node8" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1065,5,1116,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab928265ca774001cc8dd0141a3c15e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab928265ca774001cc8dd0141a3c15e78">&#9670;&nbsp;</a></span>getCurrentSeedIdx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t getCurrentSeedIdx </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searching for the last stored prng. </p>
+<dl class="section return"><dt>Returns</dt><dd>last stored value or <a class="el" href="eeemu_8c.html#abc6126af1d45847bc59afa0aa3216b04abbca9889778d24309e03a598cd7d49a8">SEED_NOT_INITED</a> if nothing is stored </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="eeemu_8c_source.html#l00109">109</a> of file <a class="el" href="eeemu_8c_source.html">eeemu.c</a>.</p>
+
+<p class="reference">References <a class="el" href="eeemu_8c_source.html#l00041">SEED_NOT_INITED</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="eeemu_8c_source.html#l00184">eeemuSeedGet()</a>, and <a class="el" href="eeemu_8c_source.html#l00190">eeemuSeedSet()</a>.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="eeemu_8c_ab928265ca774001cc8dd0141a3c15e78_icgraph.png" border="0" usemap="#eeemu_8c_ab928265ca774001cc8dd0141a3c15e78_icgraph" alt=""/></div>
+<map name="eeemu_8c_ab928265ca774001cc8dd0141a3c15e78_icgraph" id="eeemu_8c_ab928265ca774001cc8dd0141a3c15e78_icgraph">
+<area shape="rect" id="node2" href="eeemu_8c.html#a60a9cca550af4e32b3e38afaa67c0571" title="Returns previous saved prng value. " alt="" coords="184,5,296,32"/>
+<area shape="rect" id="node10" href="eeemu_8c.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="185,56,295,83"/>
+<area shape="rect" id="node3" href="prng_8c.html#a3bbf634bae2b6f1165ab662eb6c06aa3" title="gets the next random value of the sequence " alt="" coords="344,31,436,57"/>
+<area shape="rect" id="node4" href="led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="484,31,571,57"/>
+<area shape="rect" id="node5" href="led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="619,31,701,57"/>
+<area shape="rect" id="node6" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="749,31,835,57"/>
+<area shape="rect" id="node7" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="883,31,1017,57"/>
+<area shape="rect" id="node8" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="1065,31,1197,57"/>
+<area shape="rect" id="node9" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1245,31,1296,57"/>
 </map>
 </div>
 

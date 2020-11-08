@@ -1,0 +1,29 @@
+<map id="config" name="config">
+<area shape="rect" id="node2" href="$led__control_8c.html#a83ac31f201e838ba08faf013635b0e7d" title="show the param value and changes it during setup " alt="" coords="143,320,246,346"/>
+<area shape="rect" id="node7" href="$led__strip_8h.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="521,117,603,144"/>
+<area shape="rect" id="node11" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="355,472,445,498"/>
+<area shape="rect" id="node12" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="525,358,599,385"/>
+<area shape="rect" id="node13" href="$led__control_8c.html#a90079040009bdb11976bdb5d575de3dc" title="Show pattern for configuring brighness: red, green, blue and white strips. " alt="" coords="327,117,473,144"/>
+<area shape="rect" id="node14" href="$led__control_8c.html#a2b7c5fb7dd1adcab8f268b916c286c28" title="Displays brightness setup pattern using the current brighness. " alt="" coords="132,142,257,169"/>
+<area shape="rect" id="node15" href="$led__control_8c.html#a68192aa25ed535083ad7fc1c1c41f308" title="displayPodnosModeTime" alt="" coords="111,472,279,498"/>
+<area shape="rect" id="node18" href="$led__control_8c.html#afdea84b3ae64dec3eebe9e3b0a920346" title="displayT1" alt="" coords="155,522,234,549"/>
+<area shape="rect" id="node19" href="$led__control_8c.html#a002107c76047cbf8466727945864da75" title="displayT2" alt="" coords="155,573,234,600"/>
+<area shape="rect" id="node20" href="$led__control_8c.html#ac9eb710bcb5611edfd54dbacd868c975" title="displayTlightMax" alt="" coords="135,624,255,650"/>
+<area shape="rect" id="node21" href="$led__control_8c.html#a6e7d2c4e1d1543be158e3b91c6aa1b18" title="displayTlightMin" alt="" coords="137,674,253,701"/>
+<area shape="rect" id="node22" href="$led__control_8c.html#a47842ce67bfc0b2605cb6d1106c6ab20" title="displayTSEQ" alt="" coords="145,725,244,752"/>
+<area shape="rect" id="node23" href="$led__control_8c.html#ad9d7c30aba1aba8ce9cf29eea0e9b88f" title="Displays mode pattern: green points for MODE_PIT and red strips for MODE_TLIGHT. " alt="" coords="340,66,460,93"/>
+<area shape="rect" id="node24" href="$eeemu_8h.html#a8231eba0e5e301dd2bf2f1b1a3225f3e" title="stores config block to the eeprom emulation page " alt="" coords="147,776,243,802"/>
+<area shape="rect" id="node27" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="137,826,252,853"/>
+<area shape="rect" id="node28" href="$led__strip_8h.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="143,877,246,904"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#a9f56725f852569377b98fbabc341cc3c" title="Incremens the value using min and max limits. " alt="" coords="364,320,436,346"/>
+<area shape="rect" id="node4" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="345,370,455,397"/>
+<area shape="rect" id="node5" href="$buttons_8h.html#ac3cb06a3761589b05a9d31c73a5a0f52" title="IsLongPressed" alt="" coords="345,218,455,245"/>
+<area shape="rect" id="node6" href="$buttons_8h.html#a2e8d9dc0a729a8bf64ee62a334fcea72" title="IsPressed" alt="" coords="359,269,441,296"/>
+<area shape="rect" id="node8" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="661,181,731,208"/>
+<area shape="rect" id="node9" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="789,358,904,385"/>
+<area shape="rect" id="node10" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="952,358,1055,385"/>
+<area shape="rect" id="node16" href="$led__strip_8h.html#a5a619ebce1d2a34e10976da0e90ee198" title="Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by..." alt="" coords="345,573,455,600"/>
+<area shape="rect" id="node17" href="$led__strip_8c.html#a319ffd328868f2d09aaca42d35eddf3c" title="Displays one digit as a led column. Each 3 leds are separated by a black one. " alt="" coords="651,434,741,461"/>
+<area shape="rect" id="node25" href="$eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block " alt="" coords="377,750,423,777"/>
+<area shape="rect" id="node26" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="337,801,463,828"/>
+</map>

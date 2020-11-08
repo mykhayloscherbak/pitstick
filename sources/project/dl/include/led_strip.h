@@ -4,8 +4,8 @@
  * @file led_strip.h
  * @author Mykhaylo Shcherbak
  * @em mikl74@yahoo.com
- * @date 20-11-2019
- * @version 1.00
+ * @date 08-11-2020
+ * @version 1.20
  * @brief Contains common functions prototypes for led strip control.
  */
 #include <stdint.h>
@@ -72,17 +72,25 @@ uint8_t showFullWithInit(const Colors_t color, const uint8_t init);
  */
 
 void dispStrips(const Colors_t color, const uint8_t nstrips);
-/**
- * @brief Blinks the whole stick by color to black two times at 1Hz frequency
- * @param init Is non-zero if it's the first time the function is called and zero otherwise
- * @param color The color index when the stick is on
- * @param getPowerColor A function that returns the color corresponding to the current Vbat
- * @return  if nonzero the strip must be updated by @ref sendDataToStrip
- */
 
+/**
+ * @fn void dispStrip(const Colors_t, const uint8_t)
+ * @brief displays strip number (0 - 4) of selected color
+ *
+ * @param color color
+ * @param stripNo number of strip (0 - 4)
+ */
 void dispStrip(const Colors_t color,const uint8_t stripNo);
 
+/**
+ * @brief Blinks the whole stick by color to black two times at 1Hz frequency
+ * @param[in] init nonzero value shows that this is the first iteration of this function
+ * @param[in] color The color index when the stick is on
+ * @param[in] getPowerColor function that returns the color number corresponding to the current batt level
+ * @return  if nonzero the strip must be updated by @ref sendDataToStrip
+ */
 uint8_t blinkTwice(const uint8_t init,const Colors_t color,pPowerColorFunc_t const getPowerColor);
+
 /**
  * @brief Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by one black led per each 3
  * @param colorL Color index for tens

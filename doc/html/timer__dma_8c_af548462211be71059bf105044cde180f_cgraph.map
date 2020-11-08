@@ -1,0 +1,4 @@
+<map id="tim2_Init" name="tim2_Init">
+<area shape="rect" id="node2" href="$timer__dma_8c.html#a40f695d0e243e389984be5eb1847640a" title="Inits pin to which the strip is connected as af push&#45;pull. " alt="" coords="125,5,188,32"/>
+<area shape="rect" id="node3" href="$gpio_8h.html#ad40d1f14af7839ca10e2a3cbf7ac8c7a" title="returns pin and port for selected AF GPIO " alt="" coords="236,5,387,32"/>
+</map>

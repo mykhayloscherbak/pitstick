@@ -62,7 +62,8 @@ $(document).ready(function(){initNavTree('gpio_8c.html','');});
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">gpio.c File Reference</div>  </div>
 </div><!--header-->
@@ -115,6 +116,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ad40d1f14af7839ca10e2a3cbf7ac8c7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8c.html#ad40d1f14af7839ca10e2a3cbf7ac8c7a">Gpio_Get_Alt_PortPin</a> (const <a class="el" href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daee">Gpio_Desc_t</a> Gpio, GPIO_TypeDef **const Port, uint8_t *const Pin)</td></tr>
 <tr class="memdesc:ad40d1f14af7839ca10e2a3cbf7ac8c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pin and port for selected AF GPIO  <a href="#ad40d1f14af7839ca10e2a3cbf7ac8c7a">More...</a><br /></td></tr>
 <tr class="separator:ad40d1f14af7839ca10e2a3cbf7ac8c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7774f11354e20182e82155acc0e136e7"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGpio__Config__t.html">Gpio_Config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8c.html#a7774f11354e20182e82155acc0e136e7">Gpio_Config</a> [<a class="el" href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeea75ae226f3fb8814020ff732149aa1941">GPIO_TOTAL</a>]</td></tr>
+<tr class="separator:a7774f11354e20182e82155acc0e136e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains init and access functions for Gpio. </p>
@@ -183,6 +189,8 @@ Functions</h2></td></tr>
 <div class="center"><img src="gpio_8c_ae60d6d62cc9dd39cee66297840556850_icgraph.png" border="0" usemap="#gpio_8c_ae60d6d62cc9dd39cee66297840556850_icgraph" alt=""/></div>
 <map name="gpio_8c_ae60d6d62cc9dd39cee66297840556850_icgraph" id="gpio_8c_ae60d6d62cc9dd39cee66297840556850_icgraph">
 <area shape="rect" id="node2" href="heartbeat_8c.html#a729e0be438901c5f6664344701c80a48" title="Toggles &quot;Heartbeat led&quot;. " alt="" coords="164,5,289,32"/>
+<area shape="rect" id="node3" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="337,5,469,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="517,5,568,32"/>
 </map>
 </div>
 
@@ -234,6 +242,21 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="gpio_8c_source.html#l00019">GPIO_MODE_DO_NOT_TOUCH</a>, <a class="el" href="gpio_8h_source.html#l00023">GPIO_TOTAL</a>, <a class="el" href="gpio_8c_source.html#l00029">Gpio_Config_t::Pin</a>, and <a class="el" href="gpio_8c_source.html#l00028">Gpio_Config_t::Port</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="timer__dma_8c_source.html#l00018">pin_init()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="gpio_8c_ad40d1f14af7839ca10e2a3cbf7ac8c7a_icgraph.png" border="0" usemap="#gpio_8c_ad40d1f14af7839ca10e2a3cbf7ac8c7a_icgraph" alt=""/></div>
+<map name="gpio_8c_ad40d1f14af7839ca10e2a3cbf7ac8c7a_icgraph" id="gpio_8c_ad40d1f14af7839ca10e2a3cbf7ac8c7a_icgraph">
+<area shape="rect" id="node2" href="timer__dma_8c.html#a40f695d0e243e389984be5eb1847640a" title="Inits pin to which the strip is connected as af push&#45;pull. " alt="" coords="204,5,267,32"/>
+<area shape="rect" id="node3" href="timer__dma_8c.html#af548462211be71059bf105044cde180f" title="Initialization of tim2+dma. " alt="" coords="315,5,387,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="435,5,475,32"/>
+<area shape="rect" id="node5" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="523,5,573,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aec6c2e01969e7a086f7dc11853dad378"></a>
@@ -256,6 +279,19 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="gpio_8c_source.html#l00017">GPIO_MODE_IN</a>, <a class="el" href="gpio_8c_source.html#l00018">GPIO_MODE_OUT</a>, <a class="el" href="gpio_8h_source.html#l00023">GPIO_TOTAL</a>, and <a class="el" href="gpio_8c_source.html#l00028">Gpio_Config_t::Port</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00109">Init()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="gpio_8c_aec6c2e01969e7a086f7dc11853dad378_icgraph.png" border="0" usemap="#gpio_8c_aec6c2e01969e7a086f7dc11853dad378_icgraph" alt=""/></div>
+<map name="gpio_8c_aec6c2e01969e7a086f7dc11853dad378_icgraph" id="gpio_8c_aec6c2e01969e7a086f7dc11853dad378_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="128,5,168,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="216,5,267,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a53e81917237595ce4210443fa285f27d"></a>
@@ -277,6 +313,18 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="gpio_8c_source.html#l00107">107</a> of file <a class="el" href="gpio_8c_source.html">gpio.c</a>.</p>
 
 <p class="reference">References <a class="el" href="gpio_8h_source.html#l00023">GPIO_TOTAL</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="buttons_8c_source.html#l00037">ButtonState()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="gpio_8c_a53e81917237595ce4210443fa285f27d_icgraph.png" border="0" usemap="#gpio_8c_a53e81917237595ce4210443fa285f27d_icgraph" alt=""/></div>
+<map name="gpio_8c_a53e81917237595ce4210443fa285f27d_icgraph" id="gpio_8c_a53e81917237595ce4210443fa285f27d_icgraph">
+<area shape="rect" id="node2" href="buttons_8c.html#a79e79c061a60875904a364a3e8daed44" title="ButtonState" alt="" coords="164,5,255,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -309,16 +357,49 @@ Functions</h2></td></tr>
 <p class="reference">References <a class="el" href="gpio_8h_source.html#l00023">GPIO_TOTAL</a>, and <a class="el" href="gpio_8c_source.html#l00028">Gpio_Config_t::Port</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="heartbeat_8c_source.html#l00010">Toggle_Heartbeat()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="gpio_8c_acd490e73c4bdd10da5c560279b713036_icgraph.png" border="0" usemap="#gpio_8c_acd490e73c4bdd10da5c560279b713036_icgraph" alt=""/></div>
 <map name="gpio_8c_acd490e73c4bdd10da5c560279b713036_icgraph" id="gpio_8c_acd490e73c4bdd10da5c560279b713036_icgraph">
 <area shape="rect" id="node2" href="heartbeat_8c.html#a729e0be438901c5f6664344701c80a48" title="Toggles &quot;Heartbeat led&quot;. " alt="" coords="152,5,277,32"/>
+<area shape="rect" id="node3" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="325,5,457,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="505,5,556,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a7774f11354e20182e82155acc0e136e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7774f11354e20182e82155acc0e136e7">&#9670;&nbsp;</a></span>Gpio_Config</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structGpio__Config__t.html">Gpio_Config_t</a> Gpio_Config[<a class="el" href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeea75ae226f3fb8814020ff732149aa1941">GPIO_TOTAL</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">        [<a class="code" href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeea728e00c2c3df4f9c44ef18c183b5ff57">GPIO_WS_OUT</a>]       = {.Port = GPIOA,.Pin = 0,  .Mode = <a class="code" href="gpio_8c.html#a7a53baae4da39d5d6f596dcd90deba54a3b9d453ea0af25dcd0c30553902eb8fb">GPIO_MODE_DO_NOT_TOUCH</a>}, </div><div class="line">        [<a class="code" href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeeaa8ef590bba5c4c186ac74f2e033dd21e">GPIO_BUTTON</a>]       = {.Port = GPIOA,.Pin = 2,  .Mode = <a class="code" href="gpio_8c.html#a7a53baae4da39d5d6f596dcd90deba54abf2b796bd08389c6c64bc4390465e12f">GPIO_MODE_IN</a>},</div><div class="line">        [<a class="code" href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeea3f1b87198625cda0a2f884f812806741">GPIO_HEARTBEAT</a>]    = {.Port = GPIOC,.Pin = 13, .Mode = <a class="code" href="gpio_8c.html#a7a53baae4da39d5d6f596dcd90deba54a528a0e3cb614e5e10799adb39bbedc49">GPIO_MODE_OUT</a>   }</div><div class="line">}</div><div class="ttc" id="gpio_8c_html_a7a53baae4da39d5d6f596dcd90deba54abf2b796bd08389c6c64bc4390465e12f"><div class="ttname"><a href="gpio_8c.html#a7a53baae4da39d5d6f596dcd90deba54abf2b796bd08389c6c64bc4390465e12f">GPIO_MODE_IN</a></div><div class="ttdef"><b>Definition:</b> <a href="gpio_8c_source.html#l00017">gpio.c:17</a></div></div>
+<div class="ttc" id="gpio_8c_html_a7a53baae4da39d5d6f596dcd90deba54a3b9d453ea0af25dcd0c30553902eb8fb"><div class="ttname"><a href="gpio_8c.html#a7a53baae4da39d5d6f596dcd90deba54a3b9d453ea0af25dcd0c30553902eb8fb">GPIO_MODE_DO_NOT_TOUCH</a></div><div class="ttdef"><b>Definition:</b> <a href="gpio_8c_source.html#l00019">gpio.c:19</a></div></div>
+<div class="ttc" id="gpio_8h_html_a0bf7371cddba17286d5c4e3fb775daeea3f1b87198625cda0a2f884f812806741"><div class="ttname"><a href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeea3f1b87198625cda0a2f884f812806741">GPIO_HEARTBEAT</a></div><div class="ttdef"><b>Definition:</b> <a href="gpio_8h_source.html#l00020">gpio.h:20</a></div></div>
+<div class="ttc" id="gpio_8h_html_a0bf7371cddba17286d5c4e3fb775daeeaa8ef590bba5c4c186ac74f2e033dd21e"><div class="ttname"><a href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeeaa8ef590bba5c4c186ac74f2e033dd21e">GPIO_BUTTON</a></div><div class="ttdef"><b>Definition:</b> <a href="gpio_8h_source.html#l00022">gpio.h:22</a></div></div>
+<div class="ttc" id="gpio_8h_html_a0bf7371cddba17286d5c4e3fb775daeea728e00c2c3df4f9c44ef18c183b5ff57"><div class="ttname"><a href="gpio_8h.html#a0bf7371cddba17286d5c4e3fb775daeea728e00c2c3df4f9c44ef18c183b5ff57">GPIO_WS_OUT</a></div><div class="ttdef"><b>Definition:</b> <a href="gpio_8h_source.html#l00021">gpio.h:21</a></div></div>
+<div class="ttc" id="gpio_8c_html_a7a53baae4da39d5d6f596dcd90deba54a528a0e3cb614e5e10799adb39bbedc49"><div class="ttname"><a href="gpio_8c.html#a7a53baae4da39d5d6f596dcd90deba54a528a0e3cb614e5e10799adb39bbedc49">GPIO_MODE_OUT</a></div><div class="ttdef"><b>Definition:</b> <a href="gpio_8c_source.html#l00018">gpio.c:18</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="gpio_8c_source.html#l00033">33</a> of file <a class="el" href="gpio_8c_source.html">gpio.c</a>.</p>
 
 </div>
 </div>

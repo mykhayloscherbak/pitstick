@@ -1,5 +1,7 @@
 <map id="genRandom" name="genRandom">
 <area shape="rect" id="node2" href="$eeemu_8h.html#a60a9cca550af4e32b3e38afaa67c0571" title="Returns previous saved prng value. " alt="" coords="145,5,257,32"/>
-<area shape="rect" id="node3" href="$eeemu_8h.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="146,56,257,83"/>
-<area shape="rect" id="node4" href="$adc_8h.html#a0d9dbdc793bffa545f5b2c5c0b6dd688" title="returns calculated entropy value " alt="" coords="159,107,244,133"/>
+<area shape="rect" id="node4" href="$eeemu_8h.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="146,56,257,83"/>
+<area shape="rect" id="node6" href="$adc_8h.html#a0d9dbdc793bffa545f5b2c5c0b6dd688" title="returns calculated entropy value " alt="" coords="159,107,244,133"/>
+<area shape="rect" id="node3" href="$eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng. " alt="" coords="305,5,436,32"/>
+<area shape="rect" id="node5" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="308,56,433,83"/>
 </map>

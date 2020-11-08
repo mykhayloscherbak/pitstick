@@ -1,0 +1,9 @@
+<map id="dispYellowStrips" name="dispYellowStrips">
+<area shape="rect" id="node2" href="$led__strip_8h.html#ad10040e6007839c36957a9239584a8e1" title="Displays strips (0 &#45; 5) of selected color. Data is put to the out buffer and actual color will not be..." alt="" coords="172,31,252,57"/>
+<area shape="rect" id="node3" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="425,5,499,32"/>
+<area shape="rect" id="node6" href="$led__strip_8c.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color " alt="" coords="300,56,373,83"/>
+<area shape="rect" id="node4" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="668,31,783,57"/>
+<area shape="rect" id="node5" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="831,31,933,57"/>
+<area shape="rect" id="node7" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="421,56,503,83"/>
+<area shape="rect" id="node8" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="551,56,620,83"/>
+</map>

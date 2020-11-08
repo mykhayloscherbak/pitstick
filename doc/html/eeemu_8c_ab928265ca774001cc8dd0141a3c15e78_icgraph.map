@@ -1,0 +1,11 @@
+<map id="getCurrentSeedIdx" name="getCurrentSeedIdx">
+<area shape="rect" id="node2" href="$eeemu_8c.html#a60a9cca550af4e32b3e38afaa67c0571" title="Returns previous saved prng value. " alt="" coords="184,5,296,32"/>
+<area shape="rect" id="node10" href="$eeemu_8c.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="185,56,295,83"/>
+<area shape="rect" id="node3" href="$prng_8c.html#a3bbf634bae2b6f1165ab662eb6c06aa3" title="gets the next random value of the sequence " alt="" coords="344,31,436,57"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="484,31,571,57"/>
+<area shape="rect" id="node5" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="619,31,701,57"/>
+<area shape="rect" id="node6" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="749,31,835,57"/>
+<area shape="rect" id="node7" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="883,31,1017,57"/>
+<area shape="rect" id="node8" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="1065,31,1197,57"/>
+<area shape="rect" id="node9" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="1245,31,1296,57"/>
+</map>

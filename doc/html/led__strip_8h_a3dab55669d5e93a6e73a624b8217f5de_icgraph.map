@@ -1,0 +1,11 @@
+<map id="blinkTwice" name="blinkTwice">
+<area shape="rect" id="node2" href="$led__control_8c.html#ad473313ad5d686121b36ad25263a4dde" title="Last phase : two green blinks starting from 0 (TSEQ) " alt="" coords="137,5,252,32"/>
+<area shape="rect" id="node8" href="$led__control_8c.html#a6e0b4c2d4e7d80a1b154ce1ada6010f9" title="Red pre&#45;phase is 2 red blinks at &#45;T2. It&#39;s time when the driver must be at the intermediate point..." alt="" coords="165,56,225,83"/>
+<area shape="rect" id="node9" href="$led__control_8c.html#a1718f582c0a850cda87c9e5a7a54950a" title="tlight mode yellow pre&#45;phase, two blinks at the start " alt="" coords="151,107,238,133"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="300,56,391,83"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="439,81,524,108"/>
+<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="572,81,707,108"/>
+<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="755,81,887,108"/>
+<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="935,81,985,108"/>
+<area shape="rect" id="node10" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="304,107,387,133"/>
+</map>

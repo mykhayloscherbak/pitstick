@@ -1,0 +1,12 @@
+<map id="yellowPhase" name="yellowPhase">
+<area shape="rect" id="node2" href="$led__control_8c.html#af54d70c5e3a103efbcc02518609f68e1" title="dispYellowStrips" alt="" coords="149,31,268,57"/>
+<area shape="rect" id="node10" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="153,81,264,108"/>
+<area shape="rect" id="node11" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="163,132,254,159"/>
+<area shape="rect" id="node3" href="$led__strip_8h.html#ad10040e6007839c36957a9239584a8e1" title="Displays strips (0 &#45; 5) of selected color. Data is put to the out buffer and actual color will not be..." alt="" coords="316,31,396,57"/>
+<area shape="rect" id="node4" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="569,5,643,32"/>
+<area shape="rect" id="node7" href="$led__strip_8c.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color " alt="" coords="444,56,517,83"/>
+<area shape="rect" id="node5" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="812,31,927,57"/>
+<area shape="rect" id="node6" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="975,31,1077,57"/>
+<area shape="rect" id="node8" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="565,56,647,83"/>
+<area shape="rect" id="node9" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="695,56,764,83"/>
+</map>

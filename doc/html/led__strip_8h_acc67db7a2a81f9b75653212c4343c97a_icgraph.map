@@ -1,0 +1,11 @@
+<map id="showFullWithInit" name="showFullWithInit">
+<area shape="rect" id="node2" href="$led__control_8c.html#ac8aab3e010262c3352895b466da4660a" title="Green phase of &quot;Podnos&quot; mode. " alt="" coords="172,5,271,32"/>
+<area shape="rect" id="node8" href="$led__control_8c.html#ab1a1c0fe82cf1902597d1d3ecdcb37e4" title="Red phase of &quot;Podnos&quot; mode. " alt="" coords="177,56,265,83"/>
+<area shape="rect" id="node9" href="$led__control_8c.html#ac0df7b189e2e6be916b811e7165df51a" title="Turns led strip off. " alt="" coords="186,107,257,133"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#ab502b8fd1b6d1f2963cde3e25331ba23" title="fills and executes state table for stop&#45;and&#45;go (&quot;Podnos&quot;) mode. " alt="" coords="319,56,415,83"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="463,81,548,108"/>
+<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="596,81,731,108"/>
+<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="779,81,911,108"/>
+<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="959,81,1009,108"/>
+<area shape="rect" id="node10" href="$led__control_8c.html#a1a058721e80572b5dc836be8937e8973" title="Safety Car mode implementation. Safety Car mode is non&#45;setupable endless mode. The sequence can be si..." alt="" coords="333,107,401,133"/>
+</map>

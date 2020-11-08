@@ -61,7 +61,8 @@ $(document).ready(function(){initNavTree('rgbw_8c.html','');});
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">rgbw.c File Reference</div>  </div>
 </div><!--header-->
@@ -102,9 +103,18 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:abb3e8e12703db91c21c08a28caab97c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgbw_8c.html#abb3e8e12703db91c21c08a28caab97c1">ConvertLeds</a> (<a class="el" href="structLed__t.html">Led_t</a> *const Leds)</td></tr>
+<tr class="memdesc:abb3e8e12703db91c21c08a28caab97c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts leds array to serial bit array.  <a href="#abb3e8e12703db91c21c08a28caab97c1">More...</a><br /></td></tr>
+<tr class="separator:abb3e8e12703db91c21c08a28caab97c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b79ba57aa6ca4ca0a3d83f32a727eca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgbw_8c.html#a4b79ba57aa6ca4ca0a3d83f32a727eca">displayStrip</a> (<a class="el" href="structLed__t.html">Led_t</a> *const Leds)</td></tr>
 <tr class="memdesc:a4b79ba57aa6ca4ca0a3d83f32a727eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data to the strip. Number of leds is <a class="el" href="project__conf_8h.html#a99fb83031ce9923c84392b4e92f956b5a1e3c2fa5fc1173d95493e66794a6b69f">NLEDS</a>.  <a href="#a4b79ba57aa6ca4ca0a3d83f32a727eca">More...</a><br /></td></tr>
 <tr class="separator:a4b79ba57aa6ca4ca0a3d83f32a727eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8a49cac0cf96b0f2c7e8bbad357b2551"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgbw_8c.html#a8a49cac0cf96b0f2c7e8bbad357b2551">BitData</a> [<a class="el" href="project__conf_8h.html#a99fb83031ce9923c84392b4e92f956b5a1e3c2fa5fc1173d95493e66794a6b69f">NLEDS</a> *8 *4+<a class="el" href="rgbw_8c.html#a347c73ab43dfdc8ff24ddfdeff8666d6">RESET_BITS</a>+1]</td></tr>
+<tr class="memdesc:a8a49cac0cf96b0f2c7e8bbad357b2551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Led array bits. Contains one byte for bit so each led takes 32bytes. Also <a class="el" href="rgbw_8c.html#a347c73ab43dfdc8ff24ddfdeff8666d6">RESET_BITS</a> are added and one byte to switch the out off.  <a href="#a8a49cac0cf96b0f2c7e8bbad357b2551">More...</a><br /></td></tr>
+<tr class="separator:a8a49cac0cf96b0f2c7e8bbad357b2551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains SK6812 led strip driver implementation. The driver converts rgbw led data to serial array of short and long PWM pulses that are sent by dma to timer2 and use it's ch1 out. </p>
@@ -127,6 +137,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00017">17</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="rgbw_8c_source.html#l00030">ConvertLeds()</a>.</p>
+
 </div>
 </div>
 <a id="a23d0c688fdaa1f9cdab9a121a17d7268"></a>
@@ -142,6 +154,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00018">18</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rgbw_8c_source.html#l00030">ConvertLeds()</a>.</p>
 
 </div>
 </div>
@@ -159,9 +173,66 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00019">19</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="rgbw_8c_source.html#l00030">ConvertLeds()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="abb3e8e12703db91c21c08a28caab97c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3e8e12703db91c21c08a28caab97c1">&#9670;&nbsp;</a></span>ConvertLeds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConvertLeds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLed__t.html">Led_t</a> *const&#160;</td>
+          <td class="paramname"><em>Leds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts leds array to serial bit array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Leds</td><td>input array. <a class="el" href="rgbw_8c.html#a8a49cac0cf96b0f2c7e8bbad357b2551">BitData</a> is used as out </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00030">30</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
+
+<p class="reference">References <a class="el" href="rgbw_8h_source.html#l00020">Led_t::B</a>, <a class="el" href="rgbw_8c_source.html#l00024">BitData</a>, <a class="el" href="rgbw_8c_source.html#l00017">CCR_0</a>, <a class="el" href="rgbw_8c_source.html#l00018">CCR_1</a>, <a class="el" href="rgbw_8h_source.html#l00019">Led_t::G</a>, <a class="el" href="project__conf_8h_source.html#l00013">NLEDS</a>, <a class="el" href="rgbw_8h_source.html#l00018">Led_t::R</a>, <a class="el" href="rgbw_8c_source.html#l00019">RESET_BITS</a>, and <a class="el" href="rgbw_8h_source.html#l00021">Led_t::W</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rgbw_8c_source.html#l00085">displayStrip()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="rgbw_8c_abb3e8e12703db91c21c08a28caab97c1_icgraph.png" border="0" usemap="#rgbw_8c_abb3e8e12703db91c21c08a28caab97c1_icgraph" alt=""/></div>
+<map name="rgbw_8c_abb3e8e12703db91c21c08a28caab97c1_icgraph" id="rgbw_8c_abb3e8e12703db91c21c08a28caab97c1_icgraph">
+<area shape="rect" id="node2" href="rgbw_8c.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="149,5,240,32"/>
+<area shape="rect" id="node3" href="led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="288,5,408,32"/>
+<area shape="rect" id="node4" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="456,5,541,32"/>
+<area shape="rect" id="node5" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="589,5,724,32"/>
+<area shape="rect" id="node6" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="772,5,904,32"/>
+<area shape="rect" id="node7" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="952,5,1003,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a4b79ba57aa6ca4ca0a3d83f32a727eca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b79ba57aa6ca4ca0a3d83f32a727eca">&#9670;&nbsp;</a></span>displayStrip()</h2>
 
@@ -188,17 +259,64 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00085">85</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
 
+<p class="reference">References <a class="el" href="rgbw_8c_source.html#l00024">BitData</a>, <a class="el" href="rgbw_8c_source.html#l00030">ConvertLeds()</a>, <a class="el" href="timer__dma_8c_source.html#l00061">tim2_set_data()</a>, and <a class="el" href="timer__dma_8c_source.html#l00070">tim2_TransferBits()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="led__strip_8c_source.html#l00291">sendDataToStrip()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph.png" border="0" usemap="#rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph" alt=""/></div>
+<map name="rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph" id="rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph">
+<area shape="rect" id="node2" href="rgbw_8c.html#abb3e8e12703db91c21c08a28caab97c1" title="Converts leds array to serial bit array. " alt="" coords="159,5,255,32"/>
+<area shape="rect" id="node3" href="timer__dma_8h.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent. " alt="" coords="155,56,259,83"/>
+<area shape="rect" id="node4" href="timer__dma_8h.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer. " alt="" coords="144,107,269,133"/>
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph.png" border="0" usemap="#rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph" alt=""/></div>
 <map name="rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph" id="rgbw_8c_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph">
 <area shape="rect" id="node2" href="led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="144,5,264,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="312,5,397,32"/>
+<area shape="rect" id="node4" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="445,5,580,32"/>
+<area shape="rect" id="node5" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="628,5,760,32"/>
+<area shape="rect" id="node6" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="808,5,859,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a8a49cac0cf96b0f2c7e8bbad357b2551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a49cac0cf96b0f2c7e8bbad357b2551">&#9670;&nbsp;</a></span>BitData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BitData[<a class="el" href="project__conf_8h.html#a99fb83031ce9923c84392b4e92f956b5a1e3c2fa5fc1173d95493e66794a6b69f">NLEDS</a> *8 *4+<a class="el" href="rgbw_8c.html#a347c73ab43dfdc8ff24ddfdeff8666d6">RESET_BITS</a>+1]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Led array bits. Contains one byte for bit so each led takes 32bytes. Also <a class="el" href="rgbw_8c.html#a347c73ab43dfdc8ff24ddfdeff8666d6">RESET_BITS</a> are added and one byte to switch the out off. </p>
+
+<p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00024">24</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rgbw_8c_source.html#l00030">ConvertLeds()</a>, and <a class="el" href="rgbw_8c_source.html#l00085">displayStrip()</a>.</p>
 
 </div>
 </div>

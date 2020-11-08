@@ -1,0 +1,14 @@
+<map id="Init" name="Init">
+<area shape="rect" id="node2" href="$adc_8h.html#ad5f7fb41187df370fba496edbf10778d" title="Initialization of ADC+DMA. " alt="" coords="116,5,187,32"/>
+<area shape="rect" id="node3" href="$buttons_8h.html#adb18d3583167cb98279e029bfe1c696b" title="Initializes the buttons driver. " alt="" coords="105,56,197,83"/>
+<area shape="rect" id="node4" href="$clock_8h.html#a04d04902cf9bf2933581d1813ca63e88" title="Inits HSE as a main clock. PLL is setup to *8. " alt="" coords="93,107,209,133"/>
+<area shape="rect" id="node5" href="$eeemu_8h.html#a35b1b8e39cb6a64f323a282e52fd7152" title="Eeprom emulation subsystem init. It finds the index of the last saved config. " alt="" coords="108,157,195,184"/>
+<area shape="rect" id="node7" href="$gpio_8h.html#aec6c2e01969e7a086f7dc11853dad378" title="Gpio_Init" alt="" coords="114,208,189,235"/>
+<area shape="rect" id="node8" href="$clock_8h.html#a99ae53ef20dfaff65b1ca3b4687771bf" title="Inits systick timer interrupt for 1ms period. " alt="" coords="106,259,197,285"/>
+<area shape="rect" id="node10" href="$timer__dma_8h.html#af548462211be71059bf105044cde180f" title="Initialization of tim2+dma. " alt="" coords="115,309,187,336"/>
+<area shape="rect" id="node13" href="$watchdog_8h.html#a6f66e0867d1a789e988807ead66d49c5" title="Initialises and start wdt. Timeout is 1s. " alt="" coords="100,360,203,387"/>
+<area shape="rect" id="node6" href="$eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block " alt="" coords="295,157,342,184"/>
+<area shape="rect" id="node9" href="$clock_8c.html#ab5e09814056d617c521549e542639b7e" title="SysTick_Handler" alt="" coords="257,259,380,285"/>
+<area shape="rect" id="node11" href="$timer__dma_8c.html#a40f695d0e243e389984be5eb1847640a" title="Inits pin to which the strip is connected as af push&#45;pull. " alt="" coords="287,309,350,336"/>
+<area shape="rect" id="node12" href="$gpio_8h.html#ad40d1f14af7839ca10e2a3cbf7ac8c7a" title="returns pin and port for selected AF GPIO " alt="" coords="428,309,579,336"/>
+</map>

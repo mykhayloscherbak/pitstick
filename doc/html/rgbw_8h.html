@@ -76,8 +76,6 @@ $(document).ready(function(){initNavTree('rgbw_8h.html','');});
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="rgbw_8h__incl.png" border="0" usemap="#rgbw_8h" alt=""/></div>
-<map name="rgbw_8h" id="rgbw_8h">
-</map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -139,15 +137,33 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rgbw_8c_source.html#l00085">85</a> of file <a class="el" href="rgbw_8c_source.html">rgbw.c</a>.</p>
 
+<p class="reference">References <a class="el" href="rgbw_8c_source.html#l00024">BitData</a>, <a class="el" href="rgbw_8c_source.html#l00030">ConvertLeds()</a>, <a class="el" href="timer__dma_8c_source.html#l00061">tim2_set_data()</a>, and <a class="el" href="timer__dma_8c_source.html#l00070">tim2_TransferBits()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="led__strip_8c_source.html#l00291">sendDataToStrip()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph.png" border="0" usemap="#rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph" alt=""/></div>
+<map name="rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph" id="rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_cgraph">
+<area shape="rect" id="node2" href="rgbw_8c.html#abb3e8e12703db91c21c08a28caab97c1" title="Converts leds array to serial bit array. " alt="" coords="159,5,255,32"/>
+<area shape="rect" id="node3" href="timer__dma_8h.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent. " alt="" coords="155,56,259,83"/>
+<area shape="rect" id="node4" href="timer__dma_8h.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer. " alt="" coords="144,107,269,133"/>
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph.png" border="0" usemap="#rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph" alt=""/></div>
 <map name="rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph" id="rgbw_8h_a4b79ba57aa6ca4ca0a3d83f32a727eca_icgraph">
 <area shape="rect" id="node2" href="led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="144,5,264,32"/>
+<area shape="rect" id="node3" href="led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="312,5,397,32"/>
+<area shape="rect" id="node4" href="bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="445,5,580,32"/>
+<area shape="rect" id="node5" href="bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="628,5,760,32"/>
+<area shape="rect" id="node6" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="808,5,859,32"/>
 </map>
 </div>
 

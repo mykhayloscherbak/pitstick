@@ -6,5 +6,6 @@ var clock_8c =
     [ "ReadTimer", "clock_8c.html#a0916a7747db1d64daf21e3862c550fb0", null ],
     [ "ResetTimer", "clock_8c.html#aa9cb67dffbf08af7059377c84e10d7e4", null ],
     [ "SysTick_Handler", "clock_8c.html#ab5e09814056d617c521549e542639b7e", null ],
-    [ "Systick_Init", "clock_8c.html#a99ae53ef20dfaff65b1ca3b4687771bf", null ]
+    [ "Systick_Init", "clock_8c.html#a99ae53ef20dfaff65b1ca3b4687771bf", null ],
+    [ "Counter", "clock_8c.html#a042bade7288fcb4e8693692ef39cc973", null ]
 ];

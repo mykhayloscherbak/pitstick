@@ -1,0 +1,8 @@
+<map id="tim2_TransferBits" name="tim2_TransferBits">
+<area shape="rect" id="node2" href="$rgbw_8c.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="179,5,269,32"/>
+<area shape="rect" id="node3" href="$led__strip_8c.html#a57ecf691227bc0c041049ee7324cbd06" title="Sends the led buffer to the led strip. " alt="" coords="317,5,437,32"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="485,5,571,32"/>
+<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="619,5,753,32"/>
+<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="801,5,933,32"/>
+<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="981,5,1032,32"/>
+</map>

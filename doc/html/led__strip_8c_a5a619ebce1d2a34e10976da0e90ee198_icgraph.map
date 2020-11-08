@@ -1,0 +1,13 @@
+<map id="displayNumber" name="displayNumber">
+<area shape="rect" id="node2" href="$led__control_8c.html#a68192aa25ed535083ad7fc1c1c41f308" title="displayPodnosModeTime" alt="" coords="163,5,331,32"/>
+<area shape="rect" id="node8" href="$led__control_8c.html#afdea84b3ae64dec3eebe9e3b0a920346" title="displayT1" alt="" coords="207,56,286,83"/>
+<area shape="rect" id="node9" href="$led__control_8c.html#a002107c76047cbf8466727945864da75" title="displayT2" alt="" coords="207,107,286,133"/>
+<area shape="rect" id="node10" href="$led__control_8c.html#ac9eb710bcb5611edfd54dbacd868c975" title="displayTlightMax" alt="" coords="187,157,307,184"/>
+<area shape="rect" id="node11" href="$led__control_8c.html#a6e7d2c4e1d1543be158e3b91c6aa1b18" title="displayTlightMin" alt="" coords="189,208,305,235"/>
+<area shape="rect" id="node12" href="$led__control_8c.html#a47842ce67bfc0b2605cb6d1106c6ab20" title="displayTSEQ" alt="" coords="197,259,296,285"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="379,132,436,159"/>
+<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="484,132,569,159"/>
+<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="617,132,752,159"/>
+<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="800,132,932,159"/>
+<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="980,132,1031,159"/>
+</map>

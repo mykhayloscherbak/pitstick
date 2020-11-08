@@ -1,3 +1,12 @@
 <map id="eeemuGetValue" name="eeemuGetValue">
-<area shape="rect" id="node2" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="168,5,253,32"/>
+<area shape="rect" id="node2" href="$led__control_8c.html#a8d1b13c0c1b22ccd35ecff1816e5e3d0" title="all config mode processing is done here " alt="" coords="325,5,382,32"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="443,132,528,159"/>
+<area shape="rect" id="node7" href="$led__control_8c.html#a8570b3bfcea5661603159d157f7dca1e" title="Lock mode. Is shown at the end of all sequences (config, tlightMode, etc) to show that the stick is o..." alt="" coords="330,107,377,133"/>
+<area shape="rect" id="node8" href="$led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="171,157,261,184"/>
+<area shape="rect" id="node9" href="$led__control_8c.html#ab502b8fd1b6d1f2963cde3e25331ba23" title="fills and executes state table for stop&#45;and&#45;go (&quot;Podnos&quot;) mode. " alt="" coords="168,208,264,235"/>
+<area shape="rect" id="node10" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="312,259,395,285"/>
+<area shape="rect" id="node11" href="$led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="173,309,259,336"/>
+<area shape="rect" id="node4" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="576,132,711,159"/>
+<area shape="rect" id="node5" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="759,132,891,159"/>
+<area shape="rect" id="node6" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="939,132,989,159"/>
 </map>

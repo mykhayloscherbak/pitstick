@@ -13,6 +13,7 @@ var buttons_8c =
     ] ],
     [ "Button_Process", "buttons_8c.html#aa05d0d35e188d7130915f19f7c6400e9", null ],
     [ "Buttons_Init", "buttons_8c.html#adb18d3583167cb98279e029bfe1c696b", null ],
+    [ "ButtonState", "buttons_8c.html#a79e79c061a60875904a364a3e8daed44", null ],
     [ "IsLongPressed", "buttons_8c.html#ac3cb06a3761589b05a9d31c73a5a0f52", null ],
     [ "IsPressed", "buttons_8c.html#a2e8d9dc0a729a8bf64ee62a334fcea72", null ],
     [ "IsReleased", "buttons_8c.html#a65b46bd57c47e8c0dc32038b82f1c03e", null ],
@@ -20,5 +21,6 @@ var buttons_8c =
     [ "IsSteadyPressed", "buttons_8c.html#a7ccb2388360390b69361bec7392381a2", null ],
     [ "IsSteadyReleased", "buttons_8c.html#a514c5666f949bf77469a4be0f0321403", null ],
     [ "WaitButtonPress", "buttons_8c.html#a6ad01ee4495cd64633962ba026f1859b", null ],
-    [ "WaitButtonRelease", "buttons_8c.html#ac2ff9911ff3cc93371805c11bc1473b9", null ]
+    [ "WaitButtonRelease", "buttons_8c.html#ac2ff9911ff3cc93371805c11bc1473b9", null ],
+    [ "Buttons", "buttons_8c.html#a61677aed9272f85850946093a2b5e069", null ]
 ];

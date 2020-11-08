@@ -1,0 +1,22 @@
+<map id="scMode" name="scMode">
+<area shape="rect" id="node2" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="135,5,245,32"/>
+<area shape="rect" id="node3" href="$led__control_8c.html#a4c88b47551cd8a4dca011dd46f67d132" title="phase function processor. Calls needed phase function every time this function is called starting wit..." alt="" coords="121,56,259,83"/>
+<area shape="rect" id="node4" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="145,107,235,133"/>
+<area shape="rect" id="node5" href="$led__control_8c.html#a73dee7b3649bed775fbc5dc2fd9049b3" title="This is one of safety car script stages. It shows 1,2,4,5 lights using YELLOW color. " alt="" coords="149,309,231,336"/>
+<area shape="rect" id="node12" href="$led__control_8c.html#a285e3f38c686787e3a99a1dd9a028da3" title="This is one of safety car script stages. It shows 1,5 lights using YELLOW color. " alt="" coords="157,208,223,235"/>
+<area shape="rect" id="node13" href="$led__control_8c.html#ae4c2238467a12abf90170edf2d2f0df7" title="This is one of safety car script stages. It shows 2,3,4 lights using YELLOW color. " alt="" coords="153,259,227,285"/>
+<area shape="rect" id="node14" href="$led__control_8c.html#ac0df7b189e2e6be916b811e7165df51a" title="Turns led strip off. " alt="" coords="325,183,396,209"/>
+<area shape="rect" id="node17" href="$led__control_8c.html#a46249a7d12af274d83728d295a34d97e" title="shows the current bat voltage " alt="" coords="145,360,235,387"/>
+<area shape="rect" id="node6" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="323,308,398,335"/>
+<area shape="rect" id="node9" href="$led__strip_8h.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color " alt="" coords="324,257,397,284"/>
+<area shape="rect" id="node7" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="771,249,885,276"/>
+<area shape="rect" id="node8" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="933,249,1036,276"/>
+<area shape="rect" id="node10" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="481,300,563,327"/>
+<area shape="rect" id="node11" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="641,300,711,327"/>
+<area shape="rect" id="node15" href="$led__strip_8h.html#acc67db7a2a81f9b75653212c4343c97a" title="Shows total stick with the same color if init is nonzero. Does nothing else. " alt="" coords="463,185,581,212"/>
+<area shape="rect" id="node16" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="639,197,713,224"/>
+<area shape="rect" id="node18" href="$led__strip_8h.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="481,352,563,379"/>
+<area shape="rect" id="node19" href="$led__control_8c.html#a711e2a55c7fc53596f8c6a5864c1f0e0" title="Returns the color corresponding to current battery voltage. Battery needs to be charged immediately i..." alt="" coords="307,409,415,436"/>
+<area shape="rect" id="node20" href="$adc_8h.html#a156057cb0f4492d54bad69d4bfdad090" title="returns millivolts measuring of vbat " alt="" coords="463,409,581,436"/>
+<area shape="rect" id="node21" href="$adc_8c.html#a23f145378c29e2599d0da09d07a082a2" title="raw averaged value of adc channel reading " alt="" coords="629,409,723,436"/>
+</map>

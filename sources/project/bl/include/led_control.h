@@ -1,6 +1,6 @@
 /**
  * @file led_control.h
- * @date 7-11-2019
+ * @date 7-11-2020
  * @brief Contains function that controls led strip
  */
 #ifndef SOURCES_PROJECT_BL_INCLUDE_LED_CONTROL_H_

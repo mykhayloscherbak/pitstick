@@ -19,8 +19,8 @@
  * + Green  : Tlight max
  * + Red    : Podnos phase duration
  *
- * @date 12-12-2019
- * @version 1.12
+ * @date 08-11-2020
+ * @version 1.20
  */
 #include <adc.h>
 #include <stdint.h>
@@ -964,8 +964,8 @@ enum
 };
 /**
  * @brief Prepares and executes phase table for the pit stop mode
- * @param ms millisecons from the start
- * @param nextState out parameter. Becomes nonzero when all table is processed
+ * @param[in] ms millisecons from the start
+ * @param[out] nextState out parameter. Becomes nonzero when all table is processed
  * @return nonzero means the led strip must be updated
  */
 static uint8_t pitStopCalc(uint32_t const ms,uint8_t * const nextState)
@@ -1144,6 +1144,13 @@ static uint8_t podnosMode(uint32_t const ms,uint8_t * const nextState)
   return processPhaseTable(desc,nextState,ms);
 }
 
+/**
+ * @fn uint8_t show234(const uint8_t)
+ * @brief This is one of safety car script stages. It shows 2,3,4 lights using @ref YELLOW color
+ *
+ * @param init is nonzero at the first run
+ * @return nonzero if led strip must be updated
+ */
 static uint8_t show234(const uint8_t init)
 {
 	uint8_t changed = 0;
@@ -1158,7 +1165,13 @@ static uint8_t show234(const uint8_t init)
 	return changed;
 }
 
-
+/**
+ * @fn uint8_t show1245(const uint8_t)
+ * @brief This is one of safety car script stages. It shows 1,2,4,5 lights using @ref YELLOW color
+ *
+ * @param init is nonzero at the first run
+ * @return nonzero if led strip must be updated
+ */
 static uint8_t show1245(const uint8_t init)
 {
 	uint8_t changed = 0;
@@ -1174,7 +1187,13 @@ static uint8_t show1245(const uint8_t init)
 	return changed;
 }
 
-
+/**
+ * @fn uint8_t show15(const uint8_t)
+ * @brief This is one of safety car script stages. It shows 1,5 lights using @ref YELLOW color
+ *
+ * @param init is nonzero at the first run
+ * @return nonzero if led strip must be updated
+ */
 static uint8_t show15(const uint8_t init)
 {
 	uint8_t changed = 0;
@@ -1188,11 +1207,25 @@ static uint8_t show15(const uint8_t init)
 	return changed;
 }
 
-
+/**
+ * @fn uint8_t showOff(const uint8_t)
+ * @brief Turns led strip off
+ *
+ * @param init is nonzero at the first run
+ * @return nonzero if led strip must be updated
+ *
+ */
 static uint8_t showOff(const uint8_t init)
 {
 	return showFullWithInit(BLACK,init);
 }
+
+/**
+ * @fn uint8_t scMode(const uint32_t)
+ * @brief Safety Car mode implementation. Safety Car mode is non-setupable endless mode. The sequence can be simply read from the desc variable
+ * @param[in] ms milliseconds for start
+ * @return nonzero if led strip must be updated
+ */
 
 static uint8_t scMode(uint32_t const ms)
 {
@@ -1219,6 +1252,7 @@ static uint8_t scMode(uint32_t const ms)
       {125 * S / 10, showOff},
       {130 * S / 10, NULL}
   };
+
   static States_t state = STATE_IDLE;
   static uint32_t timer = 0;
   uint8_t tableEnded;

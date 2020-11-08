@@ -1,0 +1,4 @@
+<map id="ledControl_wrapper" name="ledControl_wrapper">
+<area shape="rect" id="node2" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="188,5,320,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="368,5,419,32"/>
+</map>

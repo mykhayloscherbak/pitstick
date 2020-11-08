@@ -1,0 +1,20 @@
+<map id="tlightTMain" name="tlightTMain">
+<area shape="rect" id="node2" href="$led__control_8c.html#abef6e54a57f58fde5f3d145ad7d027e0" title="dispRedStrips" alt="" coords="145,5,249,32"/>
+<area shape="rect" id="node10" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="140,56,255,83"/>
+<area shape="rect" id="node11" href="$prng_8h.html#a3bbf634bae2b6f1165ab662eb6c06aa3" title="Generates a pseudo&#45;random number in range [min..max] Result is stored in the flash to be used next ti..." alt="" coords="151,107,243,133"/>
+<area shape="rect" id="node17" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="142,157,253,184"/>
+<area shape="rect" id="node18" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="152,208,243,235"/>
+<area shape="rect" id="node19" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="771,183,845,209"/>
+<area shape="rect" id="node3" href="$led__strip_8h.html#ad10040e6007839c36957a9239584a8e1" title="Displays strips (0 &#45; 5) of selected color. Data is put to the out buffer and actual color will not be..." alt="" coords="319,5,399,32"/>
+<area shape="rect" id="node4" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="645,5,719,32"/>
+<area shape="rect" id="node7" href="$led__strip_8c.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color " alt="" coords="491,56,565,83"/>
+<area shape="rect" id="node5" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="893,56,1008,83"/>
+<area shape="rect" id="node6" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="1056,56,1159,83"/>
+<area shape="rect" id="node8" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="641,56,723,83"/>
+<area shape="rect" id="node9" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="773,56,843,83"/>
+<area shape="rect" id="node12" href="$eeemu_8h.html#a60a9cca550af4e32b3e38afaa67c0571" title="Returns previous saved prng value. " alt="" coords="303,56,415,83"/>
+<area shape="rect" id="node14" href="$adc_8h.html#a0d9dbdc793bffa545f5b2c5c0b6dd688" title="returns calculated entropy value " alt="" coords="316,107,401,133"/>
+<area shape="rect" id="node15" href="$eeemu_8h.html#abb0f1f94b8cc05907f5c45457db00fe8" title="Saves current prng. " alt="" coords="303,157,414,184"/>
+<area shape="rect" id="node13" href="$eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng. " alt="" coords="463,107,593,133"/>
+<area shape="rect" id="node16" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="465,157,591,184"/>
+</map>
