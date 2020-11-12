@@ -92,6 +92,16 @@
  * Vbat_Show --> Lock
  * Lock --> [*]
  * @enduml
+ * @startuml
+ * header
+ * Safety Car mode
+ * endheader
+ * [*] --> Vbat_Show
+ * Vbat_Show : Duration is 1 sec
+ * Vbat_Show --> Blinking_Mode
+ * Blinking_Mode : Endless blinking safety car pattern
+ * Blinking_Mode --> [*]
+ * @enduml
  */
 #include "bll.h"
 #include "clock.h"

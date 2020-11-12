@@ -1,3 +1,7 @@
+2020-11-13  Mykhaylo Shcherbak  <mikl74@yahoo.com>
+
+	* sources/project/main.c: Uml diagram added for Safety Car mode
+
 2019-12-12  Mykhaylo Shcherbak  <mikl74@yahoo.com>
 	
 	* sources\project\bl\src\led_control.c  
