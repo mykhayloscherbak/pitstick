@@ -5,6 +5,7 @@
  *        + Traffic light for autoslalom
  *        + Rally stop-and-go ("Podnos") mode
  *        + Safety Car ("Zvyagin") mode
+ *        + kart 2h mode
  *        + Config mode
  *        .
  *
@@ -19,8 +20,8 @@
  * + Green  : Tlight max
  * + Red    : Podnos phase duration
  *
- * @date 08-11-2020
- * @version 1.20
+ * @date 30-08-2021
+ * @version 1.30
  */
 #include <adc.h>
 #include <stdint.h>
@@ -35,7 +36,8 @@
 #include "prng.h"
 #include "led_strip.h"
 
-static const uint16_t S = 1000; /**< millisecons per second */
+static const uint16_t S = 1000u; /**< millisecons per second */
+static const uint32_t MIN = S * 60u; /**< milliseconds per minute */
 
 /**
  * @brief Main state machine states
@@ -48,6 +50,7 @@ typedef enum
 	STATE_TLIGHT,                   /**< Autoslalom mode. Switching between modes is done by the second config frame */
 	STATE_PODNOS,                   /**< Stop-and-go ("Podnos") mode */
 	STATE_SC,                       /**< Safety car mode */
+	STATE_K2H,					    /**< Karting 2H mode */
 	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previous modes and is needed to remind that the stick is not turned off */
 	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the configuration  mode and mode processor is in the idle state */
 	STATE_CONFIG_PARAM_PRESSED,     /**< Button is pressed while parameter is displayed */
@@ -66,6 +69,7 @@ typedef enum
 	STATE_CONFIG_TLIGHT_MAX,        /**< Configuring maximal time for the last phase in tlingt mode. 1/10s resolution */
 	STATE_CONFIG_PODNOS_MODE,       /**< Set stop-and-go mode duration */
 	STATE_CONFIG_SC_END,            /**< End of safety car mode config */
+	STATE_CONFIG_K2H_END,           /**< End of Kartig 2h mode config */
 	STATE_CONFIG_END,               /**< End of configuration process */
 	STATE_LOCK_START,               /**< Start lock mode. Lock mode is turned on after all operations are complete to remimd switchig the stick off */
 	STATE_LOCK_ON,                  /**< Lock mode. Red light+battery power is on */
@@ -73,9 +77,14 @@ typedef enum
 	STATE_GB_GREEN,                 /**< Green->black phase. Green leds are on */
 	STATE_GB_BLACK,                 /**< Green->black phase. All is off */
 	STATE_TLIGHT_SLALOM,            /**< Slalom mode start */
-	STATE_TLIGHT_SHOW_RANDOM,        /**< Random pause after the fifth strip is on */
+	STATE_TLIGHT_SHOW_RANDOM,       /**< Random pause after the fifth strip is on */
 	STATE_SC_SHOW_POWER,            /**< First phase of Safety Car mode, showing battery level */
-	STATE_SC_MAIN                   /**< Main phase of safety car mode */
+	STATE_SC_MAIN,                  /**< Main phase of safety car mode */
+	STATE_K2H_BLACK,                /**< Black phase of kart 2h mode. Power indicator only is shown */
+	STATE_K2H_ALL_GREEN,            /**< First blink at pitsop window open - 4 times all green at 0.5Hz -8s */
+	STATE_K2H_ONE_BY_ONE_GREEN,     /**< Next 472s = rows 0-58 4 times at 0.5Hz each */
+	STATE_K2H_ONE_BY_ONE_BLUE,      /**< Rows 59-71 5 times 0.5Hz each */
+	STATE_K2H_ALL_RED               /**< After 10 minutes 4 times 0.5Hz each, all red */
 }States_t;
 
 /**
@@ -87,6 +96,7 @@ typedef enum
 	MODE_TLIGHT, /**< Slalom traffic light mode */
 	MODE_PODNOS, /**< Mode for rally stop-and-go */
 	MODE_SC,     /**< Safety car mode */
+	MODE_KART2H, /**< Karting 2h mode */
 	MODE_TOTAL   /**< Total number of modes */
 } Working_Mode_t;
 
@@ -191,6 +201,16 @@ static void dispModePattern(const uint8_t value)
 	case MODE_SC:
 		put2pixels(YELLOW,0);
 		put2pixels(YELLOW,4);
+		break;
+	case MODE_KART2H:
+		for (uint8_t i = 0; i < 10; i++)
+		{
+			put2pixels(GREEN,i);
+		}
+		for (uint8_t i = 10; i < 13; i++)
+		{
+			put2pixels(BLUE,i);
+		}
 		break;
 	default:
 		break;
@@ -476,6 +496,11 @@ static uint8_t  config(uint8_t * const nextState)
     	        state = STATE_CONFIG_SC_END;
     	        noParam = !0;
     			break;
+    		case MODE_KART2H:
+    	        state = STATE_CONFIG_K2H_END;
+    	        noParam = !0;
+    			break;
+
     		}
     		if (noParam == 0)
     		{
@@ -632,6 +657,7 @@ static uint8_t  config(uint8_t * const nextState)
     	}
     	break;
 
+    case STATE_CONFIG_K2H_END:
     case STATE_CONFIG_SC_END:
         if (saved == 0)
         {
@@ -1285,6 +1311,65 @@ static uint8_t scMode(uint32_t const ms)
   return changed;
 }
 
+static const uint32_t k2hOnMs = 300;
+static const uint32_t k2hOffMs = 1700;
+static const uint32_t workingTime = 105 * MIN + 30 * S;
+
+static uint8_t dark15mPhase(const uint8_t init)
+{
+	static uint8_t onPhase = 0;
+	static uint32_t timer = 0;
+	uint8_t changed = 0;
+	if ( 0 != init )
+	{
+		onPhase = !0;
+		ResetTimer(&timer);
+		showPower(!0);
+		changed = !0;
+	}
+	else
+	{
+		if (0 != onPhase)
+		{
+			if (IsExpiredTimer(&timer,k2hOnMs) != 0)
+			{
+				showFull(BLACK);
+				ResetTimer(&timer);
+				onPhase = 0;
+				changed = !0;
+			}
+		}
+		else
+		{
+			if (IsExpiredTimer(&timer,k2hOffMs) != 0)
+			{
+				showPower(!0);
+				ResetTimer(&timer);
+				onPhase = !0;
+				changed = !0;
+			}
+		}
+	}
+	return changed;
+}
+
+static uint8_t k2hMode(uint32_t const ms,uint8_t * const nextState)
+{
+	const Phase_desc_t desc[] =
+	{
+			{0 * S / 10,dark15mPhase},
+			{1 * MIN / 10, NULL}
+	};
+	uint8_t tableEnded = 0;
+	static uint32_t currentMs = 0;
+	const uint8_t changed = processPhaseTable(desc,&tableEnded,ms - currentMs);
+	if (tableEnded != 0)
+	{
+		currentMs = ms;
+	}
+	*nextState = ms > workingTime;
+	return changed;
+}
 
 /**
  * @brief Lock mode. Is shown at the end of all sequences (@ref config, @ref tlightMode, etc) to show that the stick is on and remind to switch it off
@@ -1375,6 +1460,9 @@ void led_control(uint32_t const ms)
 			case MODE_SC:
 				state = STATE_SC;
 				break;
+			case MODE_KART2H:
+				state = STATE_K2H;
+				break;
 			default:
 				state = STATE_LOCK;
 				break;
@@ -1411,6 +1499,13 @@ void led_control(uint32_t const ms)
 	  break;
 	case STATE_SC: /* This state never ends */
 		changed = scMode(ms);
+		break;
+	case STATE_K2H:
+		changed = k2hMode(ms,&nextState);
+		if (nextState != 0)
+		{
+			state = STATE_LOCK;
+		}
 		break;
 
 	case STATE_LOCK:
