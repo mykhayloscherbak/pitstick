@@ -80,11 +80,12 @@ typedef enum
 	STATE_TLIGHT_SHOW_RANDOM,       /**< Random pause after the fifth strip is on */
 	STATE_SC_SHOW_POWER,            /**< First phase of Safety Car mode, showing battery level */
 	STATE_SC_MAIN,                  /**< Main phase of safety car mode */
-	STATE_K2H_BLACK,                /**< Black phase of kart 2h mode. Power indicator only is shown */
-	STATE_K2H_ALL_GREEN,            /**< First blink at pitsop window open - 4 times all green at 0.5Hz -8s */
-	STATE_K2H_ONE_BY_ONE_GREEN,     /**< Next 472s = rows 0-58 4 times at 0.5Hz each */
-	STATE_K2H_ONE_BY_ONE_BLUE,      /**< Rows 59-71 5 times 0.5Hz each */
-	STATE_K2H_ALL_RED               /**< After 10 minutes 4 times 0.5Hz each, all red */
+	STATE_K2H_BLACK_5MIN,           /**< Black phase of kart 2h mode at startup. Power indicator only is shown */
+	STATE_K2H_MAIN                 /**< Main phase. Table is used. */
+//	STATE_K2H_ALL_GREEN,            /**< First blink at pitsop window open - 4 times all green at 0.5Hz -8s */
+//	STATE_K2H_ONE_BY_ONE_GREEN,     /**< Next 472s = rows 0-58 4 times at 0.5Hz each */
+//	STATE_K2H_ONE_BY_ONE_BLUE,      /**< Rows 59-71 5 times 0.5Hz each */
+//	STATE_K2H_ALL_RED               /**< After 10 minutes 4 times 0.5Hz each, all red */
 }States_t;
 
 /**
@@ -1312,54 +1313,156 @@ static uint8_t scMode(uint32_t const ms)
 }
 
 static const uint32_t k2hOnMs = 300;
-static const uint32_t k2hOffMs = 1700;
+static const uint32_t k2hOffMs = 700;
+static const uint32_t k2hOnDarkMs = 200;
+static const uint32_t k2hOffDarkMs = 1800;
+static const uint32_t greenPixelMs = 8 * S;
+static const uint32_t bluePixelMs = 10 * S;
 static const uint32_t workingTime = 105 * MIN + 30 * S;
 
-static uint8_t dark15mPhase(const uint8_t init)
+typedef struct
 {
-	static uint8_t onPhase = 0;
-	static uint32_t timer = 0;
-	uint8_t changed = 0;
-	if ( 0 != init )
-	{
-		onPhase = !0;
-		ResetTimer(&timer);
-		showPower(!0);
-		changed = !0;
-	}
-	else
-	{
-		if (0 != onPhase)
-		{
-			if (IsExpiredTimer(&timer,k2hOnMs) != 0)
-			{
-				showFull(BLACK);
-				ResetTimer(&timer);
-				onPhase = 0;
-				changed = !0;
-			}
-		}
-		else
-		{
-			if (IsExpiredTimer(&timer,k2hOffMs) != 0)
-			{
-				showPower(!0);
-				ResetTimer(&timer);
-				onPhase = !0;
-				changed = !0;
-			}
-		}
-	}
-	return changed;
+    uint32_t on;
+    uint32_t off;
+    pPhase_t pPhase;
+} Blink_t;
+
+static uint8_t blink(const uint8_t init, const Blink_t * const _blink)
+{
+    static uint8_t onPhase = 0;
+    static uint32_t timer = 0;
+    uint8_t changed = 0;
+    if ( 0 != init )
+    {
+        onPhase = !0;
+        ResetTimer(&timer);
+        changed = _blink->pPhase(!0);
+    }
+    else
+    {
+        if (0 != onPhase)
+        {
+            changed = _blink->pPhase(0);
+            if (IsExpiredTimer(&timer,_blink->on) != 0)
+            {
+                showFull(BLACK);
+                ResetTimer(&timer);
+                onPhase = 0;
+                changed = !0;
+            }
+        }
+        else
+        {
+            if (IsExpiredTimer(&timer,_blink->off) != 0)
+            {
+                ResetTimer(&timer);
+                onPhase = !0;
+                changed = _blink->pPhase(!0);
+            }
+        }
+    }
+    return changed;
+}
+
+static uint8_t darkPhase(const uint8_t _init)
+{
+    static const Blink_t blinkDesc =
+    {
+            .on = k2hOnDarkMs,
+            .off = k2hOffDarkMs,
+            .pPhase = showPower
+    };
+	return blink(_init,&blinkDesc);
+}
+
+static uint8_t allGreen(const uint8_t _init)
+{
+    return showFullWithInit(GREEN,_init);
+}
+
+static uint8_t allGreenBlink(const uint8_t _init)
+{
+    static const Blink_t blinkDesc =
+    {
+            .on = k2hOnMs,
+            .off = k2hOffMs,
+            .pPhase = allGreen
+    };
+    return blink(_init, &blinkDesc);
+}
+
+
+
+static uint8_t oneByOneGreen(const uint8_t _init)
+{
+    static uint8_t onPhase = 0;
+    static uint32_t blinktimer = 0;
+    static uint32_t nextPostimer = 0;
+    static uint8_t pos = 0;
+    uint8_t changed = 0;
+    if ( 0 != _init )
+    {
+        onPhase = !0;
+        ResetTimer(&blinktimer);
+        ResetTimer(&nextPostimer);
+        changed = !0;
+        pos = 0;
+        showFull(BLACK);
+        put2pixels(BLUE,NLEDS - 1 - 59);
+        put2pixels(GREEN,NLEDS - 1 - pos);
+    }
+    else
+    {
+        if (IsExpiredTimer(&nextPostimer,greenPixelMs) != 0)
+        {
+            pos = ( pos >= 58 ) ? 58 : pos + 1;
+            onPhase = !0;
+            ResetTimer(&blinktimer);
+            ResetTimer(&nextPostimer);
+            changed = !0;
+            showFull(BLACK);
+            put2pixels(BLUE,NLEDS - 1 - 59);
+            put2pixels(GREEN,NLEDS - 1 - pos);
+        }
+        else
+        {
+        if (0 != onPhase)
+        {
+            if (IsExpiredTimer(&blinktimer,k2hOnMs) != 0)
+            {
+                showFull(BLACK);
+                onPhase = 0;
+                changed = !0;
+            }
+        }
+        else
+        {
+            if (IsExpiredTimer(&blinktimer,k2hOffMs) != 0)
+            {
+                ResetTimer(&blinktimer);
+                onPhase = !0;
+                changed = !0;
+                showFull(BLACK);
+                put2pixels(BLUE,NLEDS - 1 - 59);
+                put2pixels(GREEN,NLEDS - 1 - pos);
+            }
+        }
+        }
+    }
+    return changed;
+}
+
 }
 
 static uint8_t k2hMode(uint32_t const ms,uint8_t * const nextState)
 {
 	const Phase_desc_t desc[] =
 	{
-			{0 * S / 10,dark15mPhase},
-			{1 * MIN / 10, NULL}
+			{0 * S / 10, darkPhase},
+			{15 * MIN / 10, allGreenBlink},
+			{8 * S / 10, NULL}
 	};
+	static States_t state = STATE_K2H_BLACK_5MIN;
 	uint8_t tableEnded = 0;
 	static uint32_t currentMs = 0;
 	const uint8_t changed = processPhaseTable(desc,&tableEnded,ms - currentMs);
