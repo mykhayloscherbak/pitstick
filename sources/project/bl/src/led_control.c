@@ -1312,13 +1312,15 @@ static uint8_t scMode(uint32_t const ms)
   return changed;
 }
 
-static const uint32_t k2hOnMs = 300;
-static const uint32_t k2hOffMs = 700;
+static const uint32_t k2hOnMs = 200;
+static const uint32_t k2hOffMs = 800;
 static const uint32_t k2hOnDarkMs = 200;
-static const uint32_t k2hOffDarkMs = 1800;
+static const uint32_t k2hOffDarkMs = 4800;
+static const uint32_t k2hOnRedMs = 200;
+static const uint32_t k2hOffRedMs = 300;
 static const uint32_t greenPixelMs = 8 * S;
 static const uint32_t bluePixelMs = 10 * S;
-static const uint32_t workingTime = 105 * MIN + 30 * S;
+
 
 typedef struct
 {
@@ -1392,6 +1394,23 @@ static uint8_t allGreenBlink(const uint8_t _init)
 }
 
 
+static uint8_t allRed(const uint8_t _init)
+{
+    return showFullWithInit(RED,_init);
+}
+
+static uint8_t allRedBlink(const uint8_t _init)
+{
+    static const Blink_t blinkDesc =
+    {
+            .on = k2hOnRedMs,
+            .off = k2hOffRedMs,
+            .pPhase = allRed
+    };
+    return blink(_init, &blinkDesc);
+}
+
+
 
 static uint8_t oneByOneGreen(const uint8_t _init)
 {
@@ -1408,8 +1427,8 @@ static uint8_t oneByOneGreen(const uint8_t _init)
         changed = !0;
         pos = 0;
         showFull(BLACK);
-        put2pixels(BLUE,NLEDS - 1 - 59);
-        put2pixels(GREEN,NLEDS - 1 - pos);
+        put2pixels(BLUE,NLEDS / 2 - 1 - 59);
+        fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
     }
     else
     {
@@ -1421,8 +1440,8 @@ static uint8_t oneByOneGreen(const uint8_t _init)
             ResetTimer(&nextPostimer);
             changed = !0;
             showFull(BLACK);
-            put2pixels(BLUE,NLEDS - 1 - 59);
-            put2pixels(GREEN,NLEDS - 1 - pos);
+            put2pixels(BLUE,NLEDS / 2 - 1 - 59);
+            fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
         }
         else
         {
@@ -1431,6 +1450,8 @@ static uint8_t oneByOneGreen(const uint8_t _init)
             if (IsExpiredTimer(&blinktimer,k2hOnMs) != 0)
             {
                 showFull(BLACK);
+                ResetTimer(&blinktimer);
+                put2pixels(BLUE,NLEDS / 2 - 1 - 59);
                 onPhase = 0;
                 changed = !0;
             }
@@ -1443,8 +1464,8 @@ static uint8_t oneByOneGreen(const uint8_t _init)
                 onPhase = !0;
                 changed = !0;
                 showFull(BLACK);
-                put2pixels(BLUE,NLEDS - 1 - 59);
-                put2pixels(GREEN,NLEDS - 1 - pos);
+                put2pixels(BLUE,NLEDS / 2- 1 - 59);
+                fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
             }
         }
         }
@@ -1452,26 +1473,110 @@ static uint8_t oneByOneGreen(const uint8_t _init)
     return changed;
 }
 
+
+static uint8_t oneByOneBlue(const uint8_t _init)
+{
+    static uint8_t onPhase = 0;
+    static uint32_t blinktimer = 0;
+    static uint32_t nextPostimer = 0;
+    static uint8_t pos = 0;
+    uint8_t changed = 0;
+    if ( 0 != _init )
+    {
+        onPhase = !0;
+        ResetTimer(&blinktimer);
+        ResetTimer(&nextPostimer);
+        changed = !0;
+        pos = 0;
+        showFull(BLACK);
+        put2pixels(RED,0);
+        fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 - 1));
+        fill2Pixels(BLUE,NLEDS / 2 - 1 - 59, NLEDS / 2 - 1 - 59 - pos );
+    }
+    else
+    {
+        if (IsExpiredTimer(&nextPostimer, bluePixelMs) != 0)
+        {
+            pos = ( pos >= 12 ) ? 12 : pos + 1;
+            onPhase = !0;
+            ResetTimer(&blinktimer);
+            ResetTimer(&nextPostimer);
+            changed = !0;
+            showFull(BLACK);
+            put2pixels(RED,0);
+            fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 - 1));
+            fill2Pixels(BLUE,NLEDS / 2 - 1 - 59, NLEDS / 2 - 1 - 59 - pos );
+
+        }
+        else
+        {
+        if (0 != onPhase)
+        {
+            if (IsExpiredTimer(&blinktimer,k2hOnMs) != 0)
+            {
+                showFull(BLACK);
+                ResetTimer(&blinktimer);
+                put2pixels(RED,0);
+                onPhase = 0;
+                changed = !0;
+            }
+        }
+        else
+        {
+            if (IsExpiredTimer(&blinktimer,k2hOffMs) != 0)
+            {
+                ResetTimer(&blinktimer);
+                onPhase = !0;
+                changed = !0;
+                showFull(BLACK);
+                put2pixels(RED,0);
+                fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 - 1));
+                fill2Pixels(BLUE,NLEDS / 2 - 1 - 59, NLEDS / 2 - 1 - 59 - pos );
+            }
+        }
+        }
+    }
+    return changed;
 }
 
 static uint8_t k2hMode(uint32_t const ms,uint8_t * const nextState)
 {
+	const uint32_t phasesStart[] = {0, 25 * MIN, 45 * MIN, 65 * MIN, 85 * MIN};
 	const Phase_desc_t desc[] =
 	{
-			{0 * S / 10, darkPhase},
-			{15 * MIN / 10, allGreenBlink},
-			{8 * S / 10, NULL}
+			{phasesStart[0] + 0 * S, darkPhase},
+			{phasesStart[0] + 15 * MIN, allGreenBlink},
+			{phasesStart[0] + 15 * MIN + 8 * S, oneByOneGreen},
+			{phasesStart[0] + 15 * MIN + 8 * S + 472 * S, oneByOneBlue},
+			{phasesStart[0] + 15 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+
+			{phasesStart[1] + 3 * S, darkPhase},
+			{phasesStart[1] + 10 * MIN, allGreenBlink},
+			{phasesStart[1] + 10 * MIN + 8 * S, oneByOneGreen},
+			{phasesStart[1] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
+			{phasesStart[1] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+
+			{phasesStart[2] + 3 * S, darkPhase},
+			{phasesStart[2] + 10 * MIN, allGreenBlink},
+			{phasesStart[2] + 10 * MIN + 8 * S, oneByOneGreen},
+			{phasesStart[2] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
+			{phasesStart[2] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+
+			{phasesStart[3] + 3 * S, darkPhase},
+			{phasesStart[3] + 10 * MIN, allGreenBlink},
+			{phasesStart[3] + 10 * MIN + 8 * S, oneByOneGreen},
+			{phasesStart[3] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
+			{phasesStart[3] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+
+			{phasesStart[4] + 3 * S, darkPhase},
+			{phasesStart[4] + 10 * MIN, allGreenBlink},
+			{phasesStart[4] + 10 * MIN + 8 * S, oneByOneGreen},
+			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
+			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+
+			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S + 120 * S + 3 * S, NULL}
 	};
-	static States_t state = STATE_K2H_BLACK_5MIN;
-	uint8_t tableEnded = 0;
-	static uint32_t currentMs = 0;
-	const uint8_t changed = processPhaseTable(desc,&tableEnded,ms - currentMs);
-	if (tableEnded != 0)
-	{
-		currentMs = ms;
-	}
-	*nextState = ms > workingTime;
-	return changed;
+	return processPhaseTable(desc,nextState,ms);
 }
 
 /**

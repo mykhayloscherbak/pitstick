@@ -226,6 +226,25 @@ void dispStrips(const Colors_t color,const uint8_t nstrips)
 	}
 }
 
+void fill2Pixels(const Colors_t _color, const uint8_t _from, const uint8_t _to)
+{
+	if (_from > _to)
+	{
+		for (uint8_t i = _to; i <= _from; i++)
+		{
+			put2pixels(_color,i);
+		}
+	}
+	else
+	{
+		for (uint8_t i = _from; i <= _to; i++)
+		{
+			put2pixels(_color,i);
+		}
+
+	}
+}
+
 typedef enum
 {
 	BLINKTWICE_BLINK, /**< State while stick is blinking */

@@ -82,6 +82,8 @@ void dispStrips(const Colors_t color, const uint8_t nstrips);
  */
 void dispStrip(const Colors_t color,const uint8_t stripNo);
 
+void fill2Pixels(const Colors_t _color, const uint8_t _from, const uint8_t _to);
+
 /**
  * @brief Blinks the whole stick by color to black two times at 1Hz frequency
  * @param[in] init nonzero value shows that this is the first iteration of this function
