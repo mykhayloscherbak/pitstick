@@ -1412,16 +1412,21 @@ static uint8_t allRedBlink(const uint8_t _init)
 
 static void fill2PixelsWithFade(const Colors_t _bright, const Colors_t _dark, const uint8_t _bottom, const uint8_t _top)
 {
-
-    fill2Pixels(_dark, _bottom, _top);
-    if (_bottom == _top)
+    const uint8_t bottom = (_bottom > _top ) ? _bottom : _top;
+    const uint8_t top =    (_bottom > _top ) ? _top : _bottom;
+    if (bottom - top > 1)
     {
-        put2pixels(_bright,_top);
+        fill2Pixels(_dark, bottom, top);
+    }
+
+    if (bottom == top)
+    {
+        put2pixels(_bright,top);
     }
     else
     {
-        put2pixels(_bright,_top);
-        put2pixels(_bright,_top + 1);
+        put2pixels(_bright,top);
+        put2pixels(_bright,top + 1);
     }
 }
 
