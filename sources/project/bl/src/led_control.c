@@ -1410,7 +1410,20 @@ static uint8_t allRedBlink(const uint8_t _init)
     return blink(_init, &blinkDesc);
 }
 
+static void fill2PixelsWithFade(const Colors_t _bright, const Colors_t _dark, const uint8_t _bottom, const uint8_t _top)
+{
 
+    fill2Pixels(_dark, _bottom, _top);
+    if (_bottom == _top)
+    {
+        put2pixels(_bright,_top);
+    }
+    else
+    {
+        put2pixels(_bright,_top);
+        put2pixels(_bright,_top + 1);
+    }
+}
 
 static uint8_t oneByOneGreen(const uint8_t _init)
 {
@@ -1428,7 +1441,7 @@ static uint8_t oneByOneGreen(const uint8_t _init)
         pos = 0;
         showFull(BLACK);
         put2pixels(BLUE,NLEDS / 2 - 1 - 59);
-        fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+        fill2PixelsWithFade(GREEN, GREEN50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
     }
     else
     {
@@ -1441,7 +1454,7 @@ static uint8_t oneByOneGreen(const uint8_t _init)
             changed = !0;
             showFull(BLACK);
             put2pixels(BLUE,NLEDS / 2 - 1 - 59);
-            fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+            fill2PixelsWithFade(GREEN, GREEN50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
         }
         else
         {
@@ -1465,7 +1478,7 @@ static uint8_t oneByOneGreen(const uint8_t _init)
                 changed = !0;
                 showFull(BLACK);
                 put2pixels(BLUE,NLEDS / 2- 1 - 59);
-                fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+                fill2PixelsWithFade(GREEN, GREEN50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
             }
         }
         }
@@ -1490,8 +1503,7 @@ static uint8_t oneByOneBlue(const uint8_t _init)
         pos = 0;
         showFull(BLACK);
         put2pixels(RED,0);
-        fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 - 1));
-        fill2Pixels(BLUE,NLEDS / 2 - 1 - 59, NLEDS / 2 - 1 - 59 - pos );
+        fill2PixelsWithFade(BLUE, BLUE50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
     }
     else
     {
@@ -1504,9 +1516,7 @@ static uint8_t oneByOneBlue(const uint8_t _init)
             changed = !0;
             showFull(BLACK);
             put2pixels(RED,0);
-            fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 - 1));
-            fill2Pixels(BLUE,NLEDS / 2 - 1 - 59, NLEDS / 2 - 1 - 59 - pos );
-
+            fill2PixelsWithFade(BLUE, BLUE50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
         }
         else
         {
@@ -1530,8 +1540,7 @@ static uint8_t oneByOneBlue(const uint8_t _init)
                 changed = !0;
                 showFull(BLACK);
                 put2pixels(RED,0);
-                fill2Pixels(GREEN,NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 - 1));
-                fill2Pixels(BLUE,NLEDS / 2 - 1 - 59, NLEDS / 2 - 1 - 59 - pos );
+                fill2PixelsWithFade(BLUE, BLUE50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
             }
         }
         }
@@ -1550,25 +1559,25 @@ static uint8_t k2hMode(uint32_t const ms,uint8_t * const nextState)
 			{phasesStart[0] + 15 * MIN + 8 * S + 472 * S, oneByOneBlue},
 			{phasesStart[0] + 15 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
 
-			{phasesStart[1] + 3 * S, darkPhase},
+			{phasesStart[1] + 5 * S, darkPhase},
 			{phasesStart[1] + 10 * MIN, allGreenBlink},
 			{phasesStart[1] + 10 * MIN + 8 * S, oneByOneGreen},
 			{phasesStart[1] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
 			{phasesStart[1] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
 
-			{phasesStart[2] + 3 * S, darkPhase},
+			{phasesStart[2] + 5 * S, darkPhase},
 			{phasesStart[2] + 10 * MIN, allGreenBlink},
 			{phasesStart[2] + 10 * MIN + 8 * S, oneByOneGreen},
 			{phasesStart[2] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
 			{phasesStart[2] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
 
-			{phasesStart[3] + 3 * S, darkPhase},
+			{phasesStart[3] + 5 * S, darkPhase},
 			{phasesStart[3] + 10 * MIN, allGreenBlink},
 			{phasesStart[3] + 10 * MIN + 8 * S, oneByOneGreen},
 			{phasesStart[3] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
 			{phasesStart[3] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
 
-			{phasesStart[4] + 3 * S, darkPhase},
+			{phasesStart[4] + 5 * S, darkPhase},
 			{phasesStart[4] + 10 * MIN, allGreenBlink},
 			{phasesStart[4] + 10 * MIN + 8 * S, oneByOneGreen},
 			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},

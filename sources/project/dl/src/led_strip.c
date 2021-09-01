@@ -29,8 +29,9 @@ typedef struct
 /**
  * @brief Color names to values conversion
  */
-static const Led_t colors[]={
-                 /* R,G,B,W */
+static const Led_t colors[] =
+{
+                            /* R,G,B,W */
 		[BLACK]=			{0,   0,  0,  0 },
 		[RED] =				{255, 0,  0,  0 },
 		[GREEN]= 			{0,   255,0,  0 },
@@ -41,7 +42,9 @@ static const Led_t colors[]={
 		[CYAN]=       		{0, 255,  255,20},
 		[DARK_RED]=   		{50,  0,  0,  0 },
 		[ORANGE]=			{100,50,  0,  0 },
-		[REDDER]=			{200,50,  0,  0 }
+		[REDDER]=			{200,50,  0,  0 },
+		[GREEN50]=          {0,   127,0,  0 },
+		[BLUE50]=           {0,   0,  127,0 },
 };
 
 /**

@@ -4,8 +4,8 @@
  * @file led_strip.h
  * @author Mykhaylo Shcherbak
  * @em mikl74@yahoo.com
- * @date 08-11-2020
- * @version 1.20
+ * @date 01-09-2021
+ * @version 1.30
  * @brief Contains common functions prototypes for led strip control.
  */
 #include <stdint.h>
@@ -26,6 +26,8 @@ typedef enum
 	DARK_RED,
 	ORANGE,
 	REDDER,   /**< More red than @ref DARK_RED */
+	GREEN50,  /**< 50% green */
+	BLUE50    /**< 50% blue */
 }Colors_t;
 
 /**
