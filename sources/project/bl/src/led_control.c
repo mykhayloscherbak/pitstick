@@ -1443,10 +1443,10 @@ static uint8_t oneByOneGreen(const uint8_t _init)
         ResetTimer(&blinktimer);
         ResetTimer(&nextPostimer);
         changed = !0;
-        pos = 0;
+        pos = 1;
         showFull(BLACK);
         put2pixels(BLUE,NLEDS / 2 - 1 - 59);
-        fill2PixelsWithFade(GREEN, GREEN50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+        fill2PixelsWithFade(GREEN, GREEN10, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
     }
     else
     {
@@ -1459,7 +1459,7 @@ static uint8_t oneByOneGreen(const uint8_t _init)
             changed = !0;
             showFull(BLACK);
             put2pixels(BLUE,NLEDS / 2 - 1 - 59);
-            fill2PixelsWithFade(GREEN, GREEN50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+            fill2PixelsWithFade(GREEN, GREEN10, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
         }
         else
         {
@@ -1483,7 +1483,7 @@ static uint8_t oneByOneGreen(const uint8_t _init)
                 changed = !0;
                 showFull(BLACK);
                 put2pixels(BLUE,NLEDS / 2- 1 - 59);
-                fill2PixelsWithFade(GREEN, GREEN50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+                fill2PixelsWithFade(GREEN, GREEN10, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
             }
         }
         }
@@ -1508,7 +1508,7 @@ static uint8_t oneByOneBlue(const uint8_t _init)
         pos = 0;
         showFull(BLACK);
         put2pixels(RED,0);
-        fill2PixelsWithFade(BLUE, BLUE50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+        fill2PixelsWithFade(BLUE, BLUE10, NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 + pos));
     }
     else
     {
@@ -1521,7 +1521,7 @@ static uint8_t oneByOneBlue(const uint8_t _init)
             changed = !0;
             showFull(BLACK);
             put2pixels(RED,0);
-            fill2PixelsWithFade(BLUE, BLUE50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+            fill2PixelsWithFade(BLUE, BLUE10, NLEDS / 2 - 1, NLEDS / 2 - 1 -(59 + pos));
         }
         else
         {
@@ -1545,7 +1545,7 @@ static uint8_t oneByOneBlue(const uint8_t _init)
                 changed = !0;
                 showFull(BLACK);
                 put2pixels(RED,0);
-                fill2PixelsWithFade(BLUE, BLUE50, NLEDS / 2 - 1, NLEDS / 2 - 1 - pos);
+                fill2PixelsWithFade(BLUE, BLUE10, NLEDS / 2 - 1, NLEDS / 2 - 1 - (59 + pos));
             }
         }
         }
@@ -1555,40 +1555,40 @@ static uint8_t oneByOneBlue(const uint8_t _init)
 
 static uint8_t k2hMode(uint32_t const ms,uint8_t * const nextState)
 {
-	const uint32_t phasesStart[] = {0, 25 * MIN, 45 * MIN, 65 * MIN, 85 * MIN};
+	const uint32_t phasesStart[] = {0, 24 * MIN, 44 * MIN, 64 * MIN, 84 * MIN};
 	const Phase_desc_t desc[] =
 	{
 			{phasesStart[0] + 0 * S, darkPhase},
-			{phasesStart[0] + 15 * MIN, allGreenBlink},
-			{phasesStart[0] + 15 * MIN + 8 * S, oneByOneGreen},
-			{phasesStart[0] + 15 * MIN + 8 * S + 472 * S, oneByOneBlue},
-			{phasesStart[0] + 15 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+			{phasesStart[0] + 14 * MIN, allGreenBlink},
+			{phasesStart[0] + 14 * MIN + 16 * S, oneByOneGreen},
+			{phasesStart[0] + 14 * MIN + 16 * S + 464 * S, oneByOneBlue},
+			{phasesStart[0] + 14 * MIN + 16 * S + 464 * S + 120 * S, allRedBlink},
 
 			{phasesStart[1] + 5 * S, darkPhase},
 			{phasesStart[1] + 10 * MIN, allGreenBlink},
-			{phasesStart[1] + 10 * MIN + 8 * S, oneByOneGreen},
-			{phasesStart[1] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
-			{phasesStart[1] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+			{phasesStart[1] + 10 * MIN + 16 * S, oneByOneGreen},
+			{phasesStart[1] + 10 * MIN + 16 * S + 464 * S, oneByOneBlue},
+			{phasesStart[1] + 10 * MIN + 16 * S + 464 * S + 120 * S, allRedBlink},
 
 			{phasesStart[2] + 5 * S, darkPhase},
 			{phasesStart[2] + 10 * MIN, allGreenBlink},
-			{phasesStart[2] + 10 * MIN + 8 * S, oneByOneGreen},
-			{phasesStart[2] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
-			{phasesStart[2] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+			{phasesStart[2] + 10 * MIN + 16 * S, oneByOneGreen},
+			{phasesStart[2] + 10 * MIN + 16 * S + 464 * S, oneByOneBlue},
+			{phasesStart[2] + 10 * MIN + 16 * S + 464 * S + 120 * S, allRedBlink},
 
 			{phasesStart[3] + 5 * S, darkPhase},
 			{phasesStart[3] + 10 * MIN, allGreenBlink},
-			{phasesStart[3] + 10 * MIN + 8 * S, oneByOneGreen},
-			{phasesStart[3] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
-			{phasesStart[3] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+			{phasesStart[3] + 10 * MIN + 16 * S, oneByOneGreen},
+			{phasesStart[3] + 10 * MIN + 16 * S + 464 * S, oneByOneBlue},
+			{phasesStart[3] + 10 * MIN + 16 * S + 464 * S + 120 * S, allRedBlink},
 
 			{phasesStart[4] + 5 * S, darkPhase},
 			{phasesStart[4] + 10 * MIN, allGreenBlink},
-			{phasesStart[4] + 10 * MIN + 8 * S, oneByOneGreen},
-			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S, oneByOneBlue},
-			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S + 120 * S, allRedBlink},
+			{phasesStart[4] + 10 * MIN + 16 * S, oneByOneGreen},
+			{phasesStart[4] + 10 * MIN + 16 * S + 464 * S, oneByOneBlue},
+			{phasesStart[4] + 10 * MIN + 16 * S + 464 * S + 120 * S, allRedBlink},
 
-			{phasesStart[4] + 10 * MIN + 8 * S + 472 * S + 120 * S + 3 * S, NULL}
+			{phasesStart[4] + 10 * MIN + 16 * S + 464 * S + 120 * S + 5 * S, NULL}
 	};
 	return processPhaseTable(desc,nextState,ms);
 }

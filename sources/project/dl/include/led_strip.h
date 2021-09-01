@@ -26,8 +26,8 @@ typedef enum
 	DARK_RED,
 	ORANGE,
 	REDDER,   /**< More red than @ref DARK_RED */
-	GREEN50,  /**< 50% green */
-	BLUE50    /**< 50% blue */
+	GREEN10,  /**< 10% green */
+	BLUE10    /**< 10% blue */
 }Colors_t;
 
 /**
