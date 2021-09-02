@@ -1,4 +1,4 @@
-/**
+/** 
  * @file main.c
  * @version 1.20
  * @brief The file contains upper level init functions calls and main while(1) cycle
