@@ -82,10 +82,6 @@ typedef enum
 	STATE_SC_MAIN,                  /**< Main phase of safety car mode */
 	STATE_K2H_BLACK_5MIN,           /**< Black phase of kart 2h mode at startup. Power indicator only is shown */
 	STATE_K2H_MAIN                 /**< Main phase. Table is used. */
-//	STATE_K2H_ALL_GREEN,            /**< First blink at pitsop window open - 4 times all green at 0.5Hz -8s */
-//	STATE_K2H_ONE_BY_ONE_GREEN,     /**< Next 472s = rows 0-58 4 times at 0.5Hz each */
-//	STATE_K2H_ONE_BY_ONE_BLUE,      /**< Rows 59-71 5 times 0.5Hz each */
-//	STATE_K2H_ALL_RED               /**< After 10 minutes 4 times 0.5Hz each, all red */
 }States_t;
 
 /**
