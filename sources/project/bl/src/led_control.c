@@ -6,6 +6,7 @@
  *        + Rally stop-and-go ("Podnos") mode
  *        + Safety Car ("Zvyagin") mode
  *        + kart 2h mode
+ *        + Pitstop invite mode
  *        + Config mode
  *        .
  *
@@ -51,6 +52,7 @@ typedef enum
 	STATE_PODNOS,                   /**< Stop-and-go ("Podnos") mode */
 	STATE_SC,                       /**< Safety car mode */
 	STATE_K2H,					    /**< Karting 2H mode */
+	STATE_PITINVITE,                /**< Pitlane invitation mode */
 	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previous modes and is needed to remind that the stick is not turned off */
 	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the configuration  mode and mode processor is in the idle state */
 	STATE_CONFIG_PARAM_PRESSED,     /**< Button is pressed while parameter is displayed */
@@ -70,6 +72,7 @@ typedef enum
 	STATE_CONFIG_PODNOS_MODE,       /**< Set stop-and-go mode duration */
 	STATE_CONFIG_SC_END,            /**< End of safety car mode config */
 	STATE_CONFIG_K2H_END,           /**< End of Kartig 2h mode config */
+	STATE_CONFIG_PITINVITE_COLOR,   /**< Pit line invitation config mode */
 	STATE_CONFIG_END,               /**< End of configuration process */
 	STATE_LOCK_START,               /**< Start lock mode. Lock mode is turned on after all operations are complete to remimd switchig the stick off */
 	STATE_LOCK_ON,                  /**< Lock mode. Red light+battery power is on */
@@ -94,6 +97,7 @@ typedef enum
 	MODE_PODNOS, /**< Mode for rally stop-and-go */
 	MODE_SC,     /**< Safety car mode */
 	MODE_KART2H, /**< Karting 2h mode */
+	MODE_PITINVITE, /**< Pitlane invitation mode */
 	MODE_TOTAL   /**< Total number of modes */
 } Working_Mode_t;
 
@@ -109,7 +113,8 @@ typedef enum /* Attention! Adding new channels here do not forget to extend MAX_
 	CH_T2,            	/**< T2 Time in seconds */
 	CH_TLIGHT_MIN,    	/**< Tlight random part minimal value in 1/10s */
 	CH_TLIGHT_MAX,     	/**< Tlight random part maximal value in 1/10s */
-	CH_PODNOS_MODE_TIME /**< Stop-and-go mode time */
+	CH_PODNOS_MODE_TIME, /**< Stop-and-go mode time */
+	CH_PITINVITE_COLOR   /**< The color of pitlane invitation mode */
 }Config_idx_t;
 
 /**
@@ -140,6 +145,8 @@ typedef struct
   pDispFunc_t dispFunc; /**< Pointer to the function to display the value */
   EndMode_t endMode; /**< Result of current iteration */
 } DispValue_t;
+
+static const Colors_t num2color[] = {RED, GREEN, BLUE, ORANGE, YELLOW, WHITE};
 
 /**
  * @brief Show pattern for configuring brighness: red, green, blue and white strips
@@ -209,6 +216,11 @@ static void dispModePattern(const uint8_t value)
 			put2pixels(BLUE,i);
 		}
 		break;
+	case MODE_PITINVITE:
+		putPixel(0, 0, RED);
+		putPixel(0, 4, RED);
+		putPixel(1, 2, RED);
+		break;
 	default:
 		break;
 	}
@@ -243,6 +255,15 @@ static void displayTlightMax(const uint8_t value)
 static void displayPodnosModeTime(const uint8_t value)
 {
 	displayNumber(RED,RED,value);
+}
+
+static void displayPitInviteColor(const uint8_t value)
+{
+	const uint8_t maxValue = sizeof(num2color) / sizeof(num2color[0]) - 1;
+	const Colors_t color = num2color[(value > maxValue) ? maxValue : value];
+	showFull(BLACK);
+	dispStrip(color,0);
+	dispStrip(color,1);
 }
 
 /**
@@ -497,6 +518,15 @@ static uint8_t  config(uint8_t * const nextState)
     	        state = STATE_CONFIG_K2H_END;
     	        noParam = !0;
     			break;
+    		case MODE_PITINVITE:
+    			dV.dispFunc = displayPitInviteColor,
+				dV.min = 0,
+				dV.max = sizeof(num2color) / sizeof(num2color[0]) - 1;
+      			dV.value = savedParams[CH_PITINVITE_COLOR];
+        		dV.endMode = EM_CONTINUE;
+        		noParam = 0;
+        		state = STATE_CONFIG_PITINVITE_COLOR;
+        		break;
 
     		}
     		if (noParam == 0)
@@ -629,6 +659,33 @@ static uint8_t  config(uint8_t * const nextState)
     case STATE_CONFIG_PODNOS_MODE:
     	changed = changeParam(&dV,0);
     	savedParams[CH_PODNOS_MODE_TIME] = dV.value;
+    	if (dV.endMode != EM_CONTINUE && dV.endMode != EM_CONTINUE_DO_NOT_UPDATE)
+    	{
+    		if (dV.endMode == EM_END_SAVING)
+    		{
+    			saved = 0;
+    		}
+    		if (saved == 0)
+    		{
+    			eeemu_write(savedParams);
+    			showFull(BLACK);
+    			for (uint8_t i = 0; i < 20; i++)
+    			{
+    				put2pixels(RED,i);
+    			}
+    		}
+    		else
+    		{
+    			showFull(BLACK);
+    		}
+    		changed = !0;
+    		ResetTimer(&timer);
+    		state = STATE_CONFIG_END;
+    	}
+    	break;
+    case STATE_CONFIG_PITINVITE_COLOR:
+    	changed = changeParam(&dV,0);
+    	savedParams[CH_PITINVITE_COLOR] = dV.value;
     	if (dV.endMode != EM_CONTINUE && dV.endMode != EM_CONTINUE_DO_NOT_UPDATE)
     	{
     		if (dV.endMode == EM_END_SAVING)
@@ -1589,6 +1646,42 @@ static uint8_t k2hMode(uint32_t const ms,uint8_t * const nextState)
 	return processPhaseTable(desc,nextState,ms);
 }
 
+static uint8_t pitInviteMode(const uint32_t ms)
+{
+	uint8_t retval = 0;
+	static uint8_t oldPhase = 99;
+	const uint8_t phase = (ms / 500) % 6;
+	const uint8_t strips[6][5] =
+	{
+			{!0,  0,  0,  0,  0},
+			{!0, !0,  0,  0,  0},
+			{ 0, !0, !0,  0,  0},
+			{ 0,  0, !0, !0,  0},
+			{ 0,  0,  0, !0, !0},
+			{ 0,  0,  0,  0, !0}
+	};
+	const uint8_t * const conf = eeemuGetValue();
+	const uint8_t value = conf[CH_PITINVITE_COLOR];
+	const uint8_t maxValue = sizeof(num2color) / sizeof(num2color[0]) - 1;
+	const Colors_t color = num2color[(value > maxValue) ? maxValue : value];
+	if (phase != oldPhase)
+	{
+		retval = !0;
+		showFull(BLACK);
+
+		for (uint8_t strip = 0; strip < 5; strip++)
+		{
+			if (strips[phase][strip] != 0)
+			{
+				dispStrip(color,strip);
+			}
+		}
+		put2pixels(getPowerColor(),0);
+		oldPhase = phase;
+	}
+	return retval;
+}
+
 /**
  * @brief Lock mode. Is shown at the end of all sequences (@ref config, @ref tlightMode, etc) to show that the stick is on and remind to switch it off
  * @return nonzero means the led strip must be updated
@@ -1681,6 +1774,9 @@ void led_control(uint32_t const ms)
 			case MODE_KART2H:
 				state = STATE_K2H;
 				break;
+			case MODE_PITINVITE:
+				state = STATE_PITINVITE;
+				break;
 			default:
 				state = STATE_LOCK;
 				break;
@@ -1724,6 +1820,9 @@ void led_control(uint32_t const ms)
 		{
 			state = STATE_LOCK;
 		}
+		break;
+	case STATE_PITINVITE:
+		changed = pitInviteMode(ms); /* Never ends */
 		break;
 
 	case STATE_LOCK:
