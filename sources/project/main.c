@@ -125,7 +125,7 @@ static void Init(void)
 	tim2_Init();
 	eeemu_Init();
 	Adc_Init();
-    watchdog_Init();
+        watchdog_Init();
 }
 
 
