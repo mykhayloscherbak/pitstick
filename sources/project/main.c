@@ -113,6 +113,7 @@
 #include "watchdog.h"
 #include "adc.h"
 
+/* This is test comment #0000 */
 /**
  * @brief Contains all init functions.
  */
