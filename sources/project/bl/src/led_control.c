@@ -53,6 +53,7 @@ typedef enum
 	STATE_SC,                       /**< Safety car mode */
 	STATE_K2H,					    /**< Karting 2H mode */
 	STATE_PITINVITE,                /**< Pitlane invitation mode */
+	STATE_IRONMAN,                  /**< Ironman mode. */
 	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previous modes and is needed to remind that the stick is not turned off */
 	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the configuration  mode and mode processor is in the idle state */
 	STATE_CONFIG_PARAM_PRESSED,     /**< Button is pressed while parameter is displayed */
@@ -72,6 +73,7 @@ typedef enum
 	STATE_CONFIG_PODNOS_MODE,       /**< Set stop-and-go mode duration */
 	STATE_CONFIG_SC_END,            /**< End of safety car mode config */
 	STATE_CONFIG_K2H_END,           /**< End of Kartig 2h mode config */
+	STATE_CONFIG_IRONMAN_END,       /**< End of IronMan mode config */
 	STATE_CONFIG_PITINVITE_COLOR,   /**< Pit line invitation config mode */
 	STATE_CONFIG_END,               /**< End of configuration process */
 	STATE_LOCK_START,               /**< Start lock mode. Lock mode is turned on after all operations are complete to remimd switchig the stick off */
@@ -82,9 +84,7 @@ typedef enum
 	STATE_TLIGHT_SLALOM,            /**< Slalom mode start */
 	STATE_TLIGHT_SHOW_RANDOM,       /**< Random pause after the fifth strip is on */
 	STATE_SC_SHOW_POWER,            /**< First phase of Safety Car mode, showing battery level */
-	STATE_SC_MAIN,                  /**< Main phase of safety car mode */
-	STATE_K2H_BLACK_5MIN,           /**< Black phase of kart 2h mode at startup. Power indicator only is shown */
-	STATE_K2H_MAIN                 /**< Main phase. Table is used. */
+	STATE_SC_MAIN                  /**< Main phase of safety car mode */
 }States_t;
 
 /**
@@ -98,6 +98,7 @@ typedef enum
 	MODE_SC,     /**< Safety car mode */
 	MODE_KART2H, /**< Karting 2h mode */
 	MODE_PITINVITE, /**< Pitlane invitation mode */
+	MODE_IRONMAN, /**< Iron man mode. Tlight + pit */
 	MODE_TOTAL   /**< Total number of modes */
 } Working_Mode_t;
 
@@ -221,6 +222,13 @@ static void dispModePattern(const uint8_t value)
 		putPixel(0, 4, RED);
 		putPixel(1, 2, RED);
 		break;
+    case MODE_IRONMAN:
+        for (uint8_t i = 0; i < 5;  i++)
+        {
+            put2pixels(RED,i * 4);
+            put2pixels(RED,i * 4 + 1);
+        }
+        break;
 	default:
 		break;
 	}
@@ -527,7 +535,10 @@ static uint8_t  config(uint8_t * const nextState)
         		noParam = 0;
         		state = STATE_CONFIG_PITINVITE_COLOR;
         		break;
-
+            case MODE_IRONMAN:
+                    state = STATE_CONFIG_IRONMAN_END;
+                    noParam = !0;
+                    break;
     		}
     		if (noParam == 0)
     		{
@@ -713,6 +724,7 @@ static uint8_t  config(uint8_t * const nextState)
 
     case STATE_CONFIG_K2H_END:
     case STATE_CONFIG_SC_END:
+    case STATE_CONFIG_IRONMAN_END:
         if (saved == 0)
         {
           eeemu_write(savedParams);
@@ -976,6 +988,36 @@ static uint8_t tlight(const uint8_t init)
 	}
 	return changed;
 }
+
+/**
+ * @brief The main phase 5-4-3-2-1-go traffic light before crossing start/finish line. Starts at -5s and ends at 0
+ * @param init is nonzero at the first run
+ * @return nonzero means the led strip must be updated
+ */
+
+static uint8_t tlightReverse(const uint8_t init)
+{
+    static uint8_t nstrips;
+    uint8_t changed = 0;
+    static uint32_t timer;
+    if (init != 0)
+    {
+        nstrips = 1;
+        ResetTimer(&timer);
+        dispRedStrips(nstrips);
+        changed = !0;
+    }
+    if (IsExpiredTimer(&timer,1000) != 0)
+    {
+        changed = !0;
+        nstrips = (nstrips == 5) ? 5 : nstrips + 1;
+        dispRedStrips(nstrips);
+        ResetTimer(&timer);
+    }
+    return changed;
+}
+
+
 /**
  * @brief Last phase : two green blinks starting from 0 (TSEQ)
  * @param init is nonzero at the first run
@@ -992,7 +1034,7 @@ typedef uint8_t (*pPhase_t)(const uint8_t init);
  */
 typedef struct
 {
-  const uint32_t  start; /**< Phase start time. ms from turning the stick on */
+  uint32_t  start; /**< Phase start time. ms from turning the stick on */
   pPhase_t pPhase; /**< Phase function. Phase function is called every 100ms from @ref start until next phase starts */
 }Phase_desc_t;
 
@@ -1681,7 +1723,212 @@ static uint8_t pitInviteMode(const uint32_t ms)
 	}
 	return retval;
 }
+/*********************** Iron man **********************************/
+#define LA (90)
+#define LB (720)
+#define LC (150)
+#define LC1 (30)
+static uint8_t tlightPre(const uint8_t _init)
+{
+    static uint32_t timer;
+    static uint8_t left;
+    uint8_t retval = 0;
+    if (0 != _init)
+    {
+        left = !0;
+        ResetTimer(&timer);
+        retval = !0;
+    }
+    else if (IsExpiredTimer(&timer, 500))
+    {
+        ResetTimer(&timer);
+        left = !left;
+        retval = !0;
+    }
+    if (retval != 0)
+    {
+        showFull(BLACK);
+        if (left != 0)
+        {
+            fill2Pixels(RED,0,11);
+        }
+        else
+        {
+            fill2Pixels(RED,60,71);
+        }
+    }
+    return retval;
+}
+/**
+ * @brief IronMan phase B (race) subphases 1-29
+ * @param _init !0 if it's first run
+ * @return !0 if led strip must be updated
+ */
+static uint8_t ironB(const uint8_t _init)
+{
+    static uint8_t subphase = 0; /* 0 based, 0:29 */
+    static uint8_t on = 0;
+    static uint32_t blinkTimer = 0;
+    static uint32_t subphaseTimer = 0;
+    static uint32_t slowBlinkTimer = 0;
+    const uint32_t subphasePeriod = 24 * S;
+    const uint8_t nphases = 30;
+    const uint32_t slowBlinkTime = (LB - 5) * S;
+    static uint32_t blinkPeriod = 1 * S;
+    uint8_t retval = 0;
 
+    if (_init != 0)
+    {
+        subphase = 0;
+        ResetTimer(&blinkTimer);
+        ResetTimer(&subphaseTimer);
+        ResetTimer(&slowBlinkTimer);
+        blinkPeriod = 1 * S;
+        on = 0;
+    }
+    if (IsExpiredTimer(&slowBlinkTimer, slowBlinkTime) != 0)
+    {
+        blinkPeriod = S / 2;
+    }
+    if (IsExpiredTimer(&subphaseTimer, subphasePeriod) != 0)
+    {
+        subphase = (subphase >= nphases - 1 ) ? nphases - 1 : subphase + 1;
+        ResetTimer(&subphaseTimer);
+    }
+    if (IsExpiredTimer(&blinkTimer, blinkPeriod) != 0)
+    {
+        ResetTimer(&blinkTimer);
+        showFull(BLACK);
+        if (on != 0)
+        {
+            for (uint8_t i = subphase; i <= subphase + 6; i += 2)
+            {
+                put2pixels(RED,i);
+                put2pixels(RED,71 - i);
+            }
+        }
+        retval = !0;
+        on = !on;
+    }
+    return retval;
+}
+
+static uint8_t ironC1_10(const uint8_t _init)
+{
+    static uint8_t subphase = 0; /* 0 based, 0:28 */
+    static uint8_t on = 0;
+    static uint32_t blinkTimer = 0;
+    static uint32_t subphaseTimer = 0;
+    const uint32_t subphasePeriod = 15 * S;
+    const uint8_t nphases = 10;
+    const uint32_t blinkPeriod = 1 * S;
+    uint8_t retval = 0;
+
+    if (_init != 0)
+    {
+        subphase = 0;
+        ResetTimer(&blinkTimer);
+        ResetTimer(&subphaseTimer);
+        on = 0;
+    }
+    if (IsExpiredTimer(&subphaseTimer, subphasePeriod) != 0)
+    {
+        subphase = (subphase >= nphases - 1 ) ? nphases - 1 : subphase + 1;
+        ResetTimer(&subphaseTimer);
+    }
+    if (IsExpiredTimer(&blinkTimer, blinkPeriod) != 0)
+    {
+        ResetTimer(&blinkTimer);
+        showFull(BLACK);
+        if (on != 0)
+        {
+            for (uint8_t i = subphase; i <= subphase + 9; i += 2)
+            {
+                put2pixels(GREEN, i * 2 + 0);
+                put2pixels(GREEN, i * 2 + 1);
+                put2pixels(GREEN, 71 - (i * 2 + 0));
+                put2pixels(GREEN, 71 - (i * 2 + 1));
+            }
+        }
+        retval = !0;
+        on = !on;
+    }
+    return retval;
+
+}
+
+static uint8_t ironC11green(const uint8_t init)
+{
+    uint8_t changed = 0;
+    if (init != 0)
+    {
+        showFull(BLACK);
+        for (uint8_t i = 18; i < 54; i++)
+        {
+            put2pixels(GREEN,i);
+        }
+
+        changed = !0;
+    }
+    return changed;
+}
+
+
+static uint8_t ironC11(const uint8_t _init)
+{
+    static const Blink_t blinkDesc =
+            {
+                    .on = S / 2,
+                    .off = S / 2,
+                    .pPhase = ironC11green
+            };
+    return blink(_init,&blinkDesc);
+}
+
+
+static uint8_t ironmanMode(uint32_t const ms,uint8_t * const nextState)
+{
+    static uint8_t firstTime = !0;
+    static Phase_desc_t phaseTable[] =
+            {
+                    {.start = 0, .pPhase = tlightPre},
+                    {.start = 0, .pPhase = tlightReverse},
+                    {.start = 5 * S, .pPhase = darkPhase},
+
+                    {.start = (5 + LA + 0 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 0 * (LB + LC + LC1) + LB) * S, ironC1_10},
+                    {.start = (5 + LA + 0 * (LB + LC + LC1) + LB + LC) * S, ironC11},
+
+                    {.start = (5 + LA + 1 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 1 * (LB + LC + LC1) + LB) * S, ironC1_10},
+                    {.start = (5 + LA + 1 * (LB + LC + LC1) + LB + LC) * S, ironC11},
+
+                     {.start = (5 + LA + 2 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 2 * (LB + LC + LC1) + LB) * S, ironC1_10},
+                    {.start = (5 + LA + 2 * (LB + LC + LC1) + LB + LC) * S, ironC11},
+
+                    {.start = (5 + LA + 3 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 3 * (LB + LC + LC1) + LB) * S, NULL}
+                };
+    if (firstTime)
+    {
+        firstTime = 0;
+        const uint32_t rand1 = genRandom(7,15) * S;
+        const uint32_t rand2 = genRandom(1,5) * S / 2;
+        const uint8_t nelements = sizeof(phaseTable) / sizeof(phaseTable[0]);
+        const uint8_t rand1start = 1;
+        const uint8_t rand2start = 2;
+        for (uint8_t rand1pahse = rand1start; rand1pahse < nelements; rand1pahse++)
+        {
+            phaseTable[rand1pahse].start += rand1;
+        }
+        for (uint8_t rand2pahse = rand2start; rand2pahse < nelements; rand2pahse++)
+        {
+            phaseTable[rand2pahse].start += rand2;
+        }
+    }
+    return processPhaseTable(phaseTable, nextState, ms);
+}
 /**
  * @brief Lock mode. Is shown at the end of all sequences (@ref config, @ref tlightMode, etc) to show that the stick is on and remind to switch it off
  * @return nonzero means the led strip must be updated
@@ -1777,6 +2024,9 @@ void led_control(uint32_t const ms)
 			case MODE_PITINVITE:
 				state = STATE_PITINVITE;
 				break;
+            case MODE_IRONMAN:
+                state = STATE_IRONMAN;
+                break;
 			default:
 				state = STATE_LOCK;
 				break;
@@ -1824,6 +2074,13 @@ void led_control(uint32_t const ms)
 	case STATE_PITINVITE:
 		changed = pitInviteMode(ms); /* Never ends */
 		break;
+    case STATE_IRONMAN:
+        changed = ironmanMode(ms,&nextState);
+        if (nextState != 0)
+        {
+            state = STATE_LOCK;
+        }
+        break;
 
 	case STATE_LOCK:
 	  changed = lock();
