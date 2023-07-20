@@ -1908,7 +1908,8 @@ static uint8_t ironmanMode(uint32_t const ms,uint8_t * const nextState)
                     {.start = (5 + LA + 2 * (LB + LC + LC1) + LB + LC) * S, ironC11},
 
                     {.start = (5 + LA + 3 * (LB + LC + LC1)) * S, ironB},
-                    {.start = (5 + LA + 3 * (LB + LC + LC1) + LB) * S, NULL}
+                    {.start = (5 + LA + 3 * (LB + LC + LC1) + LB) * S, darkPhase},
+                    {.start = (5 + LA + 3 * (LB + LC + LC1) + LB + LA) * S, NULL}
                 };
     if (firstTime)
     {
