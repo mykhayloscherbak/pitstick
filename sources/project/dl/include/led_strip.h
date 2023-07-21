@@ -30,6 +30,20 @@ typedef enum
 	BLUE10    /**< 10% blue */
 }Colors_t;
 
+typedef uint8_t (*pPhase_t)(const uint8_t init);
+
+/**
+ * @brief structure for blink function
+ */
+typedef struct
+{
+    uint32_t on; /**< On time */
+    uint32_t off; /**< Off time */
+    pPhase_t pOnPhase; /**< Callback to the "on" phase function */
+    pPhase_t pOffPhase; /**< Callback to the "off" phase function */
+} Blink_t;
+
+
 /**
  * @brief Function that returns the current Vbat level color
  */
@@ -102,6 +116,13 @@ uint8_t blinkTwice(const uint8_t init,const Colors_t color,pPowerColorFunc_t con
  * @param Number The number to display
  */
 void displayNumber(const Colors_t colorL, const Colors_t colorR,const uint8_t Number);
+/**
+ * @brief Blinks between the @ref _blink.pOnPhase function out and @ref _blink.pOffPhase
+ * @param init != 0 if the function is called first time
+ * @param _blink the structure that contains timings and callback
+ * @return !0 if buffer was changed
+ */
+uint8_t blink(const uint8_t init, const Blink_t * const _blink);
 /**
  * @brief Sends the led buffer to the led strip.
  */
