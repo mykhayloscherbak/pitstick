@@ -1028,7 +1028,7 @@ static uint8_t lastGreenPhase(const uint8_t init)
    return blinkTwice(init,GREEN,getPowerColor);
 }
 
-typedef uint8_t (*pPhase_t)(const uint8_t init);
+
 /**
  * @brief Phase description
  */
@@ -1417,57 +1417,14 @@ static const uint32_t greenPixelMs = 8 * S;
 static const uint32_t bluePixelMs = 10 * S;
 
 
-typedef struct
-{
-    uint32_t on;
-    uint32_t off;
-    pPhase_t pPhase;
-} Blink_t;
-
-static uint8_t blink(const uint8_t init, const Blink_t * const _blink)
-{
-    static uint8_t onPhase = 0;
-    static uint32_t timer = 0;
-    uint8_t changed = 0;
-    if ( 0 != init )
-    {
-        onPhase = !0;
-        ResetTimer(&timer);
-        changed = _blink->pPhase(!0);
-    }
-    else
-    {
-        if (0 != onPhase)
-        {
-            changed = _blink->pPhase(0);
-            if (IsExpiredTimer(&timer,_blink->on) != 0)
-            {
-                showFull(BLACK);
-                ResetTimer(&timer);
-                onPhase = 0;
-                changed = !0;
-            }
-        }
-        else
-        {
-            if (IsExpiredTimer(&timer,_blink->off) != 0)
-            {
-                ResetTimer(&timer);
-                onPhase = !0;
-                changed = _blink->pPhase(!0);
-            }
-        }
-    }
-    return changed;
-}
-
 static uint8_t darkPhase(const uint8_t _init)
 {
     static const Blink_t blinkDesc =
     {
             .on = k2hOnDarkMs,
             .off = k2hOffDarkMs,
-            .pPhase = showPower
+            .pOnPhase = showPower,
+            .pOffPhase = showOff
     };
 	return blink(_init,&blinkDesc);
 }
@@ -1483,7 +1440,8 @@ static uint8_t allGreenBlink(const uint8_t _init)
     {
             .on = k2hOnMs,
             .off = k2hOffMs,
-            .pPhase = allGreen
+            .pOnPhase = allGreen,
+            .pOffPhase = showOff
     };
     return blink(_init, &blinkDesc);
 }
@@ -1500,7 +1458,8 @@ static uint8_t allRedBlink(const uint8_t _init)
     {
             .on = k2hOnRedMs,
             .off = k2hOffRedMs,
-            .pPhase = allRed
+            .pOnPhase = allRed,
+            .pOffPhase = showOff
     };
     return blink(_init, &blinkDesc);
 }
@@ -1726,6 +1685,9 @@ static uint8_t pitInviteMode(const uint32_t ms)
 /*********************** Iron man **********************************/
 #define LA (90)
 #define LB (720)
+#define LB30 (5)
+#define LB1_29 (LB - LB30)
+
 #define LC (150)
 #define LC1 (30)
 static uint8_t tlightPre(const uint8_t _init)
@@ -1760,21 +1722,19 @@ static uint8_t tlightPre(const uint8_t _init)
     return retval;
 }
 /**
- * @brief IronMan phase B (race) subphases 1-29
+ * @brief IronMan phase B (race) subphases 1-29. Last phase will be interrupted by the scheduler and changed to @ref ironB30
  * @param _init !0 if it's first run
  * @return !0 if led strip must be updated
  */
-static uint8_t ironB(const uint8_t _init)
+static uint8_t ironB1_29(const uint8_t _init)
 {
     static uint8_t subphase = 0; /* 0 based, 0:29 */
     static uint8_t on = 0;
     static uint32_t blinkTimer = 0;
     static uint32_t subphaseTimer = 0;
-    static uint32_t slowBlinkTimer = 0;
     const uint32_t subphasePeriod = 24 * S;
     const uint8_t nphases = 30;
-    const uint32_t slowBlinkTime = (LB - 5) * S;
-    static uint32_t blinkPeriod = 1 * S;
+    const uint32_t blinkPeriod = 1 * S;
     uint8_t retval = 0;
 
     if (_init != 0)
@@ -1782,13 +1742,7 @@ static uint8_t ironB(const uint8_t _init)
         subphase = 0;
         ResetTimer(&blinkTimer);
         ResetTimer(&subphaseTimer);
-        ResetTimer(&slowBlinkTimer);
-        blinkPeriod = 1 * S;
         on = 0;
-    }
-    if (IsExpiredTimer(&slowBlinkTimer, slowBlinkTime) != 0)
-    {
-        blinkPeriod = S / 2;
     }
     if (IsExpiredTimer(&subphaseTimer, subphasePeriod) != 0)
     {
@@ -1813,6 +1767,45 @@ static uint8_t ironB(const uint8_t _init)
     return retval;
 }
 
+static uint8_t ironB30row(const uint8_t _init, const uint8_t _row)
+{
+    uint8_t changed = 0;
+    if (_init != 0)
+    {
+        showFull(BLACK);
+        for (uint8_t i = 29; i <= 29 + 6; i += 2)
+        {
+            putPixel(_row, i, RED);
+            putPixel(_row, 71 - i, RED);
+        }
+
+        changed = !0;
+    }
+    return changed;
+}
+
+static uint8_t ironB30row0(const uint8_t _init)
+{
+    return ironB30row(_init, 0);
+}
+
+static uint8_t ironB30row1(const uint8_t _init)
+{
+    return ironB30row(_init, 1);
+}
+
+
+static uint8_t ironB30(const uint8_t _init)
+{
+    static const Blink_t blinkDesc =
+            {
+                    .on = S / 2,
+                    .off = S / 2,
+                    .pOnPhase = ironB30row0,
+                    .pOffPhase = ironB30row1
+            };
+    return blink(_init,&blinkDesc);
+}
 static uint8_t ironC1_10(const uint8_t _init)
 {
     static uint8_t subphase = 0; /* 0 based, 0:28 */
@@ -1857,20 +1850,30 @@ static uint8_t ironC1_10(const uint8_t _init)
 
 }
 
-static uint8_t ironC11green(const uint8_t init)
+static uint8_t ironC11green(const uint8_t _init,const uint8_t _row)
 {
     uint8_t changed = 0;
-    if (init != 0)
+    if (_init != 0)
     {
         showFull(BLACK);
         for (uint8_t i = 18; i < 54; i++)
         {
-            put2pixels(GREEN,i);
+            putPixel(_row, i, GREEN);
         }
 
         changed = !0;
     }
     return changed;
+}
+
+static uint8_t ironC11green0(const uint8_t _init)
+{
+    return ironC11green(_init, 0);
+}
+
+static uint8_t ironC11green1(const uint8_t _init)
+{
+    return ironC11green(_init, 1);
 }
 
 
@@ -1880,7 +1883,8 @@ static uint8_t ironC11(const uint8_t _init)
             {
                     .on = S / 2,
                     .off = S / 2,
-                    .pPhase = ironC11green
+                    .pOnPhase = ironC11green0,
+                    .pOffPhase = ironC11green1
             };
     return blink(_init,&blinkDesc);
 }
@@ -1893,21 +1897,27 @@ static uint8_t ironmanMode(uint32_t const ms,uint8_t * const nextState)
             {
                     {.start = 0, .pPhase = tlightPre},
                     {.start = 0, .pPhase = tlightReverse},
-                    {.start = 5 * S, .pPhase = darkPhase},
 
-                    {.start = (5 + LA + 0 * (LB + LC + LC1)) * S, ironB},
+                    {.start = 5 * S, .pPhase = showOff},
+                    {.start = (5 + 10) * S, .pPhase = darkPhase},
+
+                    {.start = (5 + LA + 0 * (LB + LC + LC1)) * S, ironB1_29},
+                    {.start = (5 + LA + 0 * (LB + LC + LC1) + LB1_29) * S, ironB30},
                     {.start = (5 + LA + 0 * (LB + LC + LC1) + LB) * S, ironC1_10},
                     {.start = (5 + LA + 0 * (LB + LC + LC1) + LB + LC) * S, ironC11},
 
-                    {.start = (5 + LA + 1 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 1 * (LB + LC + LC1)) * S, ironB1_29},
+                    {.start = (5 + LA + 1 * (LB + LC + LC1) + LB1_29) * S, ironB30},
                     {.start = (5 + LA + 1 * (LB + LC + LC1) + LB) * S, ironC1_10},
                     {.start = (5 + LA + 1 * (LB + LC + LC1) + LB + LC) * S, ironC11},
 
-                     {.start = (5 + LA + 2 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 2 * (LB + LC + LC1)) * S, ironB1_29},
+                    {.start = (5 + LA + 2 * (LB + LC + LC1) + LB1_29) * S, ironB30},
                     {.start = (5 + LA + 2 * (LB + LC + LC1) + LB) * S, ironC1_10},
                     {.start = (5 + LA + 2 * (LB + LC + LC1) + LB + LC) * S, ironC11},
 
-                    {.start = (5 + LA + 3 * (LB + LC + LC1)) * S, ironB},
+                    {.start = (5 + LA + 3 * (LB + LC + LC1)) * S, ironB1_29},
+                    {.start = (5 + LA + 3 * (LB + LC + LC1) + LB1_29) * S, ironB30},
                     {.start = (5 + LA + 3 * (LB + LC + LC1) + LB) * S, darkPhase},
                     {.start = (5 + LA + 3 * (LB + LC + LC1) + LB + LA) * S, NULL}
                 };

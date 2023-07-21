@@ -310,6 +310,44 @@ uint8_t blinkTwice(const uint8_t init,const Colors_t color,pPowerColorFunc_t con
   return changed;
 }
 
+
+uint8_t blink(const uint8_t init, const Blink_t * const _blink)
+{
+    static uint8_t onPhase = 0;
+    static uint32_t timer = 0;
+    uint8_t changed = 0;
+    if ( 0 != init )
+    {
+        onPhase = !0;
+        ResetTimer(&timer);
+        changed = _blink->pOnPhase(!0);
+    }
+    else
+    {
+        if (0 != onPhase)
+        {
+            changed = _blink->pOnPhase(0);
+            if (IsExpiredTimer(&timer,_blink->on) != 0)
+            {
+                ResetTimer(&timer);
+                onPhase = 0;
+                changed = _blink->pOffPhase(!0);
+            }
+        }
+        else
+        {
+            changed = _blink->pOffPhase(0);
+            if (IsExpiredTimer(&timer,_blink->off) != 0)
+            {
+                ResetTimer(&timer);
+                onPhase = !0;
+                changed = _blink->pOnPhase(!0);
+            }
+        }
+    }
+    return changed;
+}
+
 void sendDataToStrip(void)
 {
 	displayStrip(leds);
