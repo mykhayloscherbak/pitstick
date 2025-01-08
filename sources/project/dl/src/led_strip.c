@@ -229,6 +229,16 @@ void dispStrips(const Colors_t color,const uint8_t nstrips)
 	}
 }
 
+void dispStripsRevese(const Colors_t color,const uint8_t nstrips)
+{
+	showFull(BLACK);
+	for (uint8_t i = 0; i < ((nstrips > 5) ? 5 : nstrips); i++)
+	{
+		dispStrip(color,4 - i);
+	}
+}
+
+
 void fill2Pixels(const Colors_t _color, const uint8_t _from, const uint8_t _to)
 {
 	if (_from > _to)

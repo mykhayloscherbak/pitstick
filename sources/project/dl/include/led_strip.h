@@ -89,6 +89,16 @@ uint8_t showFullWithInit(const Colors_t color, const uint8_t init);
 
 void dispStrips(const Colors_t color, const uint8_t nstrips);
 
+
+/**
+ * @brief Displays strips (0 - 5) of selected color starting from the handle. Data is put to the out buffer and actual color will not be changed until updated by @ref sendDataToStrip
+ * @param color Color index
+ * @param nstrips Number of strips
+ */
+
+void dispStripsRevese(const Colors_t color,const uint8_t nstrips);
+
+
 /**
  * @fn void dispStrip(const Colors_t, const uint8_t)
  * @brief displays strip number (0 - 4) of selected color
