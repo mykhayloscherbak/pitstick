@@ -1,7 +1,0 @@
-<map id="bll.h" name="bll.h">
-<area shape="rect" id="Node000001" title="Contains business logic function prototype." alt="" coords="46,5,97,31"/>
-<area shape="rect" id="Node000002" href="$bll_8c.html" title="Contains task switcher implementation and task table." alt="" coords="5,79,55,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,44,39,80,34,77,55,41"/>
-<area shape="rect" id="Node000003" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle." alt="" coords="79,79,146,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,41,108,77,104,80,83,44"/>
-</map>

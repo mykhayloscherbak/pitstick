@@ -1,7 +1,0 @@
-<map id="Systick_Init" name="Systick_Init">
-<area shape="rect" id="Node000001" title="Inits systick timer interrupt for 1ms period." alt="" coords="199,5,296,31"/>
-<area shape="rect" id="Node000002" href="$main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions." alt="" coords="108,5,151,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,21,151,21,151,15,185,15"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
-</map>

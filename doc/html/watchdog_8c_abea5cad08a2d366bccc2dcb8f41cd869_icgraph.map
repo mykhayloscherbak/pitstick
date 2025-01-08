@@ -1,8 +1,0 @@
-<map id="Reset_Watchdog" name="Reset_Watchdog">
-<area shape="rect" id="Node000001" title="Resets watchdog." alt="" coords="303,5,433,31"/>
-<area shape="rect" id="Node000002" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,21,60,21,60,15,289,15"/>
-<area shape="rect" id="Node000003" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="contains one iteration of the main loop" alt="" coords="108,31,255,56"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,31,255,36,254,31,288,26"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="94,31,60,25,61,20,95,26"/>
-</map>

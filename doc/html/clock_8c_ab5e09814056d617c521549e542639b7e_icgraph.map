@@ -1,5 +1,0 @@
-<map id="SysTick_Handler" name="SysTick_Handler">
-<area shape="rect" id="node2" href="$clock_8c.html#a99ae53ef20dfaff65b1ca3b4687771bf" title="Inits systick timer interrupt for 1ms period. " alt="" coords="176,5,267,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a4843afe4002b0719b85072537d5754cd" title="Contains all init functions. " alt="" coords="315,5,355,32"/>
-<area shape="rect" id="node4" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="403,5,453,32"/>
-</map>

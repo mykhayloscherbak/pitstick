@@ -1,9 +1,0 @@
-<map id="led_control.h" name="led_control.h">
-<area shape="rect" id="Node000001" title="Contains function that controls led strip." alt="" coords="78,5,185,31"/>
-<area shape="rect" id="Node000002" href="$bll_8c.html" title="Contains task switcher implementation and task table." alt="" coords="5,79,55,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,41,48,81,45,76,102,36"/>
-<area shape="rect" id="Node000003" href="$led__control_8c.html" title="Contains led control logic for all modes:" alt="" coords="79,79,184,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,44,134,79,129,79,129,44"/>
-<area shape="rect" id="Node000004" href="$rgbw_8c.html" title="Contains SK6812 led strip driver implementation. The driver converts rgbw led data to serial array of..." alt="" coords="209,79,273,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,36,224,76,221,81,159,40"/>
-</map>

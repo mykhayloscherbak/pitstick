@@ -1,9 +1,0 @@
-<map id="adc.c" name="adc.c">
-<area shape="rect" id="Node000001" title="Contains ADC driver for one channel." alt="" coords="81,5,137,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,109,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,33,76,69,72,66,99,29"/>
-<area shape="rect" id="Node000003" href="$adc_8h.html" title="Contains ADC driver form one channel prototypes." alt="" coords="134,79,191,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,29,148,66,144,69,116,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="127,152,198,177"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,104,165,138,160,138,160,104"/>
-</map>

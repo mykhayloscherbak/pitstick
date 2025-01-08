@@ -1,7 +1,0 @@
-<map id="Toggle_Heartbeat" name="Toggle_Heartbeat">
-<area shape="rect" id="Node000001" title="Toggles &quot;Heartbeat led&quot;." alt="" coords="5,31,141,56"/>
-<area shape="rect" id="Node000002" href="$gpio_8c.html#ae60d6d62cc9dd39cee66297840556850" title="Reads the corresponding GPIO pin." alt="" coords="189,5,308,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,31,176,26,176,31,142,36"/>
-<area shape="rect" id="Node000003" href="$gpio_8c.html#acd490e73c4bdd10da5c560279b713036" title="Sets the corresponding GPIO pin." alt="" coords="196,55,301,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,50,183,56,182,61,141,55"/>
-</map>

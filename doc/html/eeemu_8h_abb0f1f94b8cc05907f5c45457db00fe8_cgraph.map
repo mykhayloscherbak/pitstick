@@ -1,7 +1,0 @@
-<map id="eeemuSeedSet" name="eeemuSeedSet">
-<area shape="rect" id="Node000001" title="Saves current prng." alt="" coords="5,31,125,56"/>
-<area shape="rect" id="Node000002" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page." alt="" coords="177,5,312,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,32,163,27,164,32,126,38"/>
-<area shape="rect" id="Node000003" href="$eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng." alt="" coords="173,55,316,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,49,160,53,159,59,125,54"/>
-</map>

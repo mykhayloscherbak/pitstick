@@ -1,9 +1,0 @@
-<map id="showFullWithInit" name="showFullWithInit">
-<area shape="rect" id="Node000001" title="Shows total stick with the same color if init is nonzero. Does nothing else." alt="" coords="5,5,136,31"/>
-<area shape="rect" id="Node000002" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="184,5,263,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,15,170,15,170,21,136,21"/>
-<area shape="rect" id="Node000003" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="311,5,437,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,15,297,15,297,21,263,21"/>
-<area shape="rect" id="Node000004" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="485,5,597,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="438,15,472,15,472,21,438,21"/>
-</map>
