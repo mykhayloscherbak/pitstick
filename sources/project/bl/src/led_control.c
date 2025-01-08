@@ -7,6 +7,7 @@
  *        + Safety Car ("Zvyagin") mode
  *        + kart 2h mode
  *        + Pitstop invite mode
+ *        + PitstopV2
  *        + Config mode
  *        .
  *
@@ -54,6 +55,7 @@ typedef enum
 	STATE_K2H,					    /**< Karting 2H mode */
 	STATE_PITINVITE,                /**< Pitlane invitation mode */
 	STATE_IRONMAN,                  /**< Ironman mode. */
+	STATE_PIT2,						/**< Pitstop V2 */
 	STATE_LOCK,                     /**< Lock mode. It works after ending one if the previous modes and is needed to remind that the stick is not turned off */
 	STATE_CONFIG_PARAM_IDLE,        /**< Stick is in the configuration  mode and mode processor is in the idle state */
 	STATE_CONFIG_PARAM_PRESSED,     /**< Button is pressed while parameter is displayed */
@@ -74,6 +76,7 @@ typedef enum
 	STATE_CONFIG_SC_END,            /**< End of safety car mode config */
 	STATE_CONFIG_K2H_END,           /**< End of Kartig 2h mode config */
 	STATE_CONFIG_IRONMAN_END,       /**< End of IronMan mode config */
+	STATE_CONFIG_PIT2_END,			/**< End of Pit v2 mode config */
 	STATE_CONFIG_PITINVITE_COLOR,   /**< Pit line invitation config mode */
 	STATE_CONFIG_END,               /**< End of configuration process */
 	STATE_LOCK_START,               /**< Start lock mode. Lock mode is turned on after all operations are complete to remimd switchig the stick off */
@@ -99,6 +102,7 @@ typedef enum
 	MODE_KART2H, /**< Karting 2h mode */
 	MODE_PITINVITE, /**< Pitlane invitation mode */
 	MODE_IRONMAN, /**< Iron man mode. Tlight + pit */
+	MODE_PIT2, /**< Pitstop V2, DD08012025 */
 	MODE_TOTAL   /**< Total number of modes */
 } Working_Mode_t;
 
@@ -229,6 +233,12 @@ static void dispModePattern(const uint8_t value)
             put2pixels(RED,i * 4 + 1);
         }
         break;
+		case MODE_PIT2:
+			for (uint8_t i = 0; i < 10; i++)
+			{
+				put2pixels(BLUE,i);
+			}
+		break;
 	default:
 		break;
 	}
@@ -491,8 +501,8 @@ static uint8_t  config(uint8_t * const nextState)
     		uint8_t noParam = !0;
     		switch (savedParams[CH_MODE])
     		{
-    		case MODE_PIT:
-    			dV.dispFunc = displayTSEQ;
+    			case MODE_PIT:
+    				dV.dispFunc = displayTSEQ;
     			dV.min = TSEQ_MIN;
     			dV.max = TSEQ_MAX;
     			dV.value = savedParams[CH_TSEQ];
@@ -500,8 +510,8 @@ static uint8_t  config(uint8_t * const nextState)
     			noParam = 0;
     			state = STATE_CONFIG_TSEQ;
     			break;
-    		case MODE_TLIGHT:
-    			dV.dispFunc = displayTlightMin;
+    			case MODE_TLIGHT:
+    				dV.dispFunc = displayTlightMin;
     			dV.min = TLIGHT_MIN;
     			dV.max = TLIGHT_MAX - 2;
     			dV.value = savedParams[CH_TLIGHT_MIN];
@@ -509,36 +519,41 @@ static uint8_t  config(uint8_t * const nextState)
     			noParam = 0;
     			state = STATE_CONFIG_TLIGHT_MIN;
     			break;
-    		case MODE_PODNOS:
-    			dV.dispFunc = displayPodnosModeTime,
-				dV.min = PODNOS_MODE_MIN;
+    			case MODE_PODNOS:
+    				dV.dispFunc = displayPodnosModeTime,
+					dV.min = PODNOS_MODE_MIN;
     			dV.max = PODNOS_MODE_MAX;
     			dV.value = savedParams[CH_PODNOS_MODE_TIME];
     			dV.endMode = EM_CONTINUE;
     			noParam = 0;
     			state = STATE_CONFIG_PODNOS_MODE;
     			break;
-    		case MODE_SC:
-    	        state = STATE_CONFIG_SC_END;
-    	        noParam = !0;
+    			case MODE_SC:
+    				state = STATE_CONFIG_SC_END;
+    			noParam = !0;
     			break;
-    		case MODE_KART2H:
-    	        state = STATE_CONFIG_K2H_END;
-    	        noParam = !0;
+    			case MODE_KART2H:
+    				state = STATE_CONFIG_K2H_END;
+    			noParam = !0;
     			break;
-    		case MODE_PITINVITE:
-    			dV.dispFunc = displayPitInviteColor,
-				dV.min = 0,
-				dV.max = sizeof(num2color) / sizeof(num2color[0]) - 1;
-      			dV.value = savedParams[CH_PITINVITE_COLOR];
-        		dV.endMode = EM_CONTINUE;
-        		noParam = 0;
-        		state = STATE_CONFIG_PITINVITE_COLOR;
-        		break;
-            case MODE_IRONMAN:
-                    state = STATE_CONFIG_IRONMAN_END;
-                    noParam = !0;
-                    break;
+    			case MODE_PITINVITE:
+    				dV.dispFunc = displayPitInviteColor,
+					dV.min = 0,
+					dV.max = sizeof(num2color) / sizeof(num2color[0]) - 1;
+    			dV.value = savedParams[CH_PITINVITE_COLOR];
+    			dV.endMode = EM_CONTINUE;
+    			noParam = 0;
+    			state = STATE_CONFIG_PITINVITE_COLOR;
+    			break;
+    			case MODE_IRONMAN:
+    				state = STATE_CONFIG_IRONMAN_END;
+    			noParam = !0;
+    			break;
+
+    			case MODE_PIT2:
+    				state = STATE_CONFIG_PIT2_END;
+    			noParam = !0;
+    			break;
     		}
     		if (noParam == 0)
     		{
@@ -725,6 +740,7 @@ static uint8_t  config(uint8_t * const nextState)
     case STATE_CONFIG_K2H_END:
     case STATE_CONFIG_SC_END:
     case STATE_CONFIG_IRONMAN_END:
+  	case STATE_CONFIG_PIT2_END:
         if (saved == 0)
         {
           eeemu_write(savedParams);
@@ -961,6 +977,11 @@ static void dispRedStrips(const uint8_t nstrips)
 	dispStrips(RED,nstrips);
 }
 
+static void dispRedStripsReverse(const uint8_t nstrips)
+{
+	dispStripsRevese(RED,nstrips);
+}
+
 /**
  * @brief The main phase 5-4-3-2-1-go traffic light before crossing start/finish line. Starts at -5s and ends at 0
  * @param init is nonzero at the first run
@@ -1015,6 +1036,28 @@ static uint8_t tlightReverse(const uint8_t init)
         ResetTimer(&timer);
     }
     return changed;
+}
+
+static uint8_t tlightForward(const uint8_t init)
+{
+	static uint8_t nstrips;
+	uint8_t changed = 0;
+	static uint32_t timer;
+	if (init != 0)
+	{
+		nstrips = 1;
+		ResetTimer(&timer);
+		dispRedStripsReverse(nstrips);
+		changed = !0;
+	}
+	if (IsExpiredTimer(&timer,1000) != 0)
+	{
+		changed = !0;
+		nstrips = (nstrips == 5) ? 5 : nstrips + 1;
+		dispRedStripsReverse(nstrips);
+		ResetTimer(&timer);
+	}
+	return changed;
 }
 
 
@@ -1464,6 +1507,11 @@ static uint8_t allRedBlink(const uint8_t _init)
     return blink(_init, &blinkDesc);
 }
 
+static uint8_t allBlue(const uint8_t _init)
+{
+	return showFullWithInit(BLUE,_init);
+}
+
 static void fill2PixelsWithFade(const Colors_t _bright, const Colors_t _dark, const uint8_t _bottom, const uint8_t _top)
 {
     const uint8_t bottom = (_bottom > _top ) ? _bottom : _top;
@@ -1690,7 +1738,7 @@ static uint8_t pitInviteMode(const uint32_t ms)
 
 #define LC (150)
 #define LC1 (30)
-static uint8_t tlightPre(const uint8_t _init)
+static uint8_t tlightPre(const uint8_t _init, const Colors_t _color)
 {
     static uint32_t timer;
     static uint8_t left;
@@ -1712,15 +1760,31 @@ static uint8_t tlightPre(const uint8_t _init)
         showFull(BLACK);
         if (left != 0)
         {
-            fill2Pixels(RED,0,11);
+            fill2Pixels(_color,0,11);
         }
         else
         {
-            fill2Pixels(RED,60,71);
+            fill2Pixels(_color,60,71);
         }
     }
     return retval;
 }
+
+static uint8_t tlightPreRed(const uint8_t _init)
+{
+	return tlightPre(_init, RED);
+}
+
+static uint8_t tlightPreGreen(const uint8_t _init)
+{
+	return tlightPre(_init, GREEN);
+}
+
+static uint8_t tlightPreBlue(const uint8_t _init)
+{
+	return tlightPre(_init, BLUE);
+}
+
 /**
  * @brief IronMan phase B (race) subphases 1-29. Last phase will be interrupted by the scheduler and changed to @ref ironB30
  * @param _init !0 if it's first run
@@ -1895,7 +1959,7 @@ static uint8_t ironmanMode(uint32_t const ms,uint8_t * const nextState)
     static uint8_t firstTime = !0;
     static Phase_desc_t phaseTable[] =
             {
-                    {.start = 0, .pPhase = tlightPre},
+                    {.start = 0, .pPhase = tlightPreRed},
                     {.start = 0, .pPhase = tlightReverse},
 
                     {.start = 5 * S, .pPhase = showOff},
@@ -1940,6 +2004,46 @@ static uint8_t ironmanMode(uint32_t const ms,uint8_t * const nextState)
     }
     return processPhaseTable(phaseTable, nextState, ms);
 }
+
+static uint8_t pit2(uint32_t const ms,uint8_t * const nextState)
+{
+    static uint8_t firstTime = !0;
+    static Phase_desc_t phaseTable[] =
+            {
+                    {.start = 0, .pPhase = tlightPreRed},
+                    {.start = 0, .pPhase = tlightForward},
+
+                    {.start = 5 * S, .pPhase = showOff},
+                    {.start = 20 * S, .pPhase = tlightPreRed},
+					{.start = (20 + 40) * S, .pPhase = allGreen}, /* 60 */
+				 	{.start = (20 + 40 + 80) * S, .pPhase = tlightPreGreen}, /* 140 */
+    				{.start = (20 + 40 + 80 + 40) * S, .pPhase = allRed}, /* 180 */
+					{.start = (20 + 40 + 80 + 40 + 20) * S, .pPhase = tlightPreRed}, /* 200 */
+					{.start = (20 + 40 + 80 + 40 + 20 + 40) * S, .pPhase = allBlue}, /* 240 */
+					{.start = (20 + 40 + 80 + 40 + 20 + 40 + 80) * S, .pPhase = tlightPreBlue}, /* 320 */
+					{.start = (20 + 40 + 80 + 40 + 20 + 40 + 80 + 40) * S, .pPhase = allRed}, /* 360 */
+                    {.start = (20 + 40 + 80 + 40 + 20 + 40 + 80 + 40 + 40) * S, NULL} /* 400 */
+                };
+    if (firstTime)
+    {
+        firstTime = 0;
+        const uint32_t rand1 = genRandom(2,6) * S;
+        const uint32_t rand2 = genRandom(1,5) * S / 2;
+        const uint8_t nrandom_elements  = 3;
+        const uint8_t rand1start = 1;
+        const uint8_t rand2start = 2;
+        for (uint8_t rand1pahse = rand1start; rand1pahse < nrandom_elements; rand1pahse++)
+        {
+            phaseTable[rand1pahse].start += rand1;
+        }
+        for (uint8_t rand2pahse = rand2start; rand2pahse < nrandom_elements; rand2pahse++)
+        {
+            phaseTable[rand2pahse].start += rand2;
+        }
+    }
+    return processPhaseTable(phaseTable, nextState, ms);
+}
+
 /**
  * @brief Lock mode. Is shown at the end of all sequences (@ref config, @ref tlightMode, etc) to show that the stick is on and remind to switch it off
  * @return nonzero means the led strip must be updated
@@ -2038,6 +2142,9 @@ void led_control(uint32_t const ms)
             case MODE_IRONMAN:
                 state = STATE_IRONMAN;
                 break;
+				case MODE_PIT2:
+					state = STATE_PIT2;
+				break;
 			default:
 				state = STATE_LOCK;
 				break;
@@ -2092,7 +2199,13 @@ void led_control(uint32_t const ms)
             state = STATE_LOCK;
         }
         break;
-
+	case STATE_PIT2:
+		changed = pit2(ms,&nextState);
+		if (nextState != 0)
+		{
+			state = STATE_LOCK;
+		}
+		break;
 	case STATE_LOCK:
 	  changed = lock();
 	  break;
