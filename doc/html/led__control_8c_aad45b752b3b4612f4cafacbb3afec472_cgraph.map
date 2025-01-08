@@ -1,8 +1,16 @@
 <map id="show234" name="show234">
-<area shape="rect" id="node2" href="$led__strip_8h.html#a38105803a923b427c0d872730042b27f" title="Blinks the whole stick by color to black two times at 1Hz frequency. " alt="" coords="128,5,201,32"/>
-<area shape="rect" id="node7" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="253,56,327,83"/>
-<area shape="rect" id="node3" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="249,5,331,32"/>
-<area shape="rect" id="node4" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="379,5,448,32"/>
-<area shape="rect" id="node5" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="496,31,611,57"/>
-<area shape="rect" id="node6" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="659,31,761,57"/>
+<area shape="rect" id="Node000001" title="This is one of safety car script stages. It shows 2,3,4 lights using YELLOW color." alt="" coords="5,31,85,56"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color" alt="" coords="133,5,212,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,33,119,26,120,31,86,38"/>
+<area shape="rect" id="Node000007" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="265,56,344,81"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="86,45,252,61,251,66,85,50"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="260,5,349,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,15,246,15,246,21,212,21"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="397,5,472,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="349,15,384,15,384,21,349,21"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="520,31,647,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="473,22,507,28,506,33,472,27"/>
+<area shape="rect" id="Node000006" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="695,31,807,56"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="647,41,681,41,681,46,647,46"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="344,62,506,48,506,53,345,68"/>
 </map>

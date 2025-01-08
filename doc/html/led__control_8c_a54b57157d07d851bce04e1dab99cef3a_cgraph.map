@@ -1,0 +1,22 @@
+<map id="tlightPreBlue" name="tlightPreBlue">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,112,105"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html#afa9a1bfec93d5719f4c8527744da4812" title=" " alt="" coords="160,80,237,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,90,146,90,146,95,112,95"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#a7296cdc7b329b62b2fc6200d54a12672" title=" " alt="" coords="303,5,387,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,78,284,40,296,34,299,39,287,44,221,82"/>
+<area shape="rect" id="Node000008" href="$clock_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="285,55,405,80"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="237,83,271,77,272,83,238,89"/>
+<area shape="rect" id="Node000009" href="$clock_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="297,104,394,129"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="238,96,283,104,283,109,237,102"/>
+<area shape="rect" id="Node000010" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="459,105,537,131"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="218,104,248,123,286,139,327,146,369,145,445,132,446,137,369,150,327,151,285,145,246,128,215,108"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="453,12,543,37"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="388,17,440,19,439,25,388,22"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="591,19,665,44"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="543,24,577,26,577,31,543,30"/>
+<area shape="rect" id="Node000006" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="713,56,840,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="666,38,713,50,711,55,665,43"/>
+<area shape="rect" id="Node000007" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="888,56,1000,81"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="840,66,874,66,874,71,840,71"/>
+<area shape="poly" id="edge10_Node000010_Node000006" title=" " alt="" coords="537,109,699,80,700,85,538,114"/>
+</map>

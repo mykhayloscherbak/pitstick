@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "Blink_t", "structBlink__t.html", "structBlink__t" ],
     [ "Buttons_t", "structButtons__t.html", "structButtons__t" ],
     [ "DispValue_t", "structDispValue__t.html", "structDispValue__t" ],
     [ "Div_t", "structDiv__t.html", "structDiv__t" ],

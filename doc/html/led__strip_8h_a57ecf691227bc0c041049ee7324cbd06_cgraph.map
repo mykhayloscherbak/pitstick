@@ -1,6 +1,11 @@
 <map id="sendDataToStrip" name="sendDataToStrip">
-<area shape="rect" id="node2" href="$rgbw_8h.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS. " alt="" coords="173,56,264,83"/>
-<area shape="rect" id="node3" href="$rgbw_8c.html#abb3e8e12703db91c21c08a28caab97c1" title="Converts leds array to serial bit array. " alt="" coords="327,5,423,32"/>
-<area shape="rect" id="node4" href="$timer__dma_8h.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent. " alt="" coords="323,56,427,83"/>
-<area shape="rect" id="node5" href="$timer__dma_8h.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer. " alt="" coords="312,107,437,133"/>
+<area shape="rect" id="Node000001" title="Sends the led buffer to the led strip." alt="" coords="5,55,133,80"/>
+<area shape="rect" id="Node000002" href="$rgbw_8c.html#a4b79ba57aa6ca4ca0a3d83f32a727eca" title="Sends data to the strip. Number of leds is NLEDS." alt="" coords="181,55,280,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,65,168,65,168,70,133,70"/>
+<area shape="rect" id="Node000003" href="$rgbw_8c.html#abb3e8e12703db91c21c08a28caab97c1" title="Converts leds array to serial bit array." alt="" coords="345,5,447,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,52,339,32,340,37,275,57"/>
+<area shape="rect" id="Node000004" href="$timer__dma_8c.html#a75b93c602be5fbf40b79833110fc6660" title="Sets data to be sent." alt="" coords="339,55,453,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="280,65,325,65,325,70,280,70"/>
+<area shape="rect" id="Node000005" href="$timer__dma_8c.html#af86e00ec18fe61f4d6b54bbe27b63a8d" title="Starts actual transfer." alt="" coords="328,104,464,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="275,77,340,97,339,102,273,83"/>
 </map>

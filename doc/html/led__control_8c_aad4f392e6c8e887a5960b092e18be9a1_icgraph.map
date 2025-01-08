@@ -1,7 +1,13 @@
 <map id="tlight" name="tlight">
-<area shape="rect" id="node2" href="$led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode. " alt="" coords="104,5,195,32"/>
-<area shape="rect" id="node3" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="243,5,328,32"/>
-<area shape="rect" id="node4" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="376,5,511,32"/>
-<area shape="rect" id="node5" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="559,5,691,32"/>
-<area shape="rect" id="node6" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="739,5,789,32"/>
+<area shape="rect" id="Node000001" title="The main phase 5&#45;4&#45;3&#45;2&#45;1&#45;go traffic light before crossing start/finish line. Starts at &#45;5s and ends a..." alt="" coords="787,5,843,31"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html#ad862c7faa22f1f2fd40d1796e1fb645f" title="Prepares and executes phase table for the pit stop mode." alt="" coords="643,5,739,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="773,21,739,21,739,15,773,15"/>
+<area shape="rect" id="Node000003" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="function that prepares led strip out data at every step (100ms)" alt="" coords="500,5,595,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="629,21,595,21,595,15,629,15"/>
+<area shape="rect" id="Node000004" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time" alt="" coords="303,5,452,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,21,452,21,452,15,486,15"/>
+<area shape="rect" id="Node000005" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="contains one iteration of the main loop" alt="" coords="108,5,255,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="289,21,255,21,255,15,289,15"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>

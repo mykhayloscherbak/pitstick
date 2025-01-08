@@ -1,5 +1,13 @@
 <map id="prng.c" name="prng.c">
-<area shape="rect" id="node2" href="$prng_8h.html" title="Contains prototypes of function that returns random value between min and max. Caculated value is sto..." alt="" coords="5,80,64,107"/>
-<area shape="rect" id="node4" href="$eeemu_8h.html" title="eeprom emulation header in pair with eeemu.c " alt="" coords="88,80,160,107"/>
-<area shape="rect" id="node5" href="$adc_8h.html" title="Contains ADC driver form one channel prototypes. " alt="" coords="185,80,239,107"/>
+<area shape="rect" id="Node000001" title="contains function for generation pseudo&#45;rundonm number sequence for slalom light. x[n+1] = (a*x[n] + ..." alt="" coords="100,5,163,31"/>
+<area shape="rect" id="Node000002" href="$prng_8h.html" title="Contains prototypes of function that returns random value between min and max. Caculated value is sto..." alt="" coords="5,79,68,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,65,72,62,68,115,29"/>
+<area shape="rect" id="Node000004" href="$eeemu_8h.html" title="eeprom emulation header in pair with eeemu.c" alt="" coords="92,79,171,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,31,134,65,129,65,129,31"/>
+<area shape="rect" id="Node000005" href="$adc_8h.html" title="Contains ADC driver form one channel prototypes." alt="" coords="195,79,252,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="148,29,199,68,196,72,144,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="96,152,167,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="53,102,106,141,103,146,50,106"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="134,104,134,138,129,138,129,104"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="210,106,159,146,155,141,207,102"/>
 </map>

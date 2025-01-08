@@ -1,6 +1,11 @@
 <map id="dispStrip" name="dispStrip">
-<area shape="rect" id="node2" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="127,5,208,32"/>
-<area shape="rect" id="node3" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="256,5,325,32"/>
-<area shape="rect" id="node4" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="373,5,488,32"/>
-<area shape="rect" id="node5" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="536,5,639,32"/>
+<area shape="rect" id="Node000001" title="displays strip number (0 &#45; 4) of selected color" alt="" coords="5,5,84,31"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="132,5,221,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,15,118,15,118,21,84,21"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="269,5,344,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,15,256,15,256,21,221,21"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="392,5,519,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="344,15,378,15,378,21,344,21"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="567,5,679,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="519,15,553,15,553,21,519,21"/>
 </map>

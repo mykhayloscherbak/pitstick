@@ -1,3 +1,5 @@
 <map id="MainLoop_Iteration" name="MainLoop_Iteration">
-<area shape="rect" id="node2" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="185,5,236,32"/>
+<area shape="rect" id="Node000001" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0,..." alt="" coords="108,5,255,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>

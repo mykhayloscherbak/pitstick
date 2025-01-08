@@ -1,3 +1,5 @@
 <map id="eeemuSeedGet" name="eeemuSeedGet">
-<area shape="rect" id="node2" href="$eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng. " alt="" coords="165,5,296,32"/>
+<area shape="rect" id="Node000001" title="Returns previous saved prng value." alt="" coords="5,5,128,31"/>
+<area shape="rect" id="Node000002" href="$eeemu_8c.html#ab928265ca774001cc8dd0141a3c15e78" title="Searching for the last stored prng." alt="" coords="176,5,319,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,15,163,15,163,21,128,21"/>
 </map>

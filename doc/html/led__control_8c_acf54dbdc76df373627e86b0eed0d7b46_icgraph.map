@@ -1,0 +1,18 @@
+<map id="fill2PixelsWithFade" name="fill2PixelsWithFade">
+<area shape="rect" id="Node000001" title=" " alt="" coords="949,31,1093,56"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html#a6c906787fb12f23028054913c69da594" title=" " alt="" coords="778,5,897,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="935,34,896,29,897,23,936,29"/>
+<area shape="rect" id="Node000008" href="$led__control_8c.html#a961bb1ed8a6cb30c99dda63ba92657ef" title=" " alt="" coords="773,55,901,80"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="936,57,902,62,901,56,935,52"/>
+<area shape="rect" id="Node000003" href="$led__control_8c.html#a8d561fd44c3d1fb68a0a4a0e113f82d4" title=" " alt="" coords="643,31,725,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="765,33,726,39,725,34,764,27"/>
+<area shape="rect" id="Node000004" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="function that prepares led strip out data at every step (100ms)" alt="" coords="500,31,595,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="629,46,595,46,595,41,629,41"/>
+<area shape="rect" id="Node000005" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time" alt="" coords="303,31,452,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="486,46,452,46,452,41,486,41"/>
+<area shape="rect" id="Node000006" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="contains one iteration of the main loop" alt="" coords="108,31,255,56"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="289,46,255,46,255,41,289,41"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="759,58,725,52,726,47,760,53"/>
+</map>

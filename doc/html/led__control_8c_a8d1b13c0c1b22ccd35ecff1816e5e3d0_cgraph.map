@@ -1,29 +1,79 @@
 <map id="config" name="config">
-<area shape="rect" id="node2" href="$led__control_8c.html#a83ac31f201e838ba08faf013635b0e7d" title="show the param value and changes it during setup " alt="" coords="143,320,246,346"/>
-<area shape="rect" id="node7" href="$led__strip_8h.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="521,117,603,144"/>
-<area shape="rect" id="node11" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="355,472,445,498"/>
-<area shape="rect" id="node12" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="525,358,599,385"/>
-<area shape="rect" id="node13" href="$led__control_8c.html#a90079040009bdb11976bdb5d575de3dc" title="Show pattern for configuring brighness: red, green, blue and white strips. " alt="" coords="327,117,473,144"/>
-<area shape="rect" id="node14" href="$led__control_8c.html#a2b7c5fb7dd1adcab8f268b916c286c28" title="Displays brightness setup pattern using the current brighness. " alt="" coords="132,142,257,169"/>
-<area shape="rect" id="node15" href="$led__control_8c.html#a68192aa25ed535083ad7fc1c1c41f308" title="displayPodnosModeTime" alt="" coords="111,472,279,498"/>
-<area shape="rect" id="node18" href="$led__control_8c.html#afdea84b3ae64dec3eebe9e3b0a920346" title="displayT1" alt="" coords="155,522,234,549"/>
-<area shape="rect" id="node19" href="$led__control_8c.html#a002107c76047cbf8466727945864da75" title="displayT2" alt="" coords="155,573,234,600"/>
-<area shape="rect" id="node20" href="$led__control_8c.html#ac9eb710bcb5611edfd54dbacd868c975" title="displayTlightMax" alt="" coords="135,624,255,650"/>
-<area shape="rect" id="node21" href="$led__control_8c.html#a6e7d2c4e1d1543be158e3b91c6aa1b18" title="displayTlightMin" alt="" coords="137,674,253,701"/>
-<area shape="rect" id="node22" href="$led__control_8c.html#a47842ce67bfc0b2605cb6d1106c6ab20" title="displayTSEQ" alt="" coords="145,725,244,752"/>
-<area shape="rect" id="node23" href="$led__control_8c.html#ad9d7c30aba1aba8ce9cf29eea0e9b88f" title="Displays mode pattern: green points for MODE_PIT and red strips for MODE_TLIGHT. " alt="" coords="340,66,460,93"/>
-<area shape="rect" id="node24" href="$eeemu_8h.html#a8231eba0e5e301dd2bf2f1b1a3225f3e" title="stores config block to the eeprom emulation page " alt="" coords="147,776,243,802"/>
-<area shape="rect" id="node27" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="137,826,252,853"/>
-<area shape="rect" id="node28" href="$led__strip_8h.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="143,877,246,904"/>
-<area shape="rect" id="node3" href="$led__control_8c.html#a9f56725f852569377b98fbabc341cc3c" title="Incremens the value using min and max limits. " alt="" coords="364,320,436,346"/>
-<area shape="rect" id="node4" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="345,370,455,397"/>
-<area shape="rect" id="node5" href="$buttons_8h.html#ac3cb06a3761589b05a9d31c73a5a0f52" title="IsLongPressed" alt="" coords="345,218,455,245"/>
-<area shape="rect" id="node6" href="$buttons_8h.html#a2e8d9dc0a729a8bf64ee62a334fcea72" title="IsPressed" alt="" coords="359,269,441,296"/>
-<area shape="rect" id="node8" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="661,181,731,208"/>
-<area shape="rect" id="node9" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="789,358,904,385"/>
-<area shape="rect" id="node10" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="952,358,1055,385"/>
-<area shape="rect" id="node16" href="$led__strip_8h.html#a5a619ebce1d2a34e10976da0e90ee198" title="Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by..." alt="" coords="345,573,455,600"/>
-<area shape="rect" id="node17" href="$led__strip_8c.html#a319ffd328868f2d09aaca42d35eddf3c" title="Displays one digit as a led column. Each 3 leds are separated by a black one. " alt="" coords="651,434,741,461"/>
-<area shape="rect" id="node25" href="$eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block " alt="" coords="377,750,423,777"/>
-<area shape="rect" id="node26" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page. " alt="" coords="337,801,463,828"/>
+<area shape="rect" id="Node000001" title="all config mode processing is done here" alt="" coords="5,631,67,657"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html#a83ac31f201e838ba08faf013635b0e7d" title="show the param value and changes it during setup" alt="" coords="152,303,263,329"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="37,631,62,541,84,480,112,421,146,375,180,337,184,341,150,378,117,424,89,482,67,542,43,632"/>
+<area shape="rect" id="Node000007" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="555,530,644,555"/>
+<area shape="poly" id="edge44_Node000001_Node000007" title=" " alt="" coords="66,629,114,616,311,616,506,614,545,592,576,564,580,568,548,596,507,619,311,621,115,621,68,635"/>
+<area shape="rect" id="Node000011" href="$clock_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="379,429,476,454"/>
+<area shape="poly" id="edge45_Node000001_Node000011" title=" " alt="" coords="36,631,42,596,55,550,77,503,93,482,113,465,143,447,174,435,242,422,308,421,365,427,365,432,307,426,242,427,176,440,145,452,116,469,97,486,82,506,60,552,47,597,41,632"/>
+<area shape="rect" id="Node000012" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="560,305,639,330"/>
+<area shape="poly" id="edge47_Node000001_Node000012" title=" " alt="" coords="35,631,37,533,48,381,57,302,71,229,89,168,100,144,113,126,158,81,204,46,251,21,300,7,350,3,402,11,454,31,508,63,534,86,554,114,570,145,582,177,596,240,600,291,595,291,590,241,577,179,565,147,550,117,530,90,505,68,452,36,400,17,350,9,301,12,253,26,207,51,161,86,117,130,105,147,94,170,76,230,63,303,53,382,43,533,40,631"/>
+<area shape="rect" id="Node000013" href="$led__control_8c.html#a90079040009bdb11976bdb5d575de3dc" title="Show pattern for configuring brighness: red, green, blue and white strips." alt="" coords="348,78,507,103"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="35,631,40,543,52,411,62,342,75,278,92,226,113,189,135,167,161,148,218,120,277,103,334,93,335,98,279,108,220,125,164,153,139,171,117,192,97,228,80,280,67,343,58,412,45,544,40,631"/>
+<area shape="rect" id="Node000014" href="$led__control_8c.html#a2b7c5fb7dd1adcab8f268b916c286c28" title="Displays brightness setup pattern using the current brighness." alt="" coords="138,203,277,229"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="35,631,37,574,46,486,56,436,70,386,88,336,112,289,139,258,170,234,173,238,143,262,117,292,93,338,75,387,61,438,52,487,42,574,40,631"/>
+<area shape="rect" id="Node000015" href="$led__control_8c.html#a968288c1c1ca0e2162f5cbf9552d6fcf" title=" " alt="" coords="129,479,286,505"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="40,630,66,578,87,548,113,522,137,508,140,512,116,526,91,552,70,581,45,632"/>
+<area shape="rect" id="Node000017" href="$led__control_8c.html#a68192aa25ed535083ad7fc1c1c41f308" title=" " alt="" coords="115,779,300,805"/>
+<area shape="poly" id="edge22_Node000001_Node000017" title=" " alt="" coords="44,656,69,709,90,739,116,765,127,772,124,776,113,769,86,743,65,712,39,658"/>
+<area shape="rect" id="Node000020" href="$led__control_8c.html#afdea84b3ae64dec3eebe9e3b0a920346" title=" " alt="" coords="165,829,250,854"/>
+<area shape="poly" id="edge26_Node000001_Node000020" title=" " alt="" coords="42,657,49,689,63,731,85,776,99,796,116,814,133,825,152,832,151,837,131,830,113,818,95,800,80,779,58,733,44,690,37,658"/>
+<area shape="rect" id="Node000021" href="$led__control_8c.html#a002107c76047cbf8466727945864da75" title=" " alt="" coords="165,878,250,903"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="41,657,45,697,56,752,79,812,96,840,116,863,133,875,152,882,150,887,131,880,113,867,91,843,74,815,51,754,39,697,35,657"/>
+<area shape="rect" id="Node000022" href="$led__control_8c.html#ac9eb710bcb5611edfd54dbacd868c975" title=" " alt="" coords="140,631,275,657"/>
+<area shape="poly" id="edge30_Node000001_Node000022" title=" " alt="" coords="67,641,126,641,126,647,67,647"/>
+<area shape="rect" id="Node000023" href="$led__control_8c.html#a6e7d2c4e1d1543be158e3b91c6aa1b18" title=" " alt="" coords="142,681,273,706"/>
+<area shape="poly" id="edge32_Node000001_Node000023" title=" " alt="" coords="68,651,115,666,147,675,145,680,114,671,66,656"/>
+<area shape="rect" id="Node000024" href="$led__control_8c.html#a47842ce67bfc0b2605cb6d1106c6ab20" title=" " alt="" coords="156,730,259,755"/>
+<area shape="poly" id="edge34_Node000001_Node000024" title=" " alt="" coords="49,655,77,685,116,715,144,727,142,732,113,720,74,689,45,659"/>
+<area shape="rect" id="Node000025" href="$led__control_8c.html#ad9d7c30aba1aba8ce9cf29eea0e9b88f" title="Displays mode pattern: green points for MODE_PIT and red strips for MODE_TLIGHT." alt="" coords="362,579,493,605"/>
+<area shape="poly" id="edge36_Node000001_Node000025" title=" " alt="" coords="45,630,73,599,92,584,114,572,147,562,182,556,251,555,317,562,372,573,371,579,316,567,251,560,182,562,148,567,116,577,95,588,76,603,49,633"/>
+<area shape="rect" id="Node000026" href="$eeemu_8c.html#a70a772a8de391f4aefa3bbd5343996df" title="stores config block to the eeprom emulation page" alt="" coords="154,927,261,953"/>
+<area shape="poly" id="edge40_Node000001_Node000026" title=" " alt="" coords="40,657,41,705,50,774,60,811,73,848,92,883,116,913,142,929,139,933,113,917,88,886,69,850,55,813,45,775,36,705,34,657"/>
+<area shape="rect" id="Node000029" href="$eeemu_8c.html#aaf9773547ad14119a632b9c9c0c29967" title="returns the pointer to the last stored configuration. Size is MAX_STORED" alt="" coords="144,977,271,1002"/>
+<area shape="poly" id="edge43_Node000001_Node000029" title=" " alt="" coords="41,657,49,721,65,814,87,905,101,940,117,964,133,975,130,980,113,967,96,943,82,906,60,815,44,722,36,657"/>
+<area shape="rect" id="Node000030" href="$led__strip_8c.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="152,1026,263,1051"/>
+<area shape="poly" id="edge46_Node000001_Node000030" title=" " alt="" coords="41,657,48,730,62,838,84,944,99,985,117,1013,141,1028,138,1033,113,1017,95,988,79,945,56,839,42,731,36,657"/>
+<area shape="rect" id="Node000003" href="$led__control_8c.html#a9f56725f852569377b98fbabc341cc3c" title="Incremens the value using min and max limits." alt="" coords="389,379,466,405"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,326,377,372,376,377,244,331"/>
+<area shape="rect" id="Node000004" href="$clock_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="367,179,487,205"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="221,301,274,259,310,235,347,214,362,207,364,212,349,219,312,239,278,263,225,305"/>
+<area shape="rect" id="Node000005" href="$buttons_8c.html#ac3cb06a3761589b05a9d31c73a5a0f52" title=" " alt="" coords="370,229,485,254"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="241,301,347,263,369,256,371,261,349,268,243,306"/>
+<area shape="rect" id="Node000006" href="$buttons_8c.html#a2e8d9dc0a729a8bf64ee62a334fcea72" title=" " alt="" coords="385,278,469,303"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="263,307,371,295,372,300,263,312"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="263,317,399,332,464,346,489,355,508,365,542,399,567,440,584,481,595,516,590,518,579,483,562,442,538,402,505,369,487,360,462,351,398,338,263,322"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="225,327,278,369,349,414,367,422,365,427,347,418,275,373,221,331"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="226,301,261,274,298,238,311,218,318,198,328,180,347,165,390,145,428,139,465,145,508,165,540,191,565,225,582,260,594,291,589,293,577,262,560,227,536,194,505,169,464,150,428,144,391,150,349,169,332,184,323,201,316,220,302,242,264,278,229,305"/>
+<area shape="rect" id="Node000008" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="705,555,779,581"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="645,548,691,556,690,562,644,553"/>
+<area shape="rect" id="Node000009" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="840,555,967,581"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="779,565,826,565,826,571,779,571"/>
+<area shape="rect" id="Node000010" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="1015,555,1127,581"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="967,565,1001,565,1001,571,967,571"/>
+<area shape="poly" id="edge12_Node000012_Node000009" title=" " alt="" coords="618,328,878,545,874,549,614,332"/>
+<area shape="poly" id="edge14_Node000013_Node000007" title=" " alt="" coords="449,102,480,129,509,166,528,222,552,322,595,516,590,517,547,324,523,224,504,168,476,132,445,106"/>
+<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="477,101,508,121,542,162,567,208,584,254,595,291,590,292,579,255,562,211,537,165,505,125,474,106"/>
+<area shape="poly" id="edge17_Node000014_Node000013" title=" " alt="" coords="224,201,277,163,347,120,377,106,379,111,349,125,280,167,227,205"/>
+<area shape="poly" id="edge21_Node000015_Node000012" title=" " alt="" coords="286,501,338,503,395,499,453,487,505,463,535,438,559,405,576,372,588,342,593,344,581,374,563,408,539,441,508,468,454,492,396,504,338,508,286,506"/>
+<area shape="rect" id="Node000016" href="$led__strip_8c.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color" alt="" coords="388,530,467,555"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="264,502,375,528,374,533,263,508"/>
+<area shape="poly" id="edge20_Node000016_Node000007" title=" " alt="" coords="467,540,541,540,541,545,467,545"/>
+<area shape="rect" id="Node000018" href="$led__strip_8c.html#a5a619ebce1d2a34e10976da0e90ee198" title="Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by..." alt="" coords="367,730,488,755"/>
+<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="264,777,356,756,357,761,265,782"/>
+<area shape="rect" id="Node000019" href="$led__strip_8c.html#a319ffd328868f2d09aaca42d35eddf3c" title="Displays one digit as a led column. Each 3 leds are separated by a black one." alt="" coords="692,605,792,630"/>
+<area shape="poly" id="edge24_Node000018_Node000019" title=" " alt="" coords="459,728,696,633,698,638,461,733"/>
+<area shape="poly" id="edge25_Node000019_Node000009" title=" " alt="" coords="783,602,847,583,848,588,785,607"/>
+<area shape="poly" id="edge27_Node000020_Node000018" title=" " alt="" coords="250,830,299,814,351,788,395,761,398,765,353,792,301,819,251,835"/>
+<area shape="poly" id="edge29_Node000021_Node000018" title=" " alt="" coords="250,881,275,874,299,863,331,841,361,815,406,765,410,768,364,819,334,845,301,868,277,879,251,886"/>
+<area shape="poly" id="edge31_Node000022_Node000018" title=" " alt="" coords="268,654,301,666,354,692,398,720,396,725,351,697,299,671,266,659"/>
+<area shape="poly" id="edge33_Node000023_Node000018" title=" " alt="" coords="265,704,357,724,356,730,264,709"/>
+<area shape="poly" id="edge35_Node000024_Node000018" title=" " alt="" coords="259,740,353,740,353,745,259,745"/>
+<area shape="poly" id="edge37_Node000025_Node000007" title=" " alt="" coords="472,577,541,557,542,562,473,582"/>
+<area shape="poly" id="edge38_Node000025_Node000008" title=" " alt="" coords="493,585,690,569,691,575,493,590"/>
+<area shape="poly" id="edge39_Node000025_Node000012" title=" " alt="" coords="487,577,505,565,527,540,544,512,571,450,586,391,593,344,598,345,591,392,576,452,549,514,531,543,508,569,490,582"/>
+<area shape="rect" id="Node000027" href="$eeemu_8c.html#a7090ef0372f1ed254dc73d749374d5d0" title="crc8 calcualation for data block" alt="" coords="403,903,452,929"/>
+<area shape="poly" id="edge41_Node000026_Node000027" title=" " alt="" coords="260,932,389,918,389,923,261,937"/>
+<area shape="rect" id="Node000028" href="$eeemu_8c.html#a17244966a0b706a1a48ce87112fab3e1" title="Erasing a flash page." alt="" coords="360,953,495,978"/>
+<area shape="poly" id="edge42_Node000026_Node000028" title=" " alt="" coords="261,944,347,954,346,959,260,949"/>
 </map>

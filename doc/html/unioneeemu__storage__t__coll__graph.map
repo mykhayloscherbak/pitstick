@@ -1,3 +1,5 @@
 <map id="eeemu_storage_t" name="eeemu_storage_t">
-<area shape="rect" id="node2" href="$structeeemu__storage__s.html" title="Storage element structure. " alt="" coords="5,5,131,97"/>
+<area shape="rect" id="Node000001" title="union for the storage element" alt="" coords="7,153,133,219"/>
+<area shape="rect" id="Node000002" href="$structeeemu__storage__s.html" title="Storage element structure." alt="" coords="5,5,135,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,91,73,137,67,137,67,91"/>
 </map>

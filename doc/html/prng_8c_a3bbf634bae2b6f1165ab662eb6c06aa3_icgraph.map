@@ -1,8 +1,21 @@
 <map id="genRandom" name="genRandom">
-<area shape="rect" id="node2" href="$led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval..." alt="" coords="145,5,232,32"/>
-<area shape="rect" id="node3" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light " alt="" coords="280,5,363,32"/>
-<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="411,5,496,32"/>
-<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="544,5,679,32"/>
-<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="727,5,859,32"/>
-<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="907,5,957,32"/>
+<area shape="rect" id="Node000001" title="gets the next random value of the sequence" alt="" coords="947,56,1047,81"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html#ad8a2996ec325df63ec4271019a39823d" title=" " alt="" coords="643,5,755,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="938,55,898,46,754,26,755,20,899,41,939,50"/>
+<area shape="rect" id="Node000007" href="$led__control_8c.html#a75662df6e847c33f01e5c59f977fc08d" title=" " alt="" coords="827,56,874,81"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="933,71,874,71,874,66,933,66"/>
+<area shape="rect" id="Node000008" href="$led__control_8c.html#a053f506a5e8f91dfcfa0d3a7fb1a9430" title="Slalom traffic light. After the last strip goes on all light goes off at a random time interval." alt="" coords="803,105,899,131"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="946,88,890,108,888,103,945,83"/>
+<area shape="rect" id="Node000003" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="function that prepares led strip out data at every step (100ms)" alt="" coords="500,56,595,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="648,38,587,58,585,53,646,33"/>
+<area shape="rect" id="Node000004" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time" alt="" coords="303,56,452,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,71,452,71,452,66,486,66"/>
+<area shape="rect" id="Node000005" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="contains one iteration of the main loop" alt="" coords="108,56,255,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="289,71,255,71,255,66,289,66"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,56,60,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="94,71,60,71,60,66,94,66"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="814,71,595,71,595,66,814,66"/>
+<area shape="rect" id="Node000009" href="$led__control_8c.html#a00bde153440b9cef1c0f2c8afb964e01" title="fills and executes state table for the slalom traffic light" alt="" coords="653,107,745,132"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="789,121,745,122,745,116,789,116"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="646,105,585,84,587,79,648,100"/>
 </map>

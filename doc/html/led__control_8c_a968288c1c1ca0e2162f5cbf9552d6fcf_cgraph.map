@@ -1,0 +1,16 @@
+<map id="displayPitInviteColor" name="displayPitInviteColor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,163,56"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#a38105803a923b427c0d872730042b27f" title="displays strip number (0 &#45; 4) of selected color" alt="" coords="211,5,289,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,29,197,23,198,29,163,34"/>
+<area shape="rect" id="Node000007" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="343,56,421,81"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="163,47,329,62,329,67,163,53"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="337,5,427,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,15,323,15,323,21,289,21"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="475,5,549,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="427,15,461,15,461,21,427,21"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="597,31,724,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="550,22,584,28,583,33,549,27"/>
+<area shape="rect" id="Node000006" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="772,31,884,56"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="724,41,758,41,758,46,724,46"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="421,62,583,48,584,53,422,68"/>
+</map>

@@ -1,6 +1,11 @@
 <map id="podnosRed" name="podnosRed">
-<area shape="rect" id="node2" href="$led__strip_8h.html#acc67db7a2a81f9b75653212c4343c97a" title="Shows total stick with the same color if init is nonzero. Does nothing else. " alt="" coords="141,5,260,32"/>
-<area shape="rect" id="node3" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="308,5,383,32"/>
-<area shape="rect" id="node4" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="431,5,545,32"/>
-<area shape="rect" id="node5" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="593,5,696,32"/>
+<area shape="rect" id="Node000001" title="Red phase of &quot;Podnos&quot; mode." alt="" coords="5,5,100,31"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#acc67db7a2a81f9b75653212c4343c97a" title="Shows total stick with the same color if init is nonzero. Does nothing else." alt="" coords="148,5,279,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,15,134,15,134,21,100,21"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="327,5,405,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,15,313,15,313,21,279,21"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="453,5,580,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="405,15,440,15,440,21,405,21"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="628,5,740,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="580,15,614,15,614,21,580,21"/>
 </map>

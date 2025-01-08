@@ -1,8 +1,15 @@
 <map id="gpio.h" name="gpio.h">
-<area shape="rect" id="node2" href="$heartbeat_8c.html" title="Contains heartbeat toggling function. " alt="" coords="5,80,92,107"/>
-<area shape="rect" id="node3" href="$buttons_8c.html" title="Buttons driver with debouncing and long press detection. " alt="" coords="116,80,192,107"/>
-<area shape="rect" id="node4" href="$clock_8c.html" title="Contains clock init and functions. " alt="" coords="217,80,281,107"/>
-<area shape="rect" id="node5" href="$gpio_8c.html" title="Contains init and access functions for Gpio. " alt="" coords="305,80,363,107"/>
-<area shape="rect" id="node6" href="$timer__dma_8c.html" title="Contains timer2+dma driver to send data to led strip. " alt="" coords="387,80,481,107"/>
-<area shape="rect" id="node7" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle. " alt="" coords="506,80,567,107"/>
+<area shape="rect" id="Node000001" title="Contains definitions for gpio.c." alt="" coords="253,5,315,31"/>
+<area shape="rect" id="Node000002" href="$buttons_8c.html" title="Buttons driver with debouncing and long press detection." alt="" coords="5,79,88,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,35,86,81,84,76,239,30"/>
+<area shape="rect" id="Node000003" href="$clock_8c.html" title="Contains clock init and functions." alt="" coords="112,79,179,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,39,169,81,167,76,248,34"/>
+<area shape="rect" id="Node000004" href="$gpio_8c.html" title="Contains init and access functions for Gpio." alt="" coords="203,79,264,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="270,44,244,80,239,77,265,41"/>
+<area shape="rect" id="Node000005" href="$heartbeat_8c.html" title="Contains heartbeat toggling function." alt="" coords="288,79,384,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="303,40,330,77,325,80,298,43"/>
+<area shape="rect" id="Node000006" href="$main_8c.html" title="The file contains upper level init functions calls and main while(1) cycle." alt="" coords="408,79,475,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="323,34,417,76,415,81,321,39"/>
+<area shape="rect" id="Node000007" href="$timer__dma_8c.html" title="Contains timer2+dma driver to send data to led strip." alt="" coords="499,79,603,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="330,29,508,76,507,81,328,34"/>
 </map>

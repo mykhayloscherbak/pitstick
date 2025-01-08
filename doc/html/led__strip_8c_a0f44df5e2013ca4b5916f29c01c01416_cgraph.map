@@ -1,3 +1,5 @@
 <map id="applyBrightness" name="applyBrightness">
-<area shape="rect" id="node2" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="168,5,271,32"/>
+<area shape="rect" id="Node000001" title="Applies current brightness level to the led values." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="180,5,292,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,15,166,15,166,21,132,21"/>
 </map>

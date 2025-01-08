@@ -1,11 +1,52 @@
 <map id="showFullWithInit" name="showFullWithInit">
-<area shape="rect" id="node2" href="$led__control_8c.html#ac8aab3e010262c3352895b466da4660a" title="Green phase of &quot;Podnos&quot; mode. " alt="" coords="172,5,271,32"/>
-<area shape="rect" id="node8" href="$led__control_8c.html#ab1a1c0fe82cf1902597d1d3ecdcb37e4" title="Red phase of &quot;Podnos&quot; mode. " alt="" coords="177,56,265,83"/>
-<area shape="rect" id="node9" href="$led__control_8c.html#ac0df7b189e2e6be916b811e7165df51a" title="Turns led strip off. " alt="" coords="186,107,257,133"/>
-<area shape="rect" id="node3" href="$led__control_8c.html#ab502b8fd1b6d1f2963cde3e25331ba23" title="fills and executes state table for stop&#45;and&#45;go (&quot;Podnos&quot;) mode. " alt="" coords="319,56,415,83"/>
-<area shape="rect" id="node4" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="The entry point of the led control. Switches to pitstick, config mode or tlight. " alt="" coords="463,81,548,108"/>
-<area shape="rect" id="node5" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time ..." alt="" coords="596,81,731,108"/>
-<area shape="rect" id="node6" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="Contains main while(1) loop. Tasks are selected from the task table. Last task should be {0..." alt="" coords="779,81,911,108"/>
-<area shape="rect" id="node7" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title="main" alt="" coords="959,81,1009,108"/>
-<area shape="rect" id="node10" href="$led__control_8c.html#a1a058721e80572b5dc836be8937e8973" title="Safety Car mode implementation. Safety Car mode is non&#45;setupable endless mode. The sequence can be si..." alt="" coords="333,107,401,133"/>
+<area shape="rect" id="Node000001" title="Shows total stick with the same color if init is nonzero. Does nothing else." alt="" coords="1117,129,1248,155"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html#a98d663ae3b369c316d6de3f91fa81b47" title=" " alt="" coords="982,5,1049,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1158,121,1118,83,1068,44,1047,33,1050,28,1071,40,1121,79,1162,117"/>
+<area shape="rect" id="Node000008" href="$led__control_8c.html#ab7c265a9b565807b36adb03b63541539" title=" " alt="" coords="977,55,1054,80"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1139,126,1044,82,1046,78,1142,121"/>
+<area shape="rect" id="Node000011" href="$led__control_8c.html#ab6bfcc07faec7df93bcd44d645e112fc" title=" " alt="" coords="984,104,1047,129"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1104,133,1047,124,1047,119,1104,127"/>
+<area shape="rect" id="Node000013" href="$led__control_8c.html#ac8aab3e010262c3352895b466da4660a" title="Green phase of &quot;Podnos&quot; mode." alt="" coords="961,216,1069,241"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="1146,163,1042,218,1040,213,1144,159"/>
+<area shape="rect" id="Node000015" href="$led__control_8c.html#ab1a1c0fe82cf1902597d1d3ecdcb37e4" title="Red phase of &quot;Podnos&quot; mode." alt="" coords="968,292,1063,317"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="1160,166,1031,294,1028,290,1157,163"/>
+<area shape="rect" id="Node000016" href="$led__control_8c.html#afda015411d45a5ace26c9dca590d8526" title="Turns led strip off." alt="" coords="978,153,1053,179"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="1104,156,1053,163,1052,158,1103,151"/>
+<area shape="rect" id="Node000003" href="$led__control_8c.html#a75662df6e847c33f01e5c59f977fc08d" title=" " alt="" coords="835,5,881,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="969,21,881,21,881,15,969,15"/>
+<area shape="rect" id="Node000004" href="$led__control_8c.html#afaaf13eec5719f4c93d6264fdc9a77c8" title="function that prepares led strip out data at every step (100ms)" alt="" coords="500,192,595,217"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="822,33,738,67,690,91,644,119,597,158,562,194,558,190,593,154,641,114,688,87,736,62,820,28"/>
+<area shape="rect" id="Node000005" href="$bll_8c.html#a7c11a80a9ed420242ac287642131c1d0" title="calls led_control function with ms as a parameter. ms is time from stick on to the current time" alt="" coords="303,192,452,217"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="486,207,452,207,452,202,486,202"/>
+<area shape="rect" id="Node000006" href="$bll_8c.html#acbcce6716e32407292c040cb312d5b4a" title="contains one iteration of the main loop" alt="" coords="108,192,255,217"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="289,207,255,207,255,202,289,202"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,192,60,217"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="94,207,60,207,60,202,94,202"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="963,54,881,28,882,23,965,49"/>
+<area shape="rect" id="Node000009" href="$led__control_8c.html#a4dec03713a7f6a722e023dc21ba9f636" title=" " alt="" coords="803,55,913,80"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="963,70,913,70,913,65,963,65"/>
+<area shape="rect" id="Node000010" href="$led__control_8c.html#a8d561fd44c3d1fb68a0a4a0e113f82d4" title=" " alt="" coords="657,129,740,155"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="816,88,804,94,726,132,724,127,802,89,814,83"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="656,163,580,194,578,189,653,158"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="971,100,960,93,945,80,935,68,926,56,912,44,880,28,883,23,915,40,930,53,940,65,949,77,963,89,973,96"/>
+<area shape="rect" id="Node000012" href="$led__control_8c.html#a0de87afb104797c05a2bccba3747339f" title=" " alt="" coords="810,104,906,129"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="970,119,906,119,906,114,970,114"/>
+<area shape="poly" id="edge14_Node000012_Node000010" title=" " alt="" coords="797,129,741,138,740,133,796,124"/>
+<area shape="rect" id="Node000014" href="$led__control_8c.html#ab502b8fd1b6d1f2963cde3e25331ba23" title="fills and executes state table for stop&#45;and&#45;go (&quot;Podnos&quot;) mode." alt="" coords="805,305,911,331"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="982,250,883,308,880,303,979,246"/>
+<area shape="poly" id="edge18_Node000014_Node000004" title=" " alt="" coords="791,317,718,306,679,296,641,282,594,251,559,220,562,216,597,247,644,277,681,291,719,301,792,312"/>
+<area shape="poly" id="edge20_Node000015_Node000014" title=" " alt="" coords="955,312,911,316,911,311,954,307"/>
+<area shape="poly" id="edge29_Node000016_Node000003" title=" " alt="" coords="966,148,959,142,942,117,935,92,928,68,911,44,897,33,880,26,882,21,899,29,915,40,933,66,940,90,947,114,963,139,969,144"/>
+<area shape="poly" id="edge22_Node000016_Node000009" title=" " alt="" coords="969,149,960,143,945,130,935,118,926,106,912,94,892,82,895,78,915,89,930,102,940,114,949,126,963,139,972,145"/>
+<area shape="poly" id="edge23_Node000016_Node000012" title=" " alt="" coords="964,153,898,132,900,127,966,148"/>
+<area shape="rect" id="Node000017" href="$led__control_8c.html#aae901b571f12b230857ad80e4e6580f8" title=" " alt="" coords="813,153,903,179"/>
+<area shape="poly" id="edge24_Node000016_Node000017" title=" " alt="" coords="964,169,904,169,904,163,964,163"/>
+<area shape="rect" id="Node000018" href="$led__control_8c.html#ad8a2996ec325df63ec4271019a39823d" title=" " alt="" coords="643,192,755,217"/>
+<area shape="poly" id="edge28_Node000016_Node000018" title=" " alt="" coords="965,182,914,193,831,202,755,206,755,201,830,196,913,187,964,177"/>
+<area shape="rect" id="Node000019" href="$led__control_8c.html#a66409754a6925f8630f384dc1de4970e" title="Safety Car mode implementation. Safety Car mode is non&#45;setupable endless mode. The sequence can be si..." alt="" coords="663,241,735,267"/>
+<area shape="poly" id="edge30_Node000016_Node000019" title=" " alt="" coords="975,187,914,210,818,235,735,251,734,246,816,230,913,205,973,182"/>
+<area shape="poly" id="edge27_Node000017_Node000010" title=" " alt="" coords="798,160,740,151,741,146,799,155"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="800,183,752,195,751,189,799,178"/>
+<area shape="poly" id="edge26_Node000018_Node000004" title=" " alt="" coords="629,207,595,207,595,202,629,202"/>
+<area shape="poly" id="edge31_Node000019_Node000004" title=" " alt="" coords="649,241,586,220,588,215,651,236"/>
 </map>

@@ -1,6 +1,11 @@
 <map id="displayT2" name="displayT2">
-<area shape="rect" id="node2" href="$led__strip_8h.html#a5a619ebce1d2a34e10976da0e90ee198" title="Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by..." alt="" coords="132,5,241,32"/>
-<area shape="rect" id="node3" href="$led__strip_8c.html#a319ffd328868f2d09aaca42d35eddf3c" title="Displays one digit as a led column. Each 3 leds are separated by a black one. " alt="" coords="289,5,380,32"/>
-<area shape="rect" id="node4" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="428,5,543,32"/>
-<area shape="rect" id="node5" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="591,5,693,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,91,31"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#a5a619ebce1d2a34e10976da0e90ee198" title="Displays a number as two bars. One for tens and the other for ones. Leds in the bars are separated by..." alt="" coords="139,5,260,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,15,125,15,125,21,91,21"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#a319ffd328868f2d09aaca42d35eddf3c" title="Displays one digit as a led column. Each 3 leds are separated by a black one." alt="" coords="308,5,408,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,15,294,15,294,21,260,21"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="456,5,583,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="408,15,442,15,442,21,408,21"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="631,5,743,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="583,15,617,15,617,21,583,21"/>
 </map>

@@ -1,4 +1,7 @@
 <map id="prng.h" name="prng.h">
-<area shape="rect" id="node2" href="$led__control_8c.html" title="Contains led control logic for all modes: " alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="$prng_8c.html" title="contains function for generation pseudo&#45;rundonm number sequence for slalom light. x[n+1] = (a*x[n] + ..." alt="" coords="125,80,184,107"/>
+<area shape="rect" id="Node000001" title="Contains prototypes of function that returns random value between min and max. Caculated value is sto..." alt="" coords="80,5,143,31"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html" title="Contains led control logic for all modes:" alt="" coords="5,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,43,69,80,65,77,92,40"/>
+<area shape="rect" id="Node000003" href="$prng_8c.html" title="contains function for generation pseudo&#45;rundonm number sequence for slalom light. x[n+1] = (a*x[n] + ..." alt="" coords="135,79,197,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,40,159,77,155,80,127,43"/>
 </map>

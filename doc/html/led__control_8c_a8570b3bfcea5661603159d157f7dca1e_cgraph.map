@@ -1,14 +1,28 @@
 <map id="lock" name="lock">
-<area shape="rect" id="node2" href="$eeemu_8h.html#a828bd0295ce05df8b4e99f2e8b19c400" title="returns the pointer to the last stored configuration. Size is MAX_STORED " alt="" coords="100,5,215,32"/>
-<area shape="rect" id="node3" href="$led__control_8c.html#a711e2a55c7fc53596f8c6a5864c1f0e0" title="Returns the color corresponding to current battery voltage. Battery needs to be charged immediately i..." alt="" coords="103,56,211,83"/>
-<area shape="rect" id="node6" href="$clock_8h.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired. " alt="" coords="102,107,213,133"/>
-<area shape="rect" id="node7" href="$led__strip_8h.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="117,157,198,184"/>
-<area shape="rect" id="node11" href="$clock_8h.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer. " alt="" coords="112,208,203,235"/>
-<area shape="rect" id="node12" href="$led__strip_8h.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="106,259,209,285"/>
-<area shape="rect" id="node13" href="$led__strip_8h.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="284,284,359,311"/>
-<area shape="rect" id="node4" href="$adc_8h.html#a156057cb0f4492d54bad69d4bfdad090" title="returns millivolts measuring of vbat " alt="" coords="263,56,380,83"/>
-<area shape="rect" id="node5" href="$adc_8c.html#a23f145378c29e2599d0da09d07a082a2" title="raw averaged value of adc channel reading " alt="" coords="439,56,532,83"/>
-<area shape="rect" id="node8" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated. " alt="" coords="287,208,356,235"/>
-<area shape="rect" id="node9" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values. " alt="" coords="428,245,543,272"/>
-<area shape="rect" id="node10" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title="getBrightness" alt="" coords="591,245,693,272"/>
+<area shape="rect" id="Node000001" title="Lock mode. Is shown at the end of all sequences (config, tlightMode, etc) to show that the stick is o..." alt="" coords="5,153,55,179"/>
+<area shape="rect" id="Node000002" href="$eeemu_8c.html#aaf9773547ad14119a632b9c9c0c29967" title="returns the pointer to the last stored configuration. Size is MAX_STORED" alt="" coords="103,5,229,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="33,152,56,99,76,68,101,40,107,36,110,40,104,44,80,71,61,101,38,154"/>
+<area shape="rect" id="Node000003" href="$led__control_8c.html#a711e2a55c7fc53596f8c6a5864c1f0e0" title="Returns the color corresponding to current battery voltage. Battery needs to be charged immediately i..." alt="" coords="107,55,225,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="39,152,65,121,101,89,110,84,113,88,104,93,68,125,43,155"/>
+<area shape="rect" id="Node000006" href="$clock_8c.html#a8a4e699fbe055adaac0e209980ed3288" title="Checks if timer timeout has expired." alt="" coords="106,104,226,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="54,155,116,132,118,137,56,160"/>
+<area shape="rect" id="Node000007" href="$led__strip_8c.html#a93ee67f96be3ec98f6fe6f6da14e0097" title="Puts two pixels at the same position in both rows. Data is put to the out buffer and actual color wil..." alt="" coords="121,153,211,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="55,163,107,163,107,169,55,169"/>
+<area shape="rect" id="Node000011" href="$clock_8c.html#aa9cb67dffbf08af7059377c84e10d7e4" title="Resets software timer." alt="" coords="117,203,215,228"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="56,172,118,195,116,200,54,177"/>
+<area shape="rect" id="Node000012" href="$led__strip_8c.html#a98bf1b7337d6f6c14a09e02d4d3308dd" title="Set the current brightness. All operations for now on will be performed at this brightness until it i..." alt="" coords="111,252,221,277"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="43,177,69,207,104,237,115,244,112,248,101,241,65,211,39,181"/>
+<area shape="rect" id="Node000013" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="301,277,379,303"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="37,178,44,203,57,234,77,264,104,288,149,305,197,311,245,308,287,301,287,307,245,314,197,316,148,310,101,292,73,268,53,236,39,205,32,180"/>
+<area shape="rect" id="Node000004" href="$adc_8c.html#a156057cb0f4492d54bad69d4bfdad090" title="returns millivolts measuring of vbat" alt="" coords="277,55,403,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="225,65,264,65,264,70,225,70"/>
+<area shape="rect" id="Node000005" href="$adc_8c.html#a23f145378c29e2599d0da09d07a082a2" title="raw averaged value of adc channel reading" alt="" coords="465,55,563,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="403,65,452,65,452,70,403,70"/>
+<area shape="rect" id="Node000008" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="303,203,377,228"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="212,176,290,199,289,204,210,181"/>
+<area shape="rect" id="Node000009" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="451,240,577,265"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="378,221,442,234,441,240,377,226"/>
+<area shape="rect" id="Node000010" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="625,240,737,265"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="578,250,612,250,612,255,578,255"/>
+<area shape="poly" id="edge13_Node000013_Node000009" title=" " alt="" coords="379,279,440,266,441,271,380,284"/>
 </map>

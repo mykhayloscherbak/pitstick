@@ -1,5 +1,9 @@
 <map id="rgbw.h" name="rgbw.h">
-<area shape="rect" id="node2" href="$led__control_8c.html" title="Contains led control logic for all modes: " alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="$led__strip_8c.html" title="Contains common functions implementations for led strip control. " alt="" coords="125,80,208,107"/>
-<area shape="rect" id="node4" href="$rgbw_8c.html" title="Contains SK6812 led strip driver implementation. The driver converts rgbw led data to serial array of..." alt="" coords="232,80,293,107"/>
+<area shape="rect" id="Node000001" title="Contains prototypes and data types for SK6812 led strip driver." alt="" coords="147,5,212,31"/>
+<area shape="rect" id="Node000002" href="$led__control_8c.html" title="Contains led control logic for all modes:" alt="" coords="5,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,40,79,81,77,76,146,35"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html" title="Contains common functions implementations for led strip control." alt="" coords="135,79,224,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,44,182,79,177,79,177,44"/>
+<area shape="rect" id="Node000004" href="$rgbw_8c.html" title="Contains SK6812 led strip driver implementation. The driver converts rgbw led data to serial array of..." alt="" coords="249,79,313,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,36,266,76,263,81,205,41"/>
 </map>

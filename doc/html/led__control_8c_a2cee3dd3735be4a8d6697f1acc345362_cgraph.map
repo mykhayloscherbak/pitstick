@@ -1,0 +1,12 @@
+<map id="ironC11green" name="ironC11green">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,115,56"/>
+<area shape="rect" id="Node000002" href="$led__strip_8c.html#a1b16072a1602761b8c0e264c18df6dec" title="Puts a pixel to the out buffer. Does not change the led color until updated." alt="" coords="165,5,239,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,31,151,24,152,30,115,36"/>
+<area shape="rect" id="Node000005" href="$led__strip_8c.html#ad19c7910dd7f93657785511c880f187a" title="Fills the whole stick by the color. Data is put to the out buffer and actual color will not be change..." alt="" coords="163,55,241,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="115,50,150,56,149,61,114,55"/>
+<area shape="rect" id="Node000003" href="$led__strip_8c.html#a0f44df5e2013ca4b5916f29c01c01416" title="Applies current brightness level to the led values." alt="" coords="289,31,416,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,22,276,28,275,33,239,27"/>
+<area shape="rect" id="Node000004" href="$led__strip_8c.html#ae728c4a209e05d7297df50c9252b621f" title=" " alt="" coords="464,31,576,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,41,450,41,450,46,416,46"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="241,59,275,53,276,58,242,64"/>
+</map>
